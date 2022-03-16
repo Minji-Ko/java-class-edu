@@ -43,10 +43,13 @@ public class Q06_Delivery {
 		time.add(Calendar.MINUTE, arrival);
 		System.out.printf("%s: %d시 %d분%n", food, time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE));
 		
+		
+//		int orderHour = (min >= -arrival) ? hour : hour - 1;
+//		int orderMin = (min >= -arrival)? min + arrival : (min + 60) + arrival;
+//		System.out.printf( "%s: %d시 %d분\n", food, orderHour, orderMin);
 
 	}
 	
-	////TODO int로 해보기 (2022. 3. 16. 오전 10:52:52)
 }
 
 //		설계]

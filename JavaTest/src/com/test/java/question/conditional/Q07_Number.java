@@ -15,39 +15,58 @@ public class Q07_Number {
 		int num4 = input();
 		int num5 = input();
 		
-		int even = 0, odd = 0;
-	
 		
-		if (num1 % 2 == 0) {
-			++even;
-		} else {
-			++odd;
-		}
-		if (num2 % 2 == 0) {
-			++even;
-		} else {
-			++odd;
-		}
-		if (num3 % 2 == 0) {
-			++even;
-		} else {
-			++odd;
-		}
-		if (num4 % 2 == 0) {
-			++even;
-		} else {
-			++odd;
-		}
-		if (num5 % 2 == 0) {
-			++even;
-		} else {
-			++odd;
-		}
+		int even = getEven(num1);
+		even += getEven(num2);
+		even += getEven(num3);
+		even += getEven(num4);
+		even += getEven(num5);
+		
+		int odd = 5 - even;
+			
+//		int even = 0, odd = 0;
+//		
+//		if (num1 % 2 == 0) {
+//			++even;
+//		} else {
+//			++odd;
+//		}
+//		if (num2 % 2 == 0) {
+//			++even;
+//		} else {
+//			++odd;
+//		}
+//		if (num3 % 2 == 0) {
+//			++even;
+//		} else {
+//			++odd;
+//		}
+//		if (num4 % 2 == 0) {
+//			++even;
+//		} else {
+//			++odd;
+//		}
+//		if (num5 % 2 == 0) {
+//			++even;
+//		} else {
+//			++odd;
+//		}
 		
 		System.out.printf("짝수는 %d개 홀수는 %d개 입력했습니다.\n", even, odd);
 		System.out.printf("홀수가 짝수보다 %d개 더 많습니다.\n", (odd - even > 0)? odd - even : 0);
 	
 	} //main
+
+	public static int getEven(int num) {
+		
+		int even = 0;
+		
+		if (num % 2 == 0) {
+			++even;
+		} 
+		
+		return even;
+	}
 
 	public static int input() throws Exception {
 		
@@ -59,7 +78,6 @@ public class Q07_Number {
 		return num;
 	}
 
-	//TODO 반복되는 부분 처리 (2022. 3. 16. 오전 11:35:57)
 
 }
 

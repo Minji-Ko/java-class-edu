@@ -1,7 +1,0 @@
-3. char로 하면 두글자 입력받았을 때 유효성검사가 안됨
-4. 수경비교
-5. if문으로 나누면 연산자를 %c로 할 필요 없음
-7. 반복문처리 > 승연비교
-8. //int parkingMin = (exitHour - entryHour) * 60 + (exitMin - entryMin);
-	int parkingMin = (exitHour * 60 + exitMin) - (entryHour * 60 + entryMin);
-10. 승연비교 

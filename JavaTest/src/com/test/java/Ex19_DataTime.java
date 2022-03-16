@@ -158,7 +158,7 @@ public class Ex19_DataTime {
 		end.set(Calendar.MINUTE, 0);
 
 		long endTick = end.getTimeInMillis();
-		System.out.println((double) (endTick - nowTick) / 1000 / 60 / 60); // 현재 10시 21분 정도 ... 점심시간
+		System.out.println((double)(endTick - nowTick) / 1000 / 60 / 60); // 현재 10시 21분 정도 ... 점심시간
 																			// 제외하고 6.6시간남음
 	}
 

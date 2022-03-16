@@ -27,8 +27,8 @@ public class Ex22_for {
 		//m7();
 		//m8();
 		//m9();
-		//m10();
-		m11();
+		m10();
+		//m11();
 	}//main
 
 	private static void m11() {
@@ -71,12 +71,12 @@ public class Ex22_for {
 		
 		Calendar c1 = Calendar.getInstance();
 		
-		c1.set(2022, 2, 1); //2022년 3월 1일
+		c1.set(2022, 1, 1); //2022년 2월 1일
 		
 		//c1이 속해있는 월의 최댓값을 가져와라 > 마지막 날짜
-		System.out.println(c1.getActualMaximum(Calendar.DATE));
 		
-		int lastDay = c1.getActualMaximum(Calendar.DATE); //직접 루프의 조건식에 넣으면 c1.add(Calendar.DATE,1)때문에 3월 2일까지 출력됨.
+		
+		int lastDay = c1.getActualMaximum(Calendar.DATE); //직접 루프의 조건식에 넣으면 c1.add(Calendar.DATE,1)때문에 3월 3일까지 출력됨.
 		
 		for (int i=1; i<=lastDay; i++) {
 			

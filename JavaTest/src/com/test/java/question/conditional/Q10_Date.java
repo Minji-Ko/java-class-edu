@@ -52,8 +52,7 @@ public class Q10_Date {
 		
 		day.add(Calendar.DATE, 7 - dayWeek);
 		System.out.printf("이동한 날짜는 '%tF'입니다.\n", day);
-	
-	}  //TODO 코드비교 (2022. 3. 16. 오전 11:35:02)
+	}
 }
 
 //		설계]
