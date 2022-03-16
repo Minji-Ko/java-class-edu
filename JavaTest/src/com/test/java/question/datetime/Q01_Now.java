@@ -18,7 +18,7 @@ public class Q01_Now {
 		Calendar now = Calendar.getInstance();
 		
 		System.out.printf("현재 시간 : %02d시 %02d분 %02d초%n"
-							, now.get(Calendar.HOUR)
+							, now.get(Calendar.HOUR_OF_DAY) //HOUR_OF_DAY가 24h
 							, now.get(Calendar.MINUTE)
 							, now.get(Calendar.SECOND));
 		
@@ -26,7 +26,7 @@ public class Q01_Now {
 		
 		System.out.printf("현재 시간 : %s %02d시 %02d분 %02d초%n"
 							, ampm
-							, now.get(Calendar.HOUR_OF_DAY)
+							, now.get(Calendar.HOUR)  
 							, now.get(Calendar.MINUTE)
 							, now.get(Calendar.SECOND));
 	}

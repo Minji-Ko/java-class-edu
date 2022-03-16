@@ -1,4 +1,4 @@
-package com.test.java.question.control_if;
+package com.test.java.question.conditional;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,7 +18,7 @@ public class Q03_Family {
 		
 		System.out.print("문자 : ");
 		String input = reader.readLine();
-		char letter = input.charAt(0);
+		char letter = input.charAt(0); 		//char로 하면 두글자 입력시 예외처리가 안됨
 		
 		
 		boolean f = (letter == 'f') || (letter == 'F');

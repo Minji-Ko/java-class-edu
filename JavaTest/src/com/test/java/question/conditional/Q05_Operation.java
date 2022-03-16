@@ -1,4 +1,4 @@
-package com.test.java.question.control_if;
+package com.test.java.question.conditional;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -32,19 +32,20 @@ public class Q05_Operation {
 		if (validation) {
 			
 			if (operator == '+') {
-				System.out.printf("%,d %c %,d = %,d", num1, operator, num2, num1 + num2);
+				System.out.printf("%,d + %,d = %,d", num1, operator, num2, num1 + num2);  //출력식에 연산자를 %c로 할 필요 없음
+				//System.out.printf("%,d %c %,d = %,d", num1, operator, num2, num1 + num2);  
 				
 			} else if (operator == '-') {
-				System.out.printf("%,d %c %,d = %,d", num1, operator, num2, num1 - num2);
+				System.out.printf("%,d - %,d = %,d", num1, operator, num2, num1 - num2);
 				
 			} else if (operator == '*') {
-				System.out.printf("%,d %c %,d = %,d", num1, operator, num2, num1 * num2);
+				System.out.printf("%,d * %,d = %,d", num1, operator, num2, num1 * num2);
 				
 			} else if (operator == '/') {
-				System.out.printf("%,d %c %,d = %,.1f", num1, operator, num2, (double)num1 / num2);
+				System.out.printf("%,d / %,d = %,.1f", num1, operator, num2, (double)num1 / num2);
 				
 			} else if (operator == '%') {
-				System.out.printf("%,d %c %,d = %,d", num1, operator, num2, num1 % num2);
+				System.out.printf("%,d %% %,d = %,d", num1, operator, num2, num1 % num2);
 			}
 			
 		} else {

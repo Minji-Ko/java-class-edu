@@ -1,4 +1,4 @@
-package com.test.java.question.control_if;
+package com.test.java.question.conditional;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -30,13 +30,10 @@ public class Q10_Date {
 		int dayWeek = day.get(Calendar.DAY_OF_WEEK);
 		
 		if (2 <= dayWeek && dayWeek <=6) { //(월~금)
-			
 			System.out.println("입력하신 날짜는 '평일'입니다.");
-			
 			moveDate(day, dayWeek);
 		
 		} else {
-			
 			System.out.println("입력하신 날짜는 '휴일입니다.");
 			
 			if (dayWeek == 7) {
@@ -56,7 +53,7 @@ public class Q10_Date {
 		day.add(Calendar.DATE, 7 - dayWeek);
 		System.out.printf("이동한 날짜는 '%tF'입니다.\n", day);
 	
-	}
+	}  //TODO 코드비교 (2022. 3. 16. 오전 11:35:02)
 }
 
 //		설계]

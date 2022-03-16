@@ -1,4 +1,4 @@
-package com.test.java.question.control_if;
+package com.test.java.question.conditional;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -26,7 +26,8 @@ public class Q08_Parking {
 		int exitMin = Integer.parseInt(reader.readLine());
 	
 		
-		int parkingMin = (exitHour - entryHour) * 60 + (exitMin - entryMin);
+		//int parkingMin = (exitHour - entryHour) * 60 + (exitMin - entryMin);
+		int parkingMin = (exitHour * 60 + exitMin) - (entryHour * 60 + entryMin);
 		
 		if (parkingMin >= 0) {
 			

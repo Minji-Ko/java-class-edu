@@ -116,11 +116,11 @@ public class Ex19_DataTime {
 		// 연산
 		// - 시각 - 시각
 		Calendar now = Calendar.getInstance();
-		Calendar loveday = Calendar.getInstance();
-		loveday.set(2020, 7, 25, 0, 0, 0);
-		System.out.printf("%tF\n", loveday);
+		Calendar birthday = Calendar.getInstance();
+		birthday.set(2020, 7, 25, 0, 0, 0);
+		System.out.printf("%tF\n", birthday);
 
-		// now = birthday = 내가 살아온 시간
+		// now - birthday = 내가 살아온 시간
 		// The operator - is undefined for the argument type(s) java.util.Calendar,
 		// java.util.Calendar
 		// 산술 연산자(-)는 값형을 대상으로 연산을 한다.
@@ -129,14 +129,14 @@ public class Ex19_DataTime {
 		// tick, epoch
 		// - Returns this Calendar's time value in milliseconds.
 		// - Returns:the current time as UTC milliseconds from the epoch
-		System.out.println(loveday.getTimeInMillis()); // 882580197323
+		System.out.println(birthday.getTimeInMillis()); // 882580197323
 		System.out.println(now.getTimeInMillis()); // 1647306597304
 
 		System.out.println(now.getTimeInMillis() / 1000 / 60 / 60 / 24 / 365);
 
 
 		System.out
-				.println((now.getTimeInMillis() - loveday.getTimeInMillis())/ 1000 / 60 / 60 / 24 + 1); // +1는 보정값(과거)
+				.println((now.getTimeInMillis() - birthday.getTimeInMillis())/ 1000 / 60 / 60 / 24 + 1); // +1는 보정값(과거)
 		
 
 		// 올해 크리스마스 며칠 남았는지?
@@ -150,7 +150,7 @@ public class Ex19_DataTime {
 		long nowTick = now.getTimeInMillis();
 		long christmasTick = christmas.getTimeInMillis();
 
-		System.out.println((christmasTick - nowTick ) / 1000 / 60 / 60 / 24 + 2); // +2는 보정값(미래).
+		System.out.println((christmasTick - nowTick) / 1000 / 60 / 60 / 24 + 2); // +2는 보정값(미래).
 
 
 		Calendar end = Calendar.getInstance();
@@ -166,7 +166,7 @@ public class Ex19_DataTime {
 
 		// 연산
 		// - 시각 + 시간
-		// - 시간 - 시간
+		// - 시각 - 시간
 
 		// 오늘 만난 커플 > 100일
 		Calendar now = Calendar.getInstance();
@@ -213,7 +213,7 @@ public class Ex19_DataTime {
 		// 1. int get(int)
 		// 2. int set(..)
 
-		// 현재 시각 얻오오기
+		// 현재 시각 얻어오기
 		Calendar c1 = Calendar.getInstance();
 
 		// 특정 시각 얻어오기 > 원하는 시각 만들기

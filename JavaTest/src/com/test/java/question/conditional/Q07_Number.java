@@ -1,9 +1,9 @@
-package com.test.java.question.control_if;
+package com.test.java.question.conditional;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Q07_Number2 {
+public class Q07_Number {
 
 	public static void main(String[] args) throws Exception {
 		
@@ -16,24 +16,36 @@ public class Q07_Number2 {
 		int num5 = input();
 		
 		int even = 0, odd = 0;
+	
 		
-		even += (num1 == 1) ? 1 : 0; 
-		odd += (num1 == -1) ? 1 : 0;
+		if (num1 % 2 == 0) {
+			++even;
+		} else {
+			++odd;
+		}
+		if (num2 % 2 == 0) {
+			++even;
+		} else {
+			++odd;
+		}
+		if (num3 % 2 == 0) {
+			++even;
+		} else {
+			++odd;
+		}
+		if (num4 % 2 == 0) {
+			++even;
+		} else {
+			++odd;
+		}
+		if (num5 % 2 == 0) {
+			++even;
+		} else {
+			++odd;
+		}
 		
-		even += (num2 == 1) ? 1 : 0; 
-		odd += (num2 == -1) ? 1 : 0;
-		
-		even += (num3 == 1) ? 1 : 0; 
-		odd += (num3 == -1) ? 1 : 0;
-		
-		even += (num4 == 1) ? 1 : 0; 
-		odd += (num4 == -1) ? 1 : 0;
-		
-		even += (num5 == 1) ? 1 : 0;
-		odd += (num5 == -1) ? 1 : 0;
- 		
 		System.out.printf("짝수는 %d개 홀수는 %d개 입력했습니다.\n", even, odd);
-		System.out.printf("홀수가 짝수보다 %d개 더 많습니다.\n", (odd-even > 0)? odd-even : 0);
+		System.out.printf("홀수가 짝수보다 %d개 더 많습니다.\n", (odd - even > 0)? odd - even : 0);
 	
 	} //main
 
@@ -44,14 +56,11 @@ public class Q07_Number2 {
 		System.out.print("숫자 입력 : ");
 		int num = Integer.parseInt(reader.readLine());
 		
-		if (num % 2 == 0) {
-			num = 1;
-		} else {
-			num = -1;
-		}
-		
 		return num;
 	}
+
+	//TODO 반복되는 부분 처리 (2022. 3. 16. 오전 11:35:57)
+
 }
 
 //		설계]

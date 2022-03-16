@@ -45,6 +45,8 @@ public class Q06_Delivery {
 		
 
 	}
+	
+	////TODO int로 해보기 (2022. 3. 16. 오전 10:52:52)
 }
 
 //		설계]
