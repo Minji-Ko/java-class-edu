@@ -29,6 +29,7 @@ public class Q09_Game {
 				System.out.println("틀렸습니다.");
 				System.out.println();
 			}
+			
 		}
 		
 		System.out.printf("컴퓨터가 생각한 숫자는 %d입니다.\n"

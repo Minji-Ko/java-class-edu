@@ -8,7 +8,7 @@ public class Q07_SumNum3 {
 //		- 누적값이 1000을 넘어가는 순간 루프를 종료하시오.
 		int sum = 0;
 		
-		for(int i=1;; i++) {
+		for(int i=1; ; i++) {
 			sum += i;
 			System.out.print(i);
 			

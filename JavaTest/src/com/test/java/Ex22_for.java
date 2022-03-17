@@ -27,9 +27,159 @@ public class Ex22_for {
 		//m7();
 		//m8();
 		//m9();
-		m10();
+		//m10();
 		//m11();
+		//m12();
+		m13();
+		//m14();
 	}//main
+
+	private static void m14() {
+		
+		//달력 만들기
+		
+		// 1. 월의 마지막일
+		// 2. 월의 1일의 요일
+		
+		int year = 2022;
+		int month = 3;
+		
+		int lastDay = getLastDay(year, month);
+		int dayOfWeek = getDayOfWeek(year, month);
+		
+
+		System.out.println("====================================================");
+		System.out.printf("	            %d년 %d월\n", year, month);
+		System.out.println("====================================================");
+		System.out.println("[일]\t[월]\t[화]\t[수]\t[목]\t[금]\t[토]");
+		System.out.println("====================================================");
+		
+		for(int i=0; i<dayOfWeek; i++) {
+			System.out.print("\t");  
+		} 	
+		
+		for(int i=1; i<=lastDay; i++) {
+			System.out.printf("%3d\t", i);
+			
+			if((i + dayOfWeek) % 7 == 0) {
+				System.out.println();
+			}
+		}
+		
+	}
+
+	public static int getDayOfWeek(int year, int month) {
+		
+		int total = 0;
+		int date = 1;
+		
+		for (int i=1; i<year; i++) {
+			total += 365;		
+			
+		if (isLeafYear(i)) {
+			total++;
+		}
+		
+		}
+		
+		for (int i=1; i<month; i++) {
+			total += getLastDay(year, i);
+		}
+		
+		total += date;
+		
+		return total % 7;
+	}
+
+	private static void m13() {
+		
+		//1년 = 365일
+		int total = 0;
+		int year = 2022;
+		int month = 3;
+		int date = 16;
+		
+		// 1년 1월 1일 ~ 2021년 12월 31일
+		for (int i=1; i<year; i++) {
+			total += 365;		
+		//현재 i년이 윤년인지 검사?
+		if (isLeafYear(i)) {
+			total++;
+		}
+		
+		}
+		
+		//2022년 1월 1일~ 2022년 2월 28일
+		for (int i=1; i<month; i++) {
+			total += getLastDay(year, i);
+		}
+		
+		//2022년 3월 1일 ~ 2022년 3월 17일
+		total += date;
+		
+		//특정 날짜의 요일? > 기준일 + 기준일 요일 + 기준일부터 특정 날짜의 날짜 합
+		
+		System.out.printf("%d년 %d월 %d일은 %,d일째 되는 날이고 %s입니다.\n"
+							, year, month, date
+							, total
+							, getDay(total));
+	}
+	
+	private static int getLastDay(int year, int month) {
+
+		switch(month) {
+			case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+				return 31; //break 역할 겸함
+			case 4: case 6: case 9: case 11:
+				return 30;
+			case 2: 
+				return isLeafYear(year) ? 29 : 28;  //*****
+		}
+		return 0;
+	}
+
+	public static boolean isLeafYear(int year) {
+		
+		if (year % 4 == 0) {
+			if(year % 100 == 0) {
+				if(year % 400 == 0	) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return true;
+			}
+		} else {
+			return false;
+		}
+	}
+
+	private static void m12() {
+		
+		//Iteration.Q07_SumNum3
+		
+		//1. 누적 변수 생성
+		//2. 루프 생성
+		//	2.1 값 누적
+		//	2.2 값 출력
+		// 	2.3 조건 > 누적값 1000이상 > break
+		// 3. 출력
+		
+		int sum = 0;
+		
+		for(int i=1;  ; i++) {
+			
+			sum += i; //2.1
+			System.out.printf("%d + ", i); //2.2
+			
+			if(sum > 1000) { //2.3
+				break;
+			}
+		}
+		
+		System.out.printf("\b\b = %d\n", sum);
+	}
 
 	private static void m11() {
 		//for문 아님*
@@ -115,19 +265,19 @@ public class Ex22_for {
 	public static String getDay(int date) {
 		
 		if(date % 7 == 1) {
-			return "화";
-		} else if (date % 7 == 2) {
-			return "수";
-		} else if (date % 7 == 3) {
-			return "목";
-		} else if (date % 7 == 4) {
-			return "금";
-		} else if (date % 7 == 5) {
-			return "토";
-		} else if (date % 7 == 6) {
-			return "일";
-		} else {
 			return "월";
+		} else if (date % 7 == 2) {
+			return "화";
+		} else if (date % 7 == 3) {
+			return "수";
+		} else if (date % 7 == 4) {
+			return "목";
+		} else if (date % 7 == 5) {
+			return "금";
+		} else if (date % 7 == 6) {
+			return "토";
+		} else {
+			return "일";
 		}
 		
 		//return ""; //return null;
