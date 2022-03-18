@@ -17,9 +17,7 @@ public class Q10_SumNum4 {
 		int sum = 0;
 		String print = ""; // *****
 
-		boolean loop = true;
-
-		while (loop) {
+		while (sum < 100) {
 
 			System.out.print("숫자 : ");
 			int num = Integer.parseInt(reader.readLine());
@@ -28,17 +26,14 @@ public class Q10_SumNum4 {
 			if (num % 2 == 0) {
 				sum += num;
 			} else {
-				print += "\b\b- ";
 				sum -= num;
+				print += "\b\b- ";
 			}
 
 			print += String.format("%d + ", num);
 
-			if (sum > 100) {
-				print += String.format("\b\b= %d\n", sum);
-				loop = false;
-			}		
 		}
+		print += String.format("\b\b= %d\n", sum);
 		
 		System.out.println(print);
 
