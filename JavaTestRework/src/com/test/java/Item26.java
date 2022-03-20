@@ -13,7 +13,7 @@ public class Item26 {
 		System.out.println(c1.get(Calendar.YEAR));			//2022. 년도
 		System.out.println(c1.get(Calendar.MONTH));			//2.	월(0~11) **
 		System.out.println(c1.get(Calendar.DATE));			//14.	일(날짜)
-		System.out.println(c1.get(Calendar.HOUR));			//5.	시(12H)  //TODO 0~11 (2022. 3. 16. 오전 10:36:01)
+		System.out.println(c1.get(Calendar.HOUR));			//5.	시(12H)  //0~11 
 		System.out.println(c1.get(Calendar.MINUTE));		//23. 	분
 		System.out.println(c1.get(Calendar.SECOND));		//11.	초
 		System.out.println(c1.get(Calendar.MILLISECOND));	//460.	밀리초(1/1000)
