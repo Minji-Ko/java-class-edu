@@ -21,10 +21,6 @@ public class Q12_369 {
 			
 			do369(i);
 			
-			if(i % 20 == 0) {
-				System.out.println();
-			}
-		
 			i++;
 		}
 		
@@ -35,26 +31,88 @@ public class Q12_369 {
 		int hundreds = num / 100;
 		int tens = (num / 10) % 10;
 		int units = num % 10;
+
 		
-		if((hundreds != 0) && (hundreds % 3 == 0)) {
-			System.out.print("짝 ");
-		} else {
+		boolean hundreds369 = (hundreds != 0) && (hundreds % 3 == 0);
+		boolean tens369 = (tens != 0) && (tens % 3 == 0);
+		boolean units369 = (units != 0) && (units % 3 == 0);
+		
+		
+		if(hundreds369 && tens369 && units369) {
+			System.out.print("짝짝짝 ");
 			
-			if((tens != 0) && (tens % 3 == 0)) {
-				System.out.print("짝 ");
-			} else {
-				if((units != 0) && (units % 3 == 0)) {
-					System.out.print("짝 ");
-				} else {
-					System.out.printf("%d ", num);
-				}
-			}
-		} 
+		} else if (hundreds369 && tens369 && !units369) {
+			System.out.print("짝짝 ");
+		} else if (hundreds369 && !tens369 && units369) {
+			System.out.print("짝짝 ");
+		} else if (!hundreds369 && tens369 && units369) {
+			System.out.print("짝짝 ");
 		
-		//TODO 2번나오면 짝짝으로 바꾸기 (2022. 3. 18. 오후 2:20:54)
+		} else if (hundreds369 && !tens369 && !units369) {
+			System.out.print("짝 ");
+		} else if (!hundreds369 && tens369 && !units369) {
+			System.out.print("짝 ");
+		} else if (!hundreds369 && !tens369 && units369) {
+			System.out.print("짝 ");
 		
-	} //clap()
-}
+		} else {
+			System.out.printf("%d ", num);					
+		}
+		
+		
+//		if(hundreds369) {
+//			
+//			if(tens369) {
+//				System.out.print("짝");
+//			}
+//			if(units369) {
+//				System.out.print("짝");
+//			}
+//			
+//			System.out.print("짝 ");
+//			
+//		} else if(tens369) {
+//				
+//			if(units369) {
+//				System.out.print("짝");
+//			} 
+//			
+//			System.out.print("짝 ");
+//			
+//		} else if(units369) {
+//			System.out.print("짝 ");
+//		} else {
+//			System.out.printf("%d ", num);					
+//		}
+			
+			
+		
+		
+	} //do369
+		
+//		public static void do369(int num) {
+//			
+//			int hundreds = num / 100;
+//			int tens = (num / 10) % 10;
+//			int units = num % 10;
+//			
+//			if((hundreds != 0) && (hundreds % 3 == 0)) {
+//				System.out.print("짝 ");
+//			} else {
+//				
+//				if((tens != 0) && (tens % 3 == 0)) {
+//					System.out.print("짝 ");
+//				} else {
+//					if((units != 0) && (units % 3 == 0)) {
+//						System.out.print("짝 ");
+//					} else {
+//						System.out.printf("%d ", num);
+//					}
+//				}
+//			} 
+		
+		
+} 
 
 //		설계]
 //		1. 최대 숫자 입력받기 > int num

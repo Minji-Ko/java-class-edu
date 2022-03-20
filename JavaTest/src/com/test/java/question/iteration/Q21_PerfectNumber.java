@@ -9,7 +9,7 @@ public class Q21_PerfectNumber {
 //		- 약수: 어떤 수나 식을 나누어 나머지가 없이 떨어지는 수
 	
 
-		for(int i=2; i<=100; i++) {
+		for(int i=1; i<=100; i++) {
 			
 			String print = String.format("%d = [", i);
 			

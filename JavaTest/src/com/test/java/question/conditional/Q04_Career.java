@@ -38,9 +38,8 @@ public class Q04_Career {
 		} else {
 			System.out.println("입력한 값이 올바르지 않습니다. 1이상의 값을 입력하시오.");
 		}
-	
-	} //TODO 수경님꺼 확인 (2022. 3. 16. 오전 11:40:42)
-	
+		
+	}
 }
 
 

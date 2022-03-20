@@ -12,19 +12,20 @@ public class Q18_Letter {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.print("행: ");
-		int num = Integer.parseInt(reader.readLine());
+		int row = Integer.parseInt(reader.readLine());
 		
-		for (int i=0; i<num; i++) {
+		for (int i=0; i<row; i++) {
 			
-			for(int j=1; j<num-i; j++) {
+			for(int j=1; j<row-i; j++) {
 				System.out.print(" ");
-			}
+			}	
 			for(char c=97; c<=97+i; c++) {
 				System.out.print(c);
 			}
 			for(char c=(char)(97+i); c>=97; c--) {
 				System.out.print(c);				
 			}
+		
 			
 			System.out.println();
 		}

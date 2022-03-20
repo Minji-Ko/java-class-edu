@@ -10,38 +10,67 @@ public class Q06_SumNum2 {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.print("시작 숫자 : ");
-		int start = Integer.parseInt(reader.readLine());
+		int startNum = Integer.parseInt(reader.readLine());
 		System.out.print("종료 숫자 : ");
-		int end = Integer.parseInt(reader.readLine());
+		int endNum = Integer.parseInt(reader.readLine());
 		
 		int sum = 0;
+		int order = 1;
 		
-		for(int i=start; i<=end; i++) {
+		for (int i = startNum; i <= endNum; i++) {
 			
-			if(i % 2 != 0) { //홀수
+			//첫번째("i") 또는 홀수번째("+ i") 또는 짝수번쨰("-i") 출력
+			if (order % 2 != 0) { // i가 홀수번째일 떄,
 				sum += i;
-				System.out.print(i);
-				
-				if(i==end) {
-					System.out.printf(" = %d\n", sum);
-					break;
+				if (i == startNum) { //첫번째일때
+					System.out.printf("%d", i);
+				} else {
+					System.out.printf(" + %d", i);
 				}
-				
-				System.out.print(" - ");
-			} else { 
-			
-				sum += -i;
-				System.out.print(i);
-				
-				if(i==end) {
-					System.out.printf(" = %d\n", sum);
-					break;
-				}
-				
-				System.out.print(" + ");
+
+			} else {// i가 짝수번째일 때,
+				sum -= i;
+				System.out.printf(" - %d", i);
 			}
-			
+						
+			order++;
 		}
+		
+		//마지막 "= sum" 출력하기
+		System.out.printf(" = %d", sum);
+
+		
+		
+		
+		
+//		for(int i=starNum; i<=endNum; i++) {
+//			
+//			if(order % 2 != 0) { //홀수
+//				sum += i;
+//				System.out.print(i);
+//				
+//				if(i==endNum) {
+//					System.out.printf(" = %d\n", sum);
+//					break;
+//				}
+//				
+//				System.out.print(" - ");
+//			} else { 
+//			
+//				sum += -i;
+//				System.out.print(i);
+//				
+//				if(i==endNum) {
+//					System.out.printf(" = %d\n", sum);
+//					break;
+//				}
+//				
+//				System.out.print(" + ");
+//			}
+//			
+//			order++;
+//			
+//		}
 	}
 }
 

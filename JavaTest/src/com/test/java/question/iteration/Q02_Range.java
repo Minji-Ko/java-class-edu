@@ -13,18 +13,18 @@ public class Q02_Range {
 	
 		System.out.print("시작 숫자 : ");
 		int start = Integer.parseInt(reader.readLine());
-		System.out.print("시작 숫자 : ");
+		System.out.print("종료 숫자 : ");
 		int end = Integer.parseInt(reader.readLine());
 		System.out.print("증감치 : ");
 		int change = Integer.parseInt(reader.readLine());
 	
 		
-		if (end >= start) {
+		if (start <= end) {
 			for(int i=start; i<=end; i=i+change) {
 				System.out.println(i);
 			}
 		} else {
-			for(int i=start; i > end; i=i+change) {
+			for(int i=start; i >= end; i=i+change) {
 				System.out.println(i);
 			}
 		}

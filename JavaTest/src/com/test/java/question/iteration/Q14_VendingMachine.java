@@ -96,7 +96,6 @@ public class Q14_VendingMachine {
 
 }
 
-//		//TODO 음료수 안받고 돈 돌려받기 기능 (2022. 3. 17. 오후 6:10:47)
 
 //		설계] 
 //		1. 진행변수 선언 String enter= "\r\n" //윈도우 기준

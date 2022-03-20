@@ -29,11 +29,13 @@ public class Q22_CommonDivisor {
 		
 		//공약수 구하기
 		System.out.printf("%d와 %d의 공약수:", num1, num2);
-		if(num1 >= num2) {
-			getDivisor(num1, num2);
-		} else {
-			getDivisor(num2, num1);
-		}	
+		getDivisor(num1, num2);
+			
+//		if(num1 >= num2) {   
+//			getDivisor(num1, num2);
+//		} else {
+//			getDivisor(num2, num1);
+//		}	 							//공약수를 구할 때, 작은수 큰수를 구분할 필요가 없음**
 		
 	} //main
 
@@ -48,6 +50,7 @@ public class Q22_CommonDivisor {
 	}
 	
 }
+
 	
 //	설계] 
 //	1. 숫자 입력받기 > int num

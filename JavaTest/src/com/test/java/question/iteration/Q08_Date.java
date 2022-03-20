@@ -7,9 +7,9 @@ public class Q08_Date {
 //		요구사항] 서기 1년 1월 1일부터 오늘까지 며칠째인지 합을 구하시오.
 //		- Calendar 클래스 사용 금지
 		
-		int year = 2020;
-		int month = 2;
-		int date = 17;
+		int year = 2022;
+		int month = 3;
+		int date = 16;
 		
 		int totalYear = (year - 1) * 365 + (year / 4) - (year / 100) + (year / 400);
 		int totalMonth = getMonth(month); //2월 29일 반영 안됨!! > 2월 28일까지는 윤년이라 +1이 되어있음

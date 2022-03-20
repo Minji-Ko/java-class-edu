@@ -6,25 +6,39 @@ public class Q19_Multiplication {
 		
 //		요구사항] 구구단을 출력하시오.
 		
-		//2~5단 출력
-		for(int i=1; i<=9; i++) {
-			
-			for(int j=2; j<=5; j++) {
-				System.out.printf("%d x %d = %2d\t", j, i, j * i);
-			}
-			System.out.println();
-		}
-
-		System.out.println();
+//		//2~5단 출력
+//		for(int i=1; i<=9; i++) {
+//			
+//			for(int j=2; j<=5; j++) {
+//				System.out.printf("%d x %d = %2d\t", j, i, j * i);
+//			}
+//			System.out.println();
+//		}
+//
+//		System.out.println();
+//		
+//		//6~9단 출력
+//		for(int i=1; i<=9; i++) {
+//			
+//			for(int j=6; j<=9; j++) {
+//				System.out.printf("%d x %d = %2d\t", j, i, j * i);
+//			}
+//			System.out.println();
+//		}
 		
-		//6~9단 출력
-		for(int i=1; i<=9; i++) {
+		for(int dan=2; dan<=6; dan+=4) {
 			
-			for(int j=6; j<=9; j++) {
-				System.out.printf("%d x %d = %2d\t", j, i, j * i);
+			for(int i=1; i<=9; i++) {
+				
+				for(int j=dan; j<=dan+3; j++) {
+					System.out.printf("%d x %d = %2d\t", j, i, j * i);
+				}
+				System.out.println();
 			}
+	
 			System.out.println();
 		}
+		
 	}
 }
 //		설계]

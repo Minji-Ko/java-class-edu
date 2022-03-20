@@ -13,23 +13,13 @@ public class Q20_PrimeNumber {
 		
 		for(int i=startNum; i<=endNum; i++) {
 			
-			//시작 숫자가 2일 때, 2는 그냥 출력
-			if (i == 2) {
-				System.out.print("2, ");
-				continue;
-			}
-			
 			//소수 출력
-			for(int j=2; j<=i-1; j++) {
+			for(int j=2; j<=i; j++) {
 				
-				// 소수 아니면 다음 숫자 검토
-				if(i % j == 0){
-					break;
-				}
-				
-				// 소수면 마지막에 출력
-				if (j == i-1) {
+				if (j == i) {
 					System.out.printf("%d, ", i);
+				} else if (i % j == 0) { //i가 소수 아님 -> i+1검토
+					break;
 				}
 			}	
 		}

@@ -179,7 +179,7 @@ public class Ex23_while {
 			num++; 			//증감식
 		}
 		
-//		do와 while의 사용은 선호도 문제!
+//		for와 while의 사용은 선호도 문제!
 		
 	}
 	

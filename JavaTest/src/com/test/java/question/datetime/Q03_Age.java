@@ -21,7 +21,7 @@ public class Q03_Age {
 		
 		int age = now.get(Calendar.YEAR) - birth + 1;
 		System.out.printf("나이: %d세%n", age);
-	}	//TODO 승연님코드랑 비교 (2022. 3. 16. 오후 12:03:55)
+	}
 }
 
 //		설계]

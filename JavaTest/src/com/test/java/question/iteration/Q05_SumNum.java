@@ -18,17 +18,25 @@ public class Q05_SumNum {
 		
 		int sum = 0;
 		
-		for(int i=start; i<=end; i++) {
+//		for(int i=start; i<=end; i++) {
+//			sum += i;
+//			System.out.print(i);
+//			
+//			if(i==end) {
+//				System.out.printf(" = %d\n", sum);
+//				break;
+//			}
+//			
+//			System.out.print(" + ");
+//		}
+		
+		for(int i=start; i<end; i++) {
 			sum += i;
-			System.out.print(i);
-			
-			if(i==end) {
-				System.out.printf(" = %d\n", sum);
-				break;
-			}
-			
-			System.out.print(" + ");
+			System.out.printf("%d + ", i);
 		}
+		
+		sum += end;
+		System.out.printf("%d = %d\n", end, sum);
 		
 	}
 }

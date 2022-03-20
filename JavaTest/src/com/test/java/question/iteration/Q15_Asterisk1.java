@@ -7,19 +7,19 @@ public class Q15_Asterisk1 {
 
 	public static void main(String[] args) throws Exception {
 		
-//		*****
-//		 ****
-//		  ***
-//		   **
-//		    *
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	
 		System.out.print("행: ");
 		int num = Integer.parseInt(reader.readLine());
 		
+//		*****
+//		 ****
+//		  ***
+//		   **
+//		    *
 		
-		for (int i=1; i<=num; i++) {
+		for (int i=1; i<=num; i++) {			
 			
 			//공백출력
 			for(int j=1; j<i; j++) {
@@ -33,6 +33,10 @@ public class Q15_Asterisk1 {
 			
 			System.out.println();
 		}
+		
+		
+		
+		
 	
 	}
 }
