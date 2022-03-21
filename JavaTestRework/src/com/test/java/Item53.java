@@ -4,7 +4,7 @@ public class Item53 {
 
 	public static void main(String[] args) {
 	
-		//[SUMMARY] 배열 사용하기(for문 활용) (2022. 3. 21. 오전 12:55:26)
+		//[SUMMARY] 배열 탐색하기(for문 활용) (2022. 3. 21. 오전 12:55:26)
 		
 		int[] nums = new int[3];
 		

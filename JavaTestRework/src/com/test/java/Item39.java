@@ -8,7 +8,7 @@ public class Item39 {
 		
 		int num = 5;
 		
-		switch (num) {	//조건으로 값을 사용한다.
+		switch (num) {	//조건으로 정수 또는 문자열을 사용한다.
 			case 1: 	
 				System.out.println("하나");
 				break;	//switch문을 탈출해라
