@@ -7,13 +7,22 @@ public class Q06_Lottery {
 //		요구사항] 중복되지 않는 임의의 숫자 6개를 만드시오.(로또)
 //		- 숫자의 범위 : 1 ~ 45
 //		- 오름차순 정렬
-	
+		
 		int[] lottery = new int[6];
 		
 		//난수 생성후 저장
 		for(int i=0; i<lottery.length; i++) {
 			lottery[i] = (int)(Math.random() * 45) + 1;
+			
+			//난수 중복 없애기
+			for(int j=0; j<i; j++) {
+				if(lottery[i] == lottery[j]) {
+					i--;
+					break;  //TODO break가 없어도됌 (2022. 3. 21. 오후 12:24:32)
+				}
+			}
 		}
+		 
 		
 		//오름차순 정렬
 		for(int i=0; i<lottery.length-1; i++) {

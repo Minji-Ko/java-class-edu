@@ -37,20 +37,20 @@ public class Ex26_array {
 		
 		//오름차순 정렬 > 공식적 메소드O
 		//내림차순 정렬 > 공식적 메소드X > 2~3주 후 수업	
-		System.out.println(Arrays.toString(nums)); //정렬적
+		System.out.println(Arrays.toString(nums)); //정렬 전
 		Arrays.sort(nums);
-		System.out.println(Arrays.toString(nums)); //정렬적
+		System.out.println(Arrays.toString(nums)); //정렬 후
 
-		System.out.println(Arrays.toString(names)); //정렬적
+		System.out.println(Arrays.toString(names)); 
 		Arrays.sort(names);
-		System.out.println(Arrays.toString(names)); //정렬적
+		System.out.println(Arrays.toString(names)); 
 	}
 
 	private static void m3() {
 		
 		String[] name = { "유재석", "정형돈", "노홍철", "하하", "박명수" };
 
-		System.out.println(Arrays.toString(name)); //정렬적
+		System.out.println(Arrays.toString(name)); //정렬전 
 		for(int i=0; i<name.length-1; i++) {
 			
 			for(int j=0; j<name.length-1-i; j++) {

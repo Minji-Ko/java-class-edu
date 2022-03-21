@@ -17,13 +17,13 @@ public class Q08_Delete_MUST {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	
 		System.out.print("삭제 위치 : ");
-		int location = Integer.parseInt(reader.readLine());
+		int index = Integer.parseInt(reader.readLine());
 		
 		System.out.print("원본 : ");
 		System.out.println(dump(nums));
 		
 		//삭제하기
-		for(int i=location; i<nums.length-1; i++) {
+		for(int i=index; i<nums.length-1; i++) {
 			nums[i] = nums[i+1];
 		}
 		

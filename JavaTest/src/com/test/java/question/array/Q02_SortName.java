@@ -3,7 +3,7 @@ package com.test.java.question.array;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Q02_AlignName {
+public class Q02_SortName {
 
 	public static void main(String[] args) throws Exception {
 		

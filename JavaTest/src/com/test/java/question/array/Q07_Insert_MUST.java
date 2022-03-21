@@ -18,7 +18,7 @@ public class Q07_Insert_MUST {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.print("삽입 위치 : ");
-		int location = Integer.parseInt(reader.readLine()); 
+		int index = Integer.parseInt(reader.readLine()); 
 		System.out.print("값 : ");
 		int value = Integer.parseInt(reader.readLine()); 
 		
@@ -27,12 +27,12 @@ public class Q07_Insert_MUST {
 		System.out.println(dump(nums));
 		
 		//입력받은 값 삽입전 자리만들기
-		for(int i=nums.length-1; i>location; i--) {			
+		for(int i=nums.length-1; i>index; i--) {			
 			nums[i] = nums[i-1];
 		}
 		
 		//입력받은 값 삽입하기
-		nums[location] = value;
+		nums[index] = value;
 		
 		
 		System.out.print("결과 : ");

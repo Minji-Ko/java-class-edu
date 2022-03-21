@@ -148,7 +148,7 @@ public class Ex25_array {
 		//	- Side Effect 발생X
 		
 		int[] ns = new int[3];
-		//int nd[] = new int[3]; > 다른 언어에서는 허용을 안하기도 함 > 사용X
+		//int ns[] = new int[3]; > 다른 언어에서는 허용을 안하기도 함 > 사용X
 		
 		ns[0] = 10;
 		ns[1] = 20;
@@ -240,7 +240,7 @@ public class Ex25_array {
 		//정적 할당 > 컴파일 때 이미 배열의 길이가 정해짐 
  		int[] nums = new int[330];
  		
- 		//동적 헐당 > 컴파일 때는 배열의 길이를 모름 > 런타임 때 정해짐
+ 		//동적 할당 > 컴파일 때는 배열의 길이를 모름 > 런타임 때 정해짐
  		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
  		
  		System.out.print("배열 길이: ");
