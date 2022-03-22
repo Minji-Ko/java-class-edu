@@ -41,7 +41,9 @@ public class Q16 {
 		
 		//데이터 입력 > 문제의 요구사항에 따라 수정
 		for(int i=0; i<10; i++) { 
+			
 			for(int j=0; j<3; j++) {
+				
 				for(int k=9; k>9-grade[j]/10; k--) {
 					score[k][j] = "■";
 				}
@@ -50,7 +52,6 @@ public class Q16 {
 				}
 			}
 		}
-		
 
 		
 		//데이터 출력 > 절대 수정 금지!!!

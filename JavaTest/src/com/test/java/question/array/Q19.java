@@ -13,21 +13,21 @@ public class Q19 {
 		
 		//데이터 입력
 		int n=1;
-		int Low = 1;
-		int Col = 0;
+		int row = 1;
+		int col = 2;
 		
 		
 		for(int i=0; i<3; i++) {
 			for(int j=0; j<3; j++) {
 
-				nums[Low][Col] = n;
+				nums[row][col] = n;
 				n++;
 				
 				if(j < 2) {
-					Low = modifyIndex(--Low); 
-					Col = modifyIndex(++Col);	
+					row = modifyIndex(--row); 
+					col = modifyIndex(++col);	
 				} else {
-					Col = modifyIndex(--Col); 					
+					col = modifyIndex(--col); 					
 				}			
 			}
 		}
@@ -55,7 +55,7 @@ public class Q19 {
 	}
 }
 
-//		0 	1 	2
+//		0 	1 	2  3
 //	0	2	7	6
 //	1	9	5	1
 //	2	4	3	8
