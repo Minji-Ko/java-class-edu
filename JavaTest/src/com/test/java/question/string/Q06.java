@@ -26,12 +26,11 @@ public class Q06 {
 		
 		
 		int validationValue = 0;
-		int mutiplyNum = 2;
-		
-		
+
+			
 		//유효성 확인 기준값 만들기
 		for(int i=0; i<juminCopy.length - 1; i++) {
-			validationValue += (juminCopy[i] - '0') * (mutiplyNum + i % 8);			 
+			validationValue += (juminCopy[i] - '0') * (i % 8 + 2);			 
 		}
 		
 		validationValue = (11 - (validationValue % 11)) % 10;

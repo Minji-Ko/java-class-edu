@@ -84,5 +84,43 @@ public class CodeReview {
 //		두번쨰 문제 check
 //		16. 처음에 초기화로 " "를 지정해주고 나중에 "■"로 덮어 쓸 수 있음.
 //		마지막 세문자
+		
+//		string]======================================================================================
+		
+//		2. 이메일 abc@naver.com 아이디를 추출할 때,
+//			=> split("@")
+//			=> substring(email.substring(0, email.indexOf("@")) >  substring와 indexOf를 동시에 사용할 수도 있음
+		
+//		4. 파일명 abc.jpg에서 확장자 jpg의 갯수를 셀때.
+//			if (file.substring(lastIndexOf(".") + 1).equals("jpg")) count++;
+//			=> if (file.endsWith("jpg")) count++; > endsWith( )가 훨씬 간결함 (***)
+		
+//		5. while문에 생각없이 true값을 가지는 loop를 넣지 말 것 (***) > 이 문제는 while(index > -1)가 훨씬 간결해짐
+		
+		
+		
+//		9. replace().replace() 두번도 가능
+//		
+//		11. 
+		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
