@@ -21,21 +21,47 @@ public class Q12 {
 		System.out.print("입력: ");
 		String numSentence = reader.readLine().replace(" ", "");
 		
+		
+		
+		
+		
 		//연산자 추출하기
 		String operator = "";
-		
+
 		for(int i=0; i<numSentence.length(); i++) {
-			if(!('0'<= numSentence.charAt(i) && numSentence.charAt(i) <= '9')) {
-				operator = String.valueOf(numSentence.charAt(i));
+			if(numSentence.substring(i,i+1).equals("\\+")
+					||numSentence.substring(i,i+1).equals("-")
+					||numSentence.substring(i,i+1).equals("\\*")
+					||numSentence.substring(i,i+1).equals("/")
+					||numSentence.substring(i,i+1).equals("%")) {
+				operator = numSentence.substring(i,i+1);
+				
 			}
-		}
+		} //연산자가 "+"거나 "/"일때 오류남 
+//		for(int i=0; i<numSentence.length(); i++) {
+//			char opt = numSentence.charAt(i);
+//			
+//			if(opt == '+' ||opt == '-'||opt == '*'||opt == '/'||opt == '%') {
+//				operator = String.valueOf(opt);
+//			}
+//		} //연산자가 "+"거나 "/"일때 오류남
+		
+//		for(int i=0; i<numSentence.length(); i++) {
+//			if(!('0'<= numSentence.charAt(i) && numSentence.charAt(i) <= '9')) {
+//				operator = String.valueOf(numSentence.charAt(i));
+//				
+//			}
+//		} //연산자가 없을 때 아래split에서 "\\"으로 쪼개서 오류남
+		
+		
+		
+		
 		
 		//피연산자 배열만들기
-		String[] operand = numSentence.split("\\" + operator);
+		String[] operand = numSentence.split(operator);
 		
- 		
 		//출력하기
-		if(operand.length < 2) {
+		if(operand.length < 2 || operand[0].equals("")) {
 			System.out.println("피연산자가 부족합니다.");
 			
 		} else {
@@ -44,19 +70,19 @@ public class Q12 {
 			int operand2 = Integer.parseInt(operand[1]);
 			
 			if(operator.equals("+")) {
-				System.out.printf("%s + %s = %d\n", operand1, operand2, operand1 + operand2);
+				System.out.printf("%d + %d = %d\n", operand1, operand2, operand1 + operand2);
 			
 			} else if (operator.equals("-")) {
-				System.out.printf("%s - %s = %d\n", operand1, operand2, operand1 - operand2);
+				System.out.printf("%d - %d = %d\n", operand1, operand2, operand1 - operand2);
 			
 			} else if (operator.equals("*")) {
-				System.out.printf("%s * %s = %d\n", operand1, operand2, operand1 * operand2);
+				System.out.printf("%d * %d = %d\n", operand1, operand2, operand1 * operand2);
 			
 			} else if (operator.equals("/")) {
-				System.out.printf("%s / %s = %f\n", operand1, operand2, operand1 / (double)operand2);
+				System.out.printf("%d / %d = %f\n", operand1, operand2, operand1 / (double)operand2);
 			
 			} else if (operator.equals("%")) {
-				System.out.printf("%s % %s = %d\n", operand1, operand2, operand1 % operand2);
+				System.out.printf("%d %% %d = %d\n", operand1, operand2, operand1 % operand2);
 			
 			} else {
 				System.out.println("연산자가 올바르지 않습니다.");

@@ -56,6 +56,7 @@ public class Q10 {
 			case '2':
 				return '이';
 			case '3':
+				return '삼';
 			case '4':
 				return '사';
 			case '5':
