@@ -35,10 +35,12 @@ class Box {
 		for(int i=0; i<list.length; i++) {
 			list[i] = new Macaron();
 			list[i].setSize((int)(Math.random() * 11) + 5);
-			list[i].setColor(color[(int)(Math.random() * 8)]);
+//			list[i].setColor(color[(int)(Math.random() * 8)]);
+			list[i].setColor(color[(int)(Math.random() * color.length)]); //유지보수를 최대한 적게할 수 있도록!
 			list[i].setThickness((int)(Math.random() * 20) + 1);
 		}
-		System.out.println("마카롱 10개를 만들었습니다.");
+//		System.out.println("마카롱 10개를 만들었습니다.");
+		System.out.println("마카롱 " + list.length + "개를 만들었습니다.");
 		System.out.println();
 	}
 	
@@ -76,7 +78,7 @@ class Macaron {
 	private String color;
 	private int thickness;
 
-	public int getSize() {
+	public int getSize() {  	//**  getter, setter에는 업무코드를 안넣음. 최소한의 유효성 검사만!
 		return size;
 	}
 	public void setSize(int size) {
@@ -119,9 +121,13 @@ class Macaron {
 	public String check() {
 		if(size < 8 ||size > 14) {
 			return "불합격";
-		} else if (color.equals("black")) {
+		} 
+		
+		if (color.equals("black")) {  //else if로 할 필요없음.
 			return "불합격";
-		} else if (thickness < 3 || thickness > 18) {
+		} 
+		
+		if (thickness < 3 || thickness > 18) {
 			return "불합격";
 		}	
 		return "합격";

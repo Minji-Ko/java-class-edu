@@ -45,7 +45,7 @@ public class Ex34 {
 		hong.setBirthday(1995, 3, 24);
 		System.out.println(hong.getBirthday());
 		
-		hong.setFather(father);  //B방법
+		hong.setFather(father);  
 		hong.setMother(mother);
 		
 		hong.hello();
@@ -95,7 +95,7 @@ class Person {
 		}
 	}
 	public String getGender() {
-		return gender;
+		return gender; 	
 	}
 	public void setGender(String gender) {
 		if (gender.equals("m")|| gender.equals("f")) {
@@ -114,7 +114,7 @@ class Person {
 		return String.format("%tF", this.birthday);
 	}
 	public void setBirthday(int year, int month, int date) {
-		Calendar birthday = Calendar.getInstance();
+		Calendar birthday = Calendar.getInstance(); 
 		birthday.set(year, month-1, date); //***month-1
 		this.birthday = birthday;
 	}
@@ -141,8 +141,8 @@ class Person {
 		}
 		
 		for(int i=0; i<name.length(); i++) {
-			char c = name.charAt(i);
-			if(c < '가' || c > '힣'	) {
+			char c = name.charAt(i); //TODO 글자가 길면 변수명을 의미없이해도 괜찮은가? (2022. 3. 25. 오전 12:12:24)
+			if(c < '가' || c > '힣') {
 				return false;
 			}
 		}

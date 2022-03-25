@@ -24,7 +24,7 @@ public class Q03 {
 		Bugles snack = new Bugles();
 
 		snack.setWeight(500);
-		snack.setCreationTime("2022-3-20");
+		snack.setCreationTime("2022-3-21");
 		System.out.println("가격 : " + snack.getPrice() + "원");
 		System.out.println("유통 기한이 " + snack.getExpiration() + "일 남았습니다.");
 
@@ -34,9 +34,18 @@ public class Q03 {
 		Bugles snack2 = new Bugles();
 
 		snack2.setWeight(300);
-		snack2.setCreationTime("2022-3-12");
+		snack2.setCreationTime("2022-3-13");
 		System.out.println("가격 : " + snack2.getPrice() + "원");
 		System.out.println("유통 기한이 " + snack2.getExpiration() + "일 남았습니다.");
+
+		snack2.eat();
+		
+		
+		Bugles snack3 = new Bugles();
+
+		snack3.setWeight(850);
+		snack3.setCreationTime("2022-3-25");
+		System.out.println("유통 기한이 " + snack3.getExpiration() + "일 남았습니다.");
 
 		snack2.eat();
 		
@@ -77,10 +86,11 @@ class Bugles {
 		
 	}
 	public int getExpiration() {
-		int time = (int)((System.currentTimeMillis() - creationTime.getTimeInMillis()) / 1000 / 60 / 60 / 24);
+		int time = (int)((System.currentTimeMillis() - creationTime.getTimeInMillis()) / 1000 / 60 / 60 / 24);  //** Math.ceil로 처리해야 함
 		
-		return this.expiration - time -1;
+		return this.expiration - time - 1;
 	}
+	
 	public void setCreationTime(String time) {
 		
 		int year = Integer.parseInt(time.substring(0,time.indexOf("-")));
@@ -92,7 +102,7 @@ class Bugles {
 	}
 	
 	public void eat() {
-		if(getExpiration() > 0) {
+		if(getExpiration() >= 0) {
 			System.out.println("과자를 맛있게 먹습니다.");
 		} else {
 			System.out.println("유통기한이 지나 먹을 수 없습니다.");
