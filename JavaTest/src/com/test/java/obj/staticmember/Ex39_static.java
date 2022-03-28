@@ -100,7 +100,7 @@ class Student {
 	
 	//클래스 멤버 변수 = 객체 변수 + 정적 변수
 	
-	//객체 변수 -> Heap의 객체 안에 만들어짐]
+	//객체 변수 -> Heap의 객체 안에 만들어짐
 	//- 각 개인(객체)이 각자의 데이터를 저장하는 변수
 	//- 나만의 데이터(****) > 개인만의 특성
 	//- 개인 사물함
@@ -136,7 +136,7 @@ class Student {
 	public static String getSchool() {
 		return school;
 	}
-	public static void setSchool(String school) { //TODO 객체변수에서 static메소드 자체는 어떻게 접근하지..? (2022. 3. 25. 오후 5:19:39)
+	public static void setSchool(String school) { 
 		Student.school = school;  //Studnet.***
 		//this.school = school;  -> Heap에 있는 객체에 school변수가 존재하지 않음 / static에 있는 Student클래스에서는 this를 인식할 수 없음
 	}

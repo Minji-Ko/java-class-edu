@@ -1,6 +1,6 @@
 package com.test.java.question.classtest;
 
-public class Q02 {
+public class Q02_Note {
 
 	public static void main(String[] args) {
 		

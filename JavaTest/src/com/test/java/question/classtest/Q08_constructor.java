@@ -1,6 +1,6 @@
 package com.test.java.question.classtest;
 
-public class Q08 {
+public class Q08_constructor {
 
 	public static void main(String[] args) {
 		
@@ -71,7 +71,7 @@ class Time {
 		if(second > 0) {
 			this.second += second % 60;
 			this.minute += (second / 60) % 60 ;
-			this.hour += second / 3600;
+			this.hour += second / 60 / 60;
 		}
 		if(minute > 0) {
 			this.minute += minute % 60;

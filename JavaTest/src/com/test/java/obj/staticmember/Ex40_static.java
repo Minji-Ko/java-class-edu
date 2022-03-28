@@ -80,7 +80,7 @@ class Pen {
 	public Pen(String model, String color) {
 		this.model = model;
 		this.color = color;
-		Pen.count++;
+		Pen.count++;  // 초기화(x) -> 증감 업무 코드
 	}
 	
 	public String dump() {

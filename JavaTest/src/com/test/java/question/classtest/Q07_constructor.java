@@ -1,6 +1,6 @@
 package com.test.java.question.classtest;
 
-public class Q07 {
+public class Q07_constructor {
 
 	public static void main(String[] args) {
 		
@@ -73,7 +73,7 @@ class Student {
 		if(number >= 0) 		
 			this.number = number;	
 	}
-	
+
 	public String info() {
 				
 		return String.format("%s(나이: %s, 학년: %s, 반: %s, 번호: %s)"

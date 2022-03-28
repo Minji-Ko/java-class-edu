@@ -1,7 +1,5 @@
 package com.test.java.question;
 
-import com.test.java.Ex22_for;
-
 public class CodeReview {
 
 	public static void main(String[] args) {
@@ -125,8 +123,7 @@ public class CodeReview {
 //		5.	유지보수를 최대한 적게 할 수 있도록!
 //			System.out.println("마카롱 10개를 만들었습니다.");
 //			=> System.out.println("마카롱 " + list.length + "개를 만들었습니다.");
-	
-
+		
 	
 	
 	}

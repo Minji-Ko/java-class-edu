@@ -207,8 +207,8 @@ public class Ex28_String {
 	private static void m10() {
 
 		//패턴 검색
-		//- boolean startWith(String word)
-		//- boolean endWith(String word)
+		//- boolean startsWith(String word)
+		//- boolean endsWith(String word)
 		
 		String txt = "자바 오라클 프로그래밍";
 		
@@ -322,9 +322,7 @@ public class Ex28_String {
 				// 금지어를 발견
 				System.out.println("금지어 발견!!!");
 				break; //** 적절하게 break
-				
-				
-			}  //TODO 금지어 ***처리하기 (2022. 3. 22. 오전 9:11:18)
+			}  
 		}
 		
 		System.out.println("완료");

@@ -1,6 +1,6 @@
 package com.test.java.question.classtest;
 
-public class Q05 {
+public class Q05_Box {
 
 	public static void main(String[] args) {
 		

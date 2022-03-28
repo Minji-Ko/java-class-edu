@@ -4,9 +4,9 @@ public class Ex37 {
 
 	public static void main(String[] args) {
 		
-		//공산품 > 일괄적 초기화 > model(M70), pirce(40000)
+		//공산품 > 일괄적 초기화 > model(M70), price(40000)
 		Mouse m1 = new Mouse();
-		
+
 		Mouse m2 = new Mouse();		
 		m2.setPrice(35000);
 		

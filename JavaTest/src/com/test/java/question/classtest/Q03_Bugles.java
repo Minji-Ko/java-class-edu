@@ -2,7 +2,7 @@ package com.test.java.question.classtest;
 
 import java.util.Calendar;
 
-public class Q03 {
+public class Q03_Bugles {
 
 	public static void main(String[] args) {
 

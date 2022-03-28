@@ -1,9 +1,9 @@
 package com.test.java.question.classtest;
-
+ 
 import java.util.Arrays;
 import java.util.Calendar;
 
-public class Q06 {
+public class Q06_Refrigerator {
 	
 	public static void main(String[] args) {
 		

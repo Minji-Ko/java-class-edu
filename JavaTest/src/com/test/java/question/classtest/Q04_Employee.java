@@ -1,6 +1,6 @@
 package com.test.java.question.classtest;
 
-public class Q04 {
+public class Q04_Employee {
 
 	public static void main(String[] args) {
 		
