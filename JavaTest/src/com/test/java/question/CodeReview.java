@@ -124,6 +124,7 @@ public class CodeReview {
 //			System.out.println("마카롱 10개를 만들었습니다.");
 //			=> System.out.println("마카롱 " + list.length + "개를 만들었습니다.");
 		
+//		8. Time(int hour, int min, int second) { } > 생성자 구현코드가 없어도 초기화 됨 
 	
 	
 	}

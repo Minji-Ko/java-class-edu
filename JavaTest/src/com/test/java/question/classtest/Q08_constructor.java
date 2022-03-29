@@ -44,6 +44,10 @@ public class Q08_constructor {
 		Time t7 = new Time(10000); //오버로딩 생성자 호출
 		System.out.println(t7.info());
 		
+		Time t8 = new Time(-1, -1, -1);
+		System.out.println(t8.info());
+	
+		
 	}
 }
 
@@ -64,9 +68,9 @@ class Time {
 	}
 	public Time(int hour, int minute, int second) {
 		
-		this.hour = 0;
-		this.minute = 0;
-		this.second = 0;
+//		this.hour = 0;
+//		this.minute = 0;
+//		this.second = 0;  
 		
 		if(second > 0) {
 			this.second += second % 60;
