@@ -118,7 +118,7 @@ public class Ex47_Casting {
 } //Ex47
 
 class Mouse {
-	//TODO 인터페이스, 자식공통부분 부모에 넣기? (2022. 3. 29. 오전 11:19:32)
+	//TODO 인터페이스, 자식공통부분 부모에 넣기? > 나중에 수업 (2022. 3. 29. 오전 11:19:32)
 	public void click() {
 
 	}
