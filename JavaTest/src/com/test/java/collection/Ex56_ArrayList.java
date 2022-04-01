@@ -48,9 +48,76 @@ public class Ex56_ArrayList {
 		//m2();
 		//m3();
 		//m4();
-		m5();
+		//m5();
+		//m6();
+		m7();
 		
 	}//main
+	
+
+	private static void m7() {
+		
+		int[] num = new int[10];
+		
+		for(int i=0; i<10; i++) {
+			num[i] = i;
+		}
+		
+		for(int n : num) {
+			System.out.println(n);
+		}
+
+		
+		ArrayList<Integer> list = new ArrayList<Integer>(10);
+		
+		//*** 컬렉션에 반복적으로 데이터를 넣는 행동을 할 때 발생하는 일 > 가변 특성 유지
+ 		//1. 가비지 발생 > 비용 발생
+		//2. 배열 복사 발생 > 비용 발생
+		for (int i=0; i<10; i++) {
+			list.add(i);
+		}
+		System.out.println(list.size());
+		
+		
+		for(int n : list) {
+			System.out.println(n);
+		}
+		
+		//위의 문제점 해결 방법
+		//- ArrayList의 초기 길이를 지정할 수 있다.
+		
+		list.add(10); //11번째 데이터 -> 15칸
+		
+		//*** 이 이후로.. list에 데이터를 추가할 일이 없다;; > 4칸이 남는다.. > 데이터 size가 커지면 남는 칸 수가 매우 커짐
+		
+		//확신이 들때만 가끔 호출..
+		list.trimToSize(); //20칸 -> 11칸
+		
+	}
+
+
+	private static void m6() {
+		
+		//ArrayList(컬렉션) 특징
+		//1. 내부에 배열을 가지고 있다. == ArrayList를 배열이라고 생각하자
+		//2. ArrayList 클래스의 대부분 기능이 내부 배열을 조작하는 기능들로 구성
+		//3. 길이가 가변 > 데이터를 넣으면.. 계속 공간이 늘어난다.
+		
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		list.add(10);
+		
+		System.out.println(list.size()); //내부 배열의 길이 4, size 1  //TODO 실제로 방의수 4? (2022. 3. 31. 오전 9:40:34)
+		
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		
+		System.out.println(list.get(1));
+		
+		//TODO 필기 (2022. 3. 31. 오전 9:42:24)
+		
+	}
 
 	private static void m5() {
 
@@ -168,10 +235,9 @@ public class Ex56_ArrayList {
 		ns2[0][0] = 10; //****
 		
 		//2차원 컬렉션의 초기화
-	//TODO 2차원 컬렉션을 배열 처럼 한번에 초기화할 수 없나? (2022. 3. 30. 오후 4:59:31)
-//		ArrayList<Integer> list = new ArrayList<Integer>();
-//		list.add(10);
-//		ms2.add(list);
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		list.add(10);
+		ms2.add(list);
 		 
 		
 		

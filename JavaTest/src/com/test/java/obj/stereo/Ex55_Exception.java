@@ -173,7 +173,6 @@ public class Ex55_Exception {
 			c = (Child)p;
 		} catch(Exception e) {
 			System.out.println("형변환 오류");
-			System.out.println("형변환 오류");
 		}
 		
 		//너무 잦은 try catch문 > 가독성이 떨어짐

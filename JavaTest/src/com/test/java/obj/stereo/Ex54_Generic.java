@@ -92,6 +92,7 @@ class Cup<T,U> { //인자로 보통 1개, 최대 2개정도 사용
 	public U getB() {
 		return this.b;
 	}
+	
 }
 
 
