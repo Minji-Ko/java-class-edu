@@ -107,15 +107,22 @@ public class Ex56_ArrayList {
 		
 		list.add(10);
 		
-		System.out.println(list.size()); //내부 배열의 길이 4, size 1  //TODO 실제로 방의수 4? (2022. 3. 31. 오전 9:40:34)
+		System.out.println(list.size()); //내부 배열의 길이 4, size 1  
 		
 		list.add(20);
 		list.add(30);
 		list.add(40);
 		
-		System.out.println(list.get(1));
+		System.out.println(list.size()); //list.length
 		
-		//TODO 필기 (2022. 3. 31. 오전 9:42:24)
+
+		list.add(50);
+		list.add(60);
+		list.add(70);
+		list.add(80);
+		list.add(90);
+		
+		System.out.println(list.size()); 
 		
 	}
 

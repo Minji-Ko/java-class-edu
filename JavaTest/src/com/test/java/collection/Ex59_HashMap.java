@@ -110,19 +110,6 @@ public class Ex59_HashMap {
 
 }//Ex59
 
-class MyHashMap {
-
-	private String[] keyList;
-	private int[] valueList;
-	
-	public void put(String key, int value) {
-		init();
-	}
-
-	private void init() {
-		
-	}
-}
 
 
 

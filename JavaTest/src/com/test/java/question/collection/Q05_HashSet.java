@@ -57,7 +57,7 @@ public class Q05_HashSet {
 		      System.out.println(list.next());
 		}
 
-	
+
 		System.out.println(list);
 		
 		

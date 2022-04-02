@@ -18,7 +18,7 @@ public class Q06_Lottery {
 			for(int j=0; j<i; j++) {
 				if(lottery[i] == lottery[j]) {
 					i--;
-					break;  //TODO break가 없어도됌 (2022. 3. 21. 오후 12:24:32)
+					break;  
 				}
 			}
 		}

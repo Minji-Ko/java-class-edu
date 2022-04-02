@@ -15,7 +15,7 @@ public class MySet {
 	
 	public boolean add(String value) {
 		
-		if(find(value) > -1) {
+		if(indexOf(value) > -1) { 
 			return false;
 		}
 		
@@ -28,11 +28,11 @@ public class MySet {
 		
 		hashSet[this.index] = value;
 		this.index++;
-		return true;
+		return true; //*mj* try catch문
 	}
 	
 	private void doubleSet() {
-		String[] newSet = new String[this.index * 2];
+		String[] newSet = new String[this.index * 2]; //*mj* hashSet.length를 이용하면 가독성 좋음
 		
 		for(int i=0; i<this.index; i++) {
 			newSet[i] = hashSet[i];
@@ -42,7 +42,7 @@ public class MySet {
 	}
 	
 	
-	private int find(String value) {
+	private int indexOf(String value) {
 		for(int i=0; i<this.index; i++) {
 			if(hashSet[i].equals(value)){
 				return i;
@@ -57,7 +57,7 @@ public class MySet {
 
 	public boolean remove(String value) {
 		
-		int valueIndex = find(value);
+		int valueIndex = indexOf(value);
 		
 		if(valueIndex == -1) {
 			return false;
@@ -69,7 +69,7 @@ public class MySet {
 
 		this.index--;
 
-		modifyIterIndex(valueIndex);
+		modifyIterIndex(valueIndex); //*mj*
 				
 		return true;
 	}
@@ -82,7 +82,7 @@ public class MySet {
 
 	public void clear() {
 		this.index = 0;
-		this.iterIndex = 0;
+		this.iterIndex = 0; //*mj*
 	}
 
 	
@@ -97,12 +97,12 @@ public class MySet {
 
 	public String next() {		
 		
-		if(iterIndex == this.index) {
+		if(iterIndex == this.index) {  //*mj*
 			throw new NoSuchElementException();
 		}
 		String temp = hashSet[iterIndex];
 		iterIndex++;
-		return temp;
+		return temp;  //*mj* hashSet[iterIndex -1]을 return하면 따로 temp변수 없어도 됌
 	}
 
 	

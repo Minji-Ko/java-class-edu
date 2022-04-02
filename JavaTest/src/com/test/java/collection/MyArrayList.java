@@ -1,11 +1,11 @@
-package com.test.java.question.collection;
+package com.test.java.collection;
 
-public class TArrayList {
+public class MyArrayList {
 	
 	private String[] list; 
 	private int index; 
 	
-	public TArrayList() {
+	public MyArrayList() {
 		this.index = 0;
 	}
 	
@@ -41,7 +41,7 @@ public class TArrayList {
 		
 		String[] temp = new String[this.list.length * 2];
 		
-		for(int i=0; i<this.list.length; i++) { //***mj)i값을 위와 똑같이 list.length로
+		for(int i=0; i<this.list.length; i++) { //***mj)this.index보다는 this.list.length로
 			temp[i] = this.list[i];
 		}
 	
@@ -131,7 +131,7 @@ public class TArrayList {
 	
 	public int indexOf(String value) {
 		
-		for(int i=0; i<this.list.length; i++) {
+		for(int i=0; i<this.index; i++) { //***mj) this.index까지 탐색 > 속도향상
 			if(this.list[i].equals(value)) {
 				return i;
 			}
@@ -142,7 +142,7 @@ public class TArrayList {
 
 	public int lastIndexOf(String value) {
 		
-		for(int i=this.index -1; i>=0; i--) {
+		for(int i=this.index -1; i>=0; i--) { 
 			if(this.list[i].equals(value)) {
 				return i;
 			}

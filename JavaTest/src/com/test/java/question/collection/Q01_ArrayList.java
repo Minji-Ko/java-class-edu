@@ -19,25 +19,7 @@ public class Q01_ArrayList {
 		System.out.println(list2.size());
 		list2.clear();
 		System.out.println(list2.get(0));
-		
-//========================================================================================================
-		
-		TArrayList list = new TArrayList();
-		
-		list.add("바나나");
-		list.add("사과");
-		list.add("포도");
-		list.add("딸기");
-		
-		System.out.println(list);
-
-		list.add("귤");
-		
-		System.out.println(list);
-		
-	
-		//System.out.println(list.get(5));
-		
+			
 //========================================================================================================
 
 		//배열 생성

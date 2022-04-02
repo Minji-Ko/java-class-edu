@@ -11,7 +11,7 @@ public class MyHashMap2 {
 	
 	public String put(String key, String value) {
 		
-		int keyIndex = findKey(key);
+		int keyIndex = indexOf(key);
 		
 		if(keyIndex > -1) {
 			String oldValue = hashMap[keyIndex].getValue();
@@ -44,7 +44,7 @@ public class MyHashMap2 {
 	
 	public String get(String key) {
 		
-		int keyIndex = findKey(key);
+		int keyIndex = indexOf(key);
 		
 		if(keyIndex == -1) {
 			return null;
@@ -60,7 +60,7 @@ public class MyHashMap2 {
 	
 	public String remove(String key) {
 		
-		int keyIndex = findKey(key);
+		int keyIndex = indexOf(key);
 		
 		if(keyIndex == -1) {
 			return null;
@@ -77,7 +77,7 @@ public class MyHashMap2 {
 				
 	}
 	
-	private int findKey(String key) {
+	private int indexOf(String key) {
 		
 		for(int i=0; i<this.index; i++) {
 			if(hashMap[i].getKey().equals(key)) {
@@ -135,7 +135,7 @@ public class MyHashMap2 {
 		for(int i=0; i<hashMap.length; i++) {
 			if(hashMap[i] == null) {
 				temp += "hashMap["+ i +"] key: null, value: null\n"; 	
-				continue;
+				continue;  //*mj* if와 else로 쓰면 continue;없어도 됌
 			}
 			temp += "hashMap["+ i +"] key: " + hashMap[i].getKey() + ", value: " + hashMap[i].getValue() + "\n"; 
 		}

@@ -14,7 +14,7 @@ public class MyHashMap {
 	
 	public String put(String key, String value) {
 		
-		int keyIndex = findKey(key);
+		int keyIndex = indexOf(key);
 		
 		if(keyIndex > -1) {
 			String oldValue = hashMap[keyIndex][MyHashMap.value];
@@ -48,9 +48,9 @@ public class MyHashMap {
 		hashMap = newMap;
 	}
 	
-	public String get(String key) {
+	public String get(String key) { //*mj*
 		
-		int keyIndex = findKey(key);
+		int keyIndex = indexOf(key);
 		
 		if(keyIndex == -1) {
 			return null;
@@ -66,13 +66,13 @@ public class MyHashMap {
 	
 	public String remove(String key) {
 		
-		int keyIndex = findKey(key);
+		int keyIndex = indexOf(key);
 		
 		if(keyIndex == -1) {
 			return null;
 		}
 		
-		String oldValue = hashMap[keyIndex][MyHashMap.value];
+		String oldValue = hashMap[keyIndex][MyHashMap.value]; //*mj*
 
 		for(int i=keyIndex; i<this.index-1; i++) {
 			hashMap[i][MyHashMap.key] = hashMap[i+1][MyHashMap.key];
@@ -84,7 +84,7 @@ public class MyHashMap {
 				
 	}
 	
-	private int findKey(String key) {
+	private int indexOf(String key) {
 		for(int i=0; i<this.index; i++) {
 			if(hashMap[i][MyHashMap.key].equals(key)) {
 				return i;
@@ -93,7 +93,7 @@ public class MyHashMap {
 		return -1;
 	}
 	
-	public boolean containsKey(String key) {
+	public boolean containsKey(String key) {  //*mj* 이 부분도 indexOf이용!
 		for(int i=0; i<this.index; i++) {
 			if(hashMap[i][MyHashMap.key].equals(key)) {
 				return true;
