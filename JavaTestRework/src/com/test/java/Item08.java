@@ -27,7 +27,7 @@ public class Item08 {
 		System.out.printf("%.1f\n", 10.0/3);	
 		
 //		3. %,d, %,f -> 천단위 표기
-		System.out.printf("%,.1f\n", 10000.0/3);//천단위 표기
+		System.out.printf("%,6.1f\n", 10000.0/3);//천단위 표기
 		
 	}
 }
