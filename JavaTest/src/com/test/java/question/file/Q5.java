@@ -17,13 +17,14 @@ public class Q5 {
 //				*.jpg : 5개 
 //				*.png : 3개 
 
-		String path = "C:\\class\\확장자별 카운트";
+		String path = "C:\\class\\java\\파일_디렉토리_문제\\확장자별 카운트";
 		File dir = new File(path);
 		
 		HashMap<String, Integer> map = new HashMap<String, Integer>(); 
 		
 		for(File f : dir.listFiles()) {
 			String extension = f.getName().substring(f.getName().lastIndexOf(".") + 1);
+		
 			if(map.containsKey(extension)) {
 				int value = map.get(extension) + 1;
 				map.put(extension, value);

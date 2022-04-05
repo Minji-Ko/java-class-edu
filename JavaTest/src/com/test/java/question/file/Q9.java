@@ -12,14 +12,14 @@ public class Q9 {
 //				> 부모 자식 폴더에 상관없이 파일을 한번에 비교하시오.
 //		리소스] 	폴더 > 크기 정렬
 //		출력]		[파일명]      [크기]     [파일이 들어있는 폴더]
-//				aaa.exe    57KB    AAA 
-//				bbb.exe    50KB    BBB 
-//				ccc.dat     41KB    AAA 
-//				ddd.txt     20KB    CCC 
+//				aaa.exe     57KB      AAA 
+//				bbb.exe     50KB  	  BBB 
+//				ccc.dat     41KB   	  AAA 
+//				ddd.txt     20KB      CCC 
 //				..
 		
 
-		String path = "C:\\class\\크기 정렬";
+		String path = "C:\\class\\java\\파일_디렉토리_문제\\크기 정렬";
 		File dir = new File(path);
 		
 		if(!dir.exists()) {
@@ -35,7 +35,7 @@ public class Q9 {
 		
 		System.out.println("[파일명]\t\t\t\t  [크기]\t\t[파일이 들어있는 폴더]");
 		for(File f : files) {
-			System.out.printf("%-24s\t%7s\t\t%s\n"
+			System.out.printf("%-30s\t%7s\t\t%s\n"
 									, f.getName()
 									, calcSize(f.length())
 									, f.getParent().substring(f.getParent().lastIndexOf("\\") + 1));
@@ -66,12 +66,12 @@ public class Q9 {
 				long front = files.get(j).length();
 				long back = files.get(j+1).length();
 				
-				if(front > back) {
+				if(front < back) {
 					files.add(j+2, files.get(j));
 					files.remove(j);
 				}
 			}
-		}
+		} 
 		
 		return files;
 	}
@@ -91,7 +91,7 @@ public class Q9 {
 			}
 		}
 		
-		return files;
+		return files;  //return을 안해도 되는 이유? 참조형은 주소값 복사가 이뤄짐! (2022. 4. 5. 오후 3:30:25)
 		
 	}
 }

@@ -18,7 +18,7 @@ public class Q8 {
 		map.put("countFile", 0);
 		map.put("countDir", 0);
 		
-		String path = "C:\\class\\폴더 삭제\\delete";
+		String path = "C:\\class\\java\\파일_디렉토리_문제\\폴더 삭제\\delete";
 		
 		String result = delete(map, path);
 		
@@ -44,6 +44,8 @@ public class Q8 {
 				map.put("countDir", map.get("countDir") + 1);
 			}
 		}
+		
+		//dir.delete(); //subDir.delete() 대신 여기에서 dir 삭제!
 		
 		return String.format("삭제된 폴더는 %d개이고, 파일은 %d개입니다.\n", map.get("countDir"), map.get("countFile"));
 	}

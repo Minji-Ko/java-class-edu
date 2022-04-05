@@ -14,12 +14,12 @@ public class Q10 {
 //		출력]		분류가 완료되었습니다.
 		
 		
-		String path = "C:\\class\\직원";
+		String path = "C:\\class\\java\\파일_디렉토리_문제\\직원";
 		File dir = new File(path);
 		
 		for(File file : dir.listFiles()) {
 			
-			String newPath = path + "\\" + file.getName().replace("_", "\\");
+			String newPath = path + "\\" + file.getName().substring(0, file.getName().lastIndexOf("_")).replace("_", "\\"); //마지막"_"이전까지
 		
 			File subDir = new File(newPath);
 			subDir.mkdirs();

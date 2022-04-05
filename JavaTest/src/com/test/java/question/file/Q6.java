@@ -11,12 +11,12 @@ public class Q6 {
 //		리소스] 	폴더 > 파일 제거
 //		출력]		총 34개의 파일을 삭제했습니다.
 		
-		String path = "C:\\class\\파일 제거";
+		String path = "C:\\class\\java\\파일_디렉토리_문제\\파일 제거";
 		File dir = new File(path);
 		
 		int count = 0;
 		
-		for(File f : dir.listFiles()) {
+		for(File f : dir.listFiles()) { //파일검사
 			if(f.length() == 0) {
 				f.delete();
 				count++;

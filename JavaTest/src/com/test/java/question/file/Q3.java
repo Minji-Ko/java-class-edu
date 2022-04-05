@@ -34,7 +34,7 @@ public class Q3 {
 			} 
 				
 			for(File f : newDir.listFiles()) {
-				if(f.getName().equals(file.getName())) {
+				if(f.getName().equals(file.getName())) { //newFile이 존재한다면 중복 존재!
 					
 					if(f.isFile()) {
 						solveDuplicate(file, newFile);

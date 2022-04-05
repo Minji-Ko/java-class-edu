@@ -15,9 +15,9 @@ public class Q7 {
 //				SoulMate (Feat. 아이유) - 지코 (ZICO).mp3 
 //				..
 		
-		String pathA = "C:\\class\\동일 파일\\MusicA";
+		String pathA = "C:\\class\\java\\파일_디렉토리_문제\\동일 파일\\MusicA";
 		File dirA = new File(pathA);
-		String pathB = "C:\\class\\동일 파일\\MusicB";
+		String pathB = "C:\\class\\java\\파일_디렉토리_문제\\동일 파일\\MusicB";
 		File dirB = new File(pathB);
 		
 		HashSet<String> set = new HashSet<String>();
@@ -27,7 +27,7 @@ public class Q7 {
 		}
 		
 		for(File f : dirB.listFiles()) {
-			if(set.add(f.getName()) == false) {
+			if(set.add(f.getName()) == false) { //!set.add(f.getName())으로 줄일 수 있음!
 				System.out.println(f.getName());
 			}
 		}
