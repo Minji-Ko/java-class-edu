@@ -70,6 +70,8 @@ public class Ex56_ArrayList {
 		
 		ArrayList<Integer> list = new ArrayList<Integer>(10);
 		
+		System.out.println(list.size());
+		
 		//*** 컬렉션에 반복적으로 데이터를 넣는 행동을 할 때 발생하는 일 > 가변 특성 유지
  		//1. 가비지 발생 > 비용 발생
 		//2. 배열 복사 발생 > 비용 발생
