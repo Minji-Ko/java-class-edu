@@ -20,7 +20,7 @@ public class Q2 {
 		File dir = new File(scan.nextLine());
 		
 		System.out.print("확장자: ");
-		String extension = scan.nextLine(); //대소문자 구분없이!!
+		String extension = scan.nextLine().toLowerCase(); //대소문자 구분없이!!
 		
 		
 		if(dir.exists()) {
@@ -29,7 +29,7 @@ public class Q2 {
 			
 			for(File f : dir.listFiles()) {
 				if(f.isFile()) {
-					if(f.getName().contains("." + extension)) { //endsWith(extension)
+					if(f.getName().toLowerCase().contains("." + extension)) { //endsWith(extension)
 						System.out.println(f.getName());
 						noFile = false;
 					}

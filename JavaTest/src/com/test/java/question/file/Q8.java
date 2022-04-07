@@ -19,16 +19,16 @@ public class Q8 {
 		map.put("countDir", 0);
 		
 		String path = "C:\\class\\java\\파일_디렉토리_문제\\폴더 삭제\\delete";
+		File dir = new File(path);
 		
-		String result = delete(map, path);
+		String result = delete(map, dir);
 		
 		System.out.println(result);
 		
 	}
 
-	private static String delete(HashMap<String, Integer> map, String path) {
+	private static String delete(HashMap<String, Integer> map, File dir) {
 		
-		File dir = new File(path);
 		
 		for(File subFile : dir.listFiles()) {
 			if(subFile.isFile()) {
@@ -39,7 +39,7 @@ public class Q8 {
 		
 		for(File subDir : dir.listFiles()) {
 			if(subDir.isDirectory()) {
-				delete(map, subDir.getAbsolutePath());
+				delete(map, subDir); //subDir은 이미 파일객체임!! 다시 new File할 필요 없음
 				subDir.delete();
 				map.put("countDir", map.get("countDir") + 1);
 			}

@@ -28,42 +28,67 @@ public class Q11 {
 			
 			if(file.isFile()) {
 				
-				//1. 파일 내용 확인
+				File newFile = new File(file.getParent() + "\\" + file.getName().substring(0, file.getName().lastIndexOf(".")) + "_변환" +  file.getName().substring(file.getName().lastIndexOf(".")));
+				
 				BufferedReader reader = new BufferedReader(new FileReader(file)); 
+				BufferedWriter writer = new BufferedWriter(new FileWriter(newFile));
 				
-				String line = null;
-				StringBuilder content = new StringBuilder();
-				
-				while((line = reader.readLine()) != null) {
-					content.append(line);
-					content.append("\n");
-				}
-				
-				reader.close();
-			
-				
-				//2. 수정할 내용물 생성
 				String word = "유재석";
 				String newWord = "메뚜기";
 				
-				String newContent = content.toString().replace(word, newWord);
 				
-				//3. 파일 내용 변경
-				BufferedWriter writer = new BufferedWriter(new FileWriter(file)); //*mj*어짜피 새파일을 만드는 작엄 > 이름바꾸기
+				String line = null;
 				
-				writer.write(newContent);
+				while((line = reader.readLine()) != null) {
+					writer.write(line.replace(word, newWord));
+					writer.newLine();
+					System.out.println(line);
+				}
 				
+				reader.close();
 				writer.close();
 				
-				
-				//4. 파일 이름 변경
-				String newFileName = file.getParent() + "\\" + file.getName().substring(0, file.getName().lastIndexOf(".")) + "_변환" +  file.getName().substring(file.getName().lastIndexOf("."));
-				
-				File newFile = new File(newFileName); 
-				
-				file.renameTo(newFile);
+				file.delete();
 				
 				System.out.println("변환 후 다른 이름으로 저장하였습니다.");
+			
+				
+//				//1. 파일 내용 확인
+//				BufferedReader reader = new BufferedReader(new FileReader(file)); 
+//				
+//				String line = null;
+//				StringBuilder content = new StringBuilder();
+//				
+//				while((line = reader.readLine()) != null) {
+//					content.append(line);
+//					content.append("\n");
+//				}
+//				
+//				reader.close();
+//			
+//				
+//				//2. 수정할 내용물 생성
+//				String word = "유재석";
+//				String newWord = "메뚜기";
+//				
+//				String newContent = content.toString().replace(word, newWord);
+//				
+//				//3. 파일 내용 변경
+//				BufferedWriter writer = new BufferedWriter(new FileWriter(file)); //*mj*어짜피 새파일을 만드는 작엄 > 이름바꾸기
+//				
+//				writer.write(newContent);
+//				
+//				writer.close();
+//				
+//				
+//				//4. 파일 이름 변경
+//				String newFileName = file.getParent() + "\\" + file.getName().substring(0, file.getName().lastIndexOf(".")) + "_변환" +  file.getName().substring(file.getName().lastIndexOf("."));
+//				
+//				File newFile = new File(newFileName); 
+//				
+//				file.renameTo(newFile);
+//				
+//				System.out.println("변환 후 다른 이름으로 저장하였습니다.");
 				
 			} else {
 				System.out.println("파일이 아닙니다.");

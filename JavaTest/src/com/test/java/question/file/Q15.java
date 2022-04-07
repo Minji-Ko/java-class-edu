@@ -3,6 +3,7 @@ package com.test.java.question.file;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class Q15 {
 	입력] 	이름: 홍길동 
 	출력]==== 구매내역 ==== 
 		[번호]    [이름]    [상품명]    [개수]    [배송지]
-	      3    홍길동     마우스          3    서울시 강동구 천호동
+	      3   	 홍길동     마우스       3       서울시 강동구 천호동
 	 
 */		
 		//1.
@@ -39,67 +40,64 @@ public class Q15 {
 		}
 		
 		try {
-			
-			BufferedReader reader = new BufferedReader(new FileReader(memberFile));
-			
-			HashMap<String, String> Info = new HashMap<String, String>();
-			
-			if(memberFile.isFile()) {
+
+			ArrayList<String[]> orders = new ArrayList<String[]>();
+
+			//1. 주문 정보 저장
+			if(orderFile.isFile()) {	
+				
+				BufferedReader reader = new BufferedReader(new FileReader(orderFile));
 				
 				String line = null;
 				
 				while((line = reader.readLine()) != null) {
-					
-					String[] temp = line.split(",");
-					
-					if(temp[1].equals(name)) {
-						Info.put("번호", temp[0]);
-						Info.put("이름", temp[1]);
-						Info.put("배송지", temp[2]);
-						break;
-					}
-				}
-					
-				if(line == null) {
-					System.out.println("회원 정보를 찾을 수 없습니다.");
+					orders.add(line.split(","));
 				}
 				
 				reader.close();
-				
-				//3.
-				reader = new BufferedReader(new FileReader(orderFile));
-				
-				if(line != null && orderFile.isFile()) {
-					
-					line = null;
-					StringBuilder result = new StringBuilder("[번호]\t[이름]\t[상품명]\t[개수]\t[배송지]\n");
-					
-					while((line = reader.readLine()) != null) {
-						
-						String[] temp = line.split(",");
-						
-						if(temp[3].equals(Info.get("번호"))) {
-							
-							result.append(Info.get("번호"));
-							result.append("\t");
-							result.append(Info.get("이름"));
-							result.append("\t");
-							result.append(temp[1]); //상품명
-							result.append("\t");
-							result.append(temp[2]); //개수
-							result.append("\t");
-							result.append(Info.get("배송지"));
-							result.append("\n");
-						}
-					}
-						
-				
-					System.out.println(result);
-					
-				}
 			}
 			
-			reader.close();
+			
+			//2. 회원 검색 -> 회원이 존재하면 주문 출력하기
+			if(memberFile.isFile()) {
+				
+				BufferedReader reader = new BufferedReader(new FileReader(memberFile));
+
+				String result = "";
+				String line = null;
+				
+				while((line = reader.readLine()) != null) {
+					
+					String[] memberInfo = line.split(",");
+					
+					if(memberInfo[1].equals(name)) { //이름
+						
+						for(String[] order : orders) {
+							if(order[3].equals(memberInfo[0])) { //회원번호
+								result+= String.format("%s\t%s\t%s\t%s\t%s\n"
+														, memberInfo[0]
+														, name
+														, order[1]
+														, order[2]
+														, memberInfo[2]);
+							}
+						}
+						
+					}
+				}
+
+				reader.close();
+				
+				
+				if(result != "") {
+					System.out.println("[번호]\t[이름]\t[상품명]\t[개수]\t[배송지]");
+					System.out.println(result);
+				} else {
+					System.out.println("정보를 찾을 수 없습니다.");
+				}
+				
+			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -108,6 +106,7 @@ public class Q15 {
 		
 		
 	}
+
 }
 
 /*

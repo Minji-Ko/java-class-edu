@@ -25,26 +25,47 @@ public class Q3 {
 				
 		
 		if(file.exists()) {
-
-			System.out.println("파일 이동을 실행합니다");
+			
+			if(file.isFile()) {
 				
-			if(file.renameTo(newFile)) {
-				System.out.println("파일을 이동했습니다.");
-				return;
-			} 
-				
-			for(File f : newDir.listFiles()) {
-				if(f.getName().equals(file.getName())) { //newFile이 존재한다면 중복 존재!
+				System.out.println("파일 이동을 실행합니다");
 					
-					if(f.isFile()) {
+				if(newFile.exists()) {
+					
+					if(newFile.isFile()) {
 						solveDuplicate(file, newFile);
 					}
 					
-					if(f.isDirectory()) {
+					if(newFile.isDirectory()) {
 						System.out.print("같은 이름으로 된 폴더가 이미 존재합니다.");
 					}
-					break;
+					
+				} else {
+					file.renameTo(newFile);
+					System.out.println("파일을 이동했습니다.");
 				}
+				
+				
+//				if(file.renameTo(newFile)) {
+//					System.out.println("파일을 이동했습니다.");
+//					return;
+//				} 
+//					
+//				for(File f : newDir.listFiles()) {
+//					if(f.getName().equals(file.getName())) { //newFile이 존재한다면 중복 존재!
+//						
+//						if(f.isFile()) {
+//							solveDuplicate(file, newFile);
+//						}
+//						
+//						if(f.isDirectory()) {
+//							System.out.print("같은 이름으로 된 폴더가 이미 존재합니다.");
+//						}
+//						break;
+//					}
+//				}
+			} else {
+				System.out.println("파일이 아닙니다.");
 			}
 			
 		} else {

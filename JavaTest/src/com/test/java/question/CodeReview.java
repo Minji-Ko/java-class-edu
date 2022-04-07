@@ -1,5 +1,7 @@
 package com.test.java.question;
 
+import java.io.File;
+
 public class CodeReview {
 
 	public static void main(String[] args) {
@@ -134,24 +136,37 @@ public class CodeReview {
 		
 //		file]=====================================================================================
 		
-//		9.
+//		2.	(1) 파일명에서 확장자 추출시 contain("." + extension) 보다는 endsWith("." + extension)사용하기
+//			(2) 확장자 등을 입력받아 검색할 때 대소문자 구분없이!
 		
-//		11. 수경님) BufferedWriter(File) >알아서 파일 생성 + delete
-//				 "" 빈문자열 + "\n\n"로 빈줄 처리
-//			승연님) 읽으면서 수정
-//			민지) append 
-//  	12. 재민님)  charAt(i)으로 0~9찾기 +  switch문
-//		13. 재민님) arraylist
-//			승연님) arraylist + class
+//		3. 	파일 이동 전 중복된 파일이 있는지는 가상의 파일경로로 만들어진 파일객체의 exist()를 확인하면 됌 > 같은 이름이 있는지 직접 확인할 필요 없음
 		
-//		14. 중복된 이름이 존재
-//		15. 중복된 이름이 존재
-//			승연님) class > order
-//			수경님) arraylist  
-//		16. 수경님) }괄호가 없는데 빼려고 하면 > EmptyStackException
-//			승연님) 개수로 표현 > {(})
+//		7. 	setA와 setB에 중복된 값이 있는지 확인하는 방법
+//			if(!set.add(f.getName())) 	> setA를 만들고 SetB에 넣을 값을 그냥 setA에 add()하여 성공하는지 확인
+//			=> setA.retainAll(setB); (***) 	> setA와 setB를 만들고 교집합!
 		
-	
+//		8. 	폴더(자식 파일 + 자식 폴더와 자식 폴더의 파일)를 삭제할 때 폴더삭제 코드를 어디 넣는지에 따라 대상폴더까지 삭제되는지가 결정됨		
+//			for (File subdir : dir.listFiles()) { if(subdir.isDirectory()) { deleteDirectory(subdir);  subdir.delete()}}  
+//			=> for (File subdir : dir.listFiles()) { if(subdir.isDirectory()) { deleteDirectory(subdir);}}  dir.delete(); (***) 
+		
+//		9. 메인 메소드에서 ArrayList<String> a를 만든 후 메소드에 인자로 전달하면, 값형과 달리 주소값 복사가 이뤄져서 ArrayList를 return할 필요가 없음
+		
+//		11. (1) BufferedReader와 BufferedWriter를 동시에 사용하여 한 줄씩 읽고 바로 파일 내용을 수정하여 새로 작성할 수 있음
+//			=> while((line = reader.readLine()) != null) {
+//					writer.write(line.replace(word, newWord));
+//					writer.newLine();
+//				}
+			
+//			(2) new BufferedWriter(new FileWriter(filePath))에서는 file의 존재여부와 관계없이, 자동으로 새 파일이 생성됨(***)
+			
+//			(3) BufferedReader의 readLine()의 결과가 빈줄이면 null이 아니라 ""(빈문자열)이 반환됨. 즉, null != "" (***)
+			
+//		13. 전체 목록을 탐색해야 할 때(루프를 돌 때)는 HashSet보다 ArrayList가 편함
+		
+//		15. 동일이름의 다른 회원을 처리해야함
+//		
+//		17. 클래스에서 ArrayList 참조변수만 만들면 안되고 반드시 ArrayList 객체 생성을 해야 사용가능!!! (***)
+		
 	}
 }
 

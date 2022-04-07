@@ -3,8 +3,7 @@ package com.test.java.question.file;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.ArrayList;
 
 public class Q13 {
 
@@ -40,8 +39,9 @@ public class Q13 {
 			
 			if(file.isFile()) {
 				
-				HashSet<Student> pass = new HashSet<Student>();
-				HashSet<Student> fail = new HashSet<Student>();
+				//*mj* 루프를 돌 때는 HashSet보다 ArrayList가 편함
+				ArrayList<Student> pass = new ArrayList<Student>();
+				ArrayList<Student> fail = new ArrayList<Student>();
 
 				
 				//1. 파일 내용 확인 + 합격자 분류
@@ -67,24 +67,20 @@ public class Q13 {
 				reader.close();	
 			
 				
-				//2. 합격자 출력  TODO 코드리뷰때 결과 비교
+				//2. 합격자 출력 
 				System.out.println("[합격자]");
 				
-				Iterator<Student> passIter = pass.iterator();
-				
-				while(passIter.hasNext()) {
-					System.out.println(passIter.next().getName());
+				for(Student s : pass) {
+					System.out.println(s.getName());
 				}
-				
 				System.out.println();
 				
 				
 				//3. 불합격자 출력
 				System.out.println("[불합격자]");
-				Iterator<Student> failIter = fail.iterator();
 				
-				while(failIter.hasNext()) {
-					System.out.println(failIter.next().getName());
+				for(Student s : fail)  {
+					System.out.println(s.getName());
 				}
 				
 				

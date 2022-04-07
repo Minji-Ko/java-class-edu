@@ -86,8 +86,7 @@ public class Q9 {
 		
 		for(File subDir: dir.listFiles()) {
 			if(subDir.isDirectory()) {
-				File subdir = new File(subDir.getAbsolutePath());
-				search(subdir, files);
+				search(subDir, files);
 			}
 		}
 		

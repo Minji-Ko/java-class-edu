@@ -18,14 +18,15 @@ public class Q10 {
 		File dir = new File(path);
 		
 		for(File file : dir.listFiles()) {
+			if(file.isFile()) {
+				String newPath = path + "\\" + file.getName().substring(0, file.getName().lastIndexOf("_")).replace("_", "\\"); //마지막"_"이전까지
 			
-			String newPath = path + "\\" + file.getName().substring(0, file.getName().lastIndexOf("_")).replace("_", "\\"); //마지막"_"이전까지
-		
-			File subDir = new File(newPath);
-			subDir.mkdirs();
-			
-			File newFile = new File(newPath + "\\" + file.getName());
-			file.renameTo(newFile);
+				File subDir = new File(newPath);
+				subDir.mkdirs();
+				
+				File newFile = new File(newPath + "\\" + file.getName());
+				file.renameTo(newFile);
+			}
 		}
 		
 		System.out.println("분류가 완료되었습니다.");

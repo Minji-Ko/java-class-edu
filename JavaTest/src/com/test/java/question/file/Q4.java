@@ -1,6 +1,7 @@
 package com.test.java.question.file;
 
 import java.io.File;
+import java.util.Arrays;
 
 public class Q4 {
 
@@ -19,21 +20,8 @@ public class Q4 {
 		File dir = new File(path);
 		
 		File[] musics = dir.listFiles();
-
-		//TODO 정렬? (2022. 4. 4. 오후 9:23:05)
-//		for(int i=0; i<musics.length-1; i++) {
-//			for(int j=0; j<musics[i].length(); j++) {
-//				if(musics[i].getName().charAt(j) > musics[i+1].getName().charAt(j)) {
-//					File temp = musics[i];
-//					musics[i] = musics[i+1];
-//					musics[i+1] = temp;
-//					break;
-//				} else if(musics[i].getName().charAt(j) < musics[i+1].getName().charAt(j) ) {
-//					break;
-//				}
-//			}
-//		}
 		
+		//Arrays.sort(musics);
 		
 		for(int i=0; i<musics.length; i++) {
 			String newPath = path + String.format("\\[%03d]", i+1) + musics[i].getName();

@@ -41,7 +41,7 @@ public class Q14 {
 				BufferedReader reader = new BufferedReader(new FileReader(file));
 				
 				String line = null;
-				boolean find = false;
+				boolean member = false;
 				
 				while ((line = reader.readLine()) != null) {
 					String[] data = line.split(",");
@@ -52,11 +52,11 @@ public class Q14 {
 												, data[0]
 												, data[2]
 						 						, data[3]);
-						find = true;
+						member = true;
 					}	
 				}
 				
-				if (find == false) {
+				if (member == false) {
 					System.out.println("회원정보를 찾을 수 없습니다.");
 				}
 			

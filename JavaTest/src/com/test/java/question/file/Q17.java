@@ -34,7 +34,8 @@ public class Q17 {
 
 		try {
 		
-			ArrayList<Employee> employee = new ArrayList<Employee>();
+			ArrayList<Employee> employees = new ArrayList<Employee>();
+			
 			
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 		
@@ -44,35 +45,9 @@ public class Q17 {
 				
 				String[] temp = line.split(",");
 				
-				Employee member = null;
-				for(Employee e : employee) {
-					if(e.getName().equals(temp[1])){
-						member = e;
-						break;
-					}
-				}
+				Employee member = findEmployee(employees, temp);
 				
-				if(member == null) {
-					member = new Employee(temp[1]);
-					employee.add(member);
-				}
-				
-				//지각check
-				int hour = Integer.parseInt(temp[2].split(":")[0]);
-				int min = Integer.parseInt(temp[2].split(":")[1]);
-				
-				if(hour > 9 || hour == 9 && min > 0) {
-					member.setLateCheck(temp[0], temp[2]);
-				}
-
-				
-				//조퇴check
-				hour = Integer.parseInt(temp[3].split(":")[0]);
-				min = Integer.parseInt(temp[3].split(":")[1]);
-				
-				if(hour < 18) {
-					member.setEarlyCheck(temp[0], temp[3]);
-				}
+				checkTime(member, temp);
 	
 			}
 			
@@ -80,7 +55,7 @@ public class Q17 {
 		
 			System.out.println("[이름]\t[지각]\t[조퇴]");
 			
-			for(Employee e : employee) {
+			for(Employee e : employees) {
 				System.out.println(e); 
 			}
 
@@ -92,6 +67,37 @@ public class Q17 {
 		
 		
 	
+	}
+
+	private static void checkTime(Employee member, String[] temp) {
+		//지각check
+		int hour = Integer.parseInt(temp[2].split(":")[0]);
+		
+		if(hour >= 9) {
+			member.setLateCheck(temp[0], temp[2]);
+		}
+
+		
+		//조퇴check
+		hour = Integer.parseInt(temp[3].split(":")[0]);
+		
+		if(hour < 18) {
+			member.setEarlyCheck(temp[0], temp[3]);
+		}
+	}
+
+	private static Employee findEmployee(ArrayList<Employee> employees, String[] temp) {
+		
+		for(Employee e : employees) {
+			if(e.getName().equals(temp[1])){
+				return e;
+			}
+		}
+	
+		Employee e = new Employee(temp[1]);
+		employees.add(e);
+		
+		return e;
 	}
 }
 
