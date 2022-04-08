@@ -3,7 +3,9 @@ package com.test.java;
 public class prac {
 
 	public static void main(String[] args) {
-		String a = "";
-		System.out.println(a);
+		System.out.print("a\n");
+		System.out.print("\n\n");
+		System.out.println("b");
+		
 	}
 }

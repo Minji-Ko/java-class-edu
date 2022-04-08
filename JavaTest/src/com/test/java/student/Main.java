@@ -43,6 +43,17 @@ public class Main {
 		 			- 각각의 기능 실행
 		 			- 종료 > 2번으로 돌아가기
 		 		4. 종료
+		 		
+		 		
+		 		공통코드 > 어디까지인지? 회의!!!
+		 		
+		 		수업 프로젝트 > 클래스 ?개
+		 		
+		 		1인 + 1일 7개
+		 		
+		 		클래스 N개 생성 > 7개 > 패키지 분리 관리
+		 		
+		 		
 		 */
 		
 		//파일 데이터 -> 메모리
@@ -65,6 +76,8 @@ public class Main {
 				work.add(); //업무 위임
 			} else if(input.equals("2")) {
 				work.list();
+			} else if(input.equals("3")) {
+				work.search();
 			} else {
 				loop = false;
 			}

@@ -13,8 +13,9 @@ public class Output {
 
 	public static void mainmenu() {
 		System.out.println("1. 학생 등록하기");
-		System.out.println("2. 학생 목록보기");
-		System.out.println("3. 종료");
+		System.out.println("2. 학생 목록보기");		
+		System.out.println("3. 학생 검색하기");
+		System.out.println("4. 종료");
 		System.out.print("선택: ");
 	}
 	
