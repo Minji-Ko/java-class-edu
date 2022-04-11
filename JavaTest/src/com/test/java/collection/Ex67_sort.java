@@ -32,7 +32,7 @@ public class Ex67_sort {
 		nums.add(3);
 		
 		System.out.println(nums);
-		
+
 		Collections.sort(nums);
 		System.out.println(nums);
 		

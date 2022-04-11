@@ -41,7 +41,7 @@ public class Ex64_File {
 									, u.getNo()
 									, u.getName()
 									, u.getAge());
-							}
+			}
 		}
 	
 
@@ -267,16 +267,18 @@ public class Ex64_File {
 			//File projectFile = new File(".\\data\\data.txt"); //프로젝트 폴더 > 상대경로로!
 			File projectFile = new File("data\\data.txt"); //프로젝트 폴더 > 상대경로로!
 			
+			
+			//파일 수정하기(****)
+			//- 파일 입출력(스트림)에는 수정이라는 행동이 없다.
+			//- 덮어쓰기로 구현한다.
+			
 			BufferedWriter writer = new BufferedWriter(new FileWriter(projectFile));
 			
 			writer.write("테스트");
 			writer.close();
 			
 			System.out.println("종료");
-			
-			
-			//수정하기 TODO
-			
+
 			
 		} catch (Exception e) {
 			System.out.println("Ex64_File.m1");

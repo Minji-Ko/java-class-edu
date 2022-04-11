@@ -31,7 +31,6 @@ public class Ex73_Lambda {
 			public int compare(Integer o1, Integer o2) {
 				return o1 - o2;
 			}
-			
 		});
 		
 		//오름차순 정렬(익명객체 -> 람다식)
@@ -81,15 +80,15 @@ public class Ex73_Lambda {
 			//[16, 20, 18, 11, 16, 6, 15, 4, 19, 11]
 			Collections.sort(nums); //ArrayList<Integer>
 			
-			//[User [seq=1, name=홍길동, age=25, position=사원, hireDate=2011-03-05]
-			// , User [seq=2, name=아무개, age=30, position=대리, hireDate=2020-07-30]
-			// , User [seq=3, name=하하하, age=40, position=부장, hireDate=2018-12-05]
-			// , User [seq=4, name=호호호, age=34, position=과장, hireDate=2017-11-25]
-			// , User [seq=5, name=후후후, age=38, position=차장, hireDate=2013-09-16]
-			// , User [seq=6, name=헤헤헤, age=33, position=대리, hireDate=2022-02-25]
-			// , User [seq=7, name=히히히, age=29, position=사원, hireDate=2018-03-14]
-			// , User [seq=8, name=테스트, age=33, position=대리, hireDate=2016-07-17]
-			// ]
+//			[User [seq=1, name=홍길동, age=25, position=사원, hireDate=2011-03-05]
+//			 , User [seq=2, name=아무개, age=30, position=대리, hireDate=2020-07-30]
+//			 , User [seq=3, name=하하하, age=40, position=부장, hireDate=2018-12-05]
+//			 , User [seq=4, name=호호호, age=34, position=과장, hireDate=2017-11-25]
+//			 , User [seq=5, name=후후후, age=38, position=차장, hireDate=2013-09-16]
+//			 , User [seq=6, name=헤헤헤, age=33, position=대리, hireDate=2022-02-25]
+//			 , User [seq=7, name=히히히, age=29, position=사원, hireDate=2018-03-14]
+//			 , User [seq=8, name=테스트, age=33, position=대리, hireDate=2016-07-17]
+//			 ]
 			//Collections.sort(list); //ArrayList<User>
 			list.sort(new Comparator<User>() {
 				@Override

@@ -12,7 +12,7 @@ public class Dummy {
 	public static void main(String[] args) {
 		//데이터 생성용
 		try {
-			createStudent();			
+			//createStudent();			
 			createScore();
 		} catch (Exception e) {
 			System.out.println("Dummy.main");
@@ -103,6 +103,7 @@ public class Dummy {
 					System.out.print(temp);
 				}
 
+				reader.close();
 			}
 
 			BufferedWriter writer = new BufferedWriter(new FileWriter(DataPath.성적));

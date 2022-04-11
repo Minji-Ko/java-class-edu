@@ -48,9 +48,9 @@ public class Ex65_Anonymous {
 			}
 			
 			//익명 객체는 자신의 멤버를 만들지 않는다. > 부모 인터페이스 참조 변수를 통해서 호출 불가능 + 다운 캐스팅 불가능
-//			public void ccc() {
-//				System.out.println("자신만의 메소드 구현");
-//			}
+			public void ccc() {
+				System.out.println("자신만의 메소드 구현");
+			}
 			
 		}; //;를 빼먹으면 안됌***
 		
