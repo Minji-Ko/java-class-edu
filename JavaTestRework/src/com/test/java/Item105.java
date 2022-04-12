@@ -4,16 +4,22 @@ public class Item105 {
 
 	public static void main(String[] args) {
 	
-		//[SUMMARY] 열거형 만들기(enum) (2022. 4. 3. 오후 11:56:07)
-		
-		직급 position = 직급.과장;
+		//[SUMMARY] 인터페이스 만들기 (2022. 4. 11. 오후 10:31:18)
 
 	}
 }
-
-enum 직급 {
-	사원,  //final static 상수
-	대리,
-	과장,
-	부장
+interface MyInterface {
+	
+	public static final int A = 20;	//static final
+	
+	public static void bbb() { 		//static > 모두의 행동
+		
+	}
+	
+	default void ccc() { 			//default
+		
+	}
+	
+	int sum(int a, int b); //추상 메소드
+	
 }

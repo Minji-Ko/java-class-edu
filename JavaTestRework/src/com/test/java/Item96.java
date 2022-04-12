@@ -24,6 +24,13 @@ class Time {
 		this.min = min;
 	}
 	
+	public int getHour() {
+		return hour;
+	}
+	public int getMin() {
+		return min;
+	}
+
 	@Override 
 	public String toString() {   //개발자만 보는 정보
 		return "Time [hour=" + hour + ", min=" + min + "]";

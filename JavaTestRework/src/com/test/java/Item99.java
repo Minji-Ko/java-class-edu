@@ -1,14 +1,25 @@
 package com.test.java;
 
+import java.util.function.Consumer;
+import java.util.function.BiConsumer;
+import java.util.function.IntConsumer;
+
 public class Item99 {
 
 	public static void main(String[] args) {
 	
-		//[SUMMARY] 참조형 형변환하기(업캐스팅) (2022. 4. 3. 오후 11:27:36)
+		//[SUMMARY] 함수형 인터페이스 Consumer 사용하기 (2022. 4. 11. 오후 10:26:49)
 		
-		Parent p;
-		Child c = new Child();
+		Consumer<Integer> c = num -> System.out.println(num * num);
+		c.accept(3);
+		
+		
+		BiConsumer<String, Integer> bc = (name, age) -> System.out.println(name + "("+ age + "세)");
+		bc.accept("홍길동", 25);
+		
+		
+		IntConsumer ic = num -> System.out.println(num * 2);
+		ic.accept(100);
 	
-		p = c; //p = (Parent)c;
 	}
 }

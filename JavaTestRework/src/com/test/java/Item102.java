@@ -1,35 +1,17 @@
 package com.test.java;
 
+import java.util.function.BinaryOperator;
+
 public class Item102 {
 
 	public static void main(String[] args) {
 	
-		//[SUMMARY] 인터페이스 만들기 (2022. 4. 3. 오후 11:48:11)
+		//[SUMMARY] 함수형 인터페이스 Operator 사용하기 (2022. 4. 11. 오후 10:27:51)
 	
-	}
-}
-
-
-//인터페이스 == 제품의 규격 역할
-interface Key {
-	
-	void test(); //public
-	
-	void click();
-	
-}
-
-class G305 implements Key {
-	private String type;
-	private String color;
-	private int dpi;
-	
-	@Override
-	public void test() {
-		
-	}
-	@Override
-	public void click() {
+		//BiFunction<Integer, Integer, Integer>
+		BinaryOperator<Integer> bo = (a, b) -> a * b;
+		int num = bo.apply(10, 20);
 		
 	}
 }
+

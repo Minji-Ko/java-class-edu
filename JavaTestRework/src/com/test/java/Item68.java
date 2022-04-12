@@ -6,7 +6,7 @@ public class Item68 {
 		
 		//[SUMMARY] 코드 속도 비교하기 (2022. 3. 22. 오전 12:05:17)
 		
-		long begin = System.nanoTime();
+		long begin = System.nanoTime(); //System.currentTimeMillis();도 가능
 		
 		long end = System.nanoTime(); 
 		
