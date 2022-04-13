@@ -34,7 +34,7 @@ public class Ex74_Lambda {
 				- andThen()
 				
 			2. Supplier > 매개변수X, 반환값O
-				- Sumpplier<T>
+				- Supplier<T>
 			
 			3. Function > 매개변수O, 반환값O
 				- Operator, Predicate 상위셋
@@ -60,7 +60,7 @@ public class Ex74_Lambda {
 				
 				
 				자바의 인터페이스
-				- fianl 상수
+				- final 상수
 				- default 메소드
 				- static 메소드
 				
@@ -159,7 +159,7 @@ public class Ex74_Lambda {
 		Function<String, Integer> f7 = str -> str.length();
 		
 		Function<Integer, Integer> f8 = f6.andThen(f7); //f6+f7
-		Function<Integer, Integer> f9 = f7.compose(f6); //f6+f7  //TODO compose는 나중에 다시 수업 (2022. 4. 11. 오후 12:10:32)
+		Function<Integer, Integer> f9 = f7.compose(f6); //f6+f7  
 		
 		System.out.println(f8.apply(10));
 		System.out.println(f9.apply(10));

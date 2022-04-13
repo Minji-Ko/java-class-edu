@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import mylibrary.util.MyUtil;
 
 public class Ex64_File {
 
@@ -16,6 +17,7 @@ public class Ex64_File {
 		//m2();
 		//m3();
 		m4();
+		
 	}
 
 	private static void m4() {
