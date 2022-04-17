@@ -50,7 +50,7 @@ public class Ex19_DataTime {
 		// m1();
 		// m2();
 		// m3();
-		// m4();
+		 m4();
 		 m5();
 		// m6();
 		// m7();
@@ -204,7 +204,7 @@ public class Ex19_DataTime {
 		now.add(Calendar.MINUTE, 25);
 
 		System.out.printf("비타민 먹을 시간 : %tT", now);
-
+		System.out.println();
 	}
 
 	public static void m3() {
