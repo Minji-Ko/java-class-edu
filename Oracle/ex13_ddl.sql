@@ -243,3 +243,59 @@ select * from tblMemo;
 
 
 
+-- DDL > 테이블 생성 > 컬럼 생성 = 컬럼명 + 자료형(길이) + 제약사항
+
+-- 1.not null
+-- 2. primary key = not null + unique
+-- 3. unique
+-- 4. check
+-- 5. default
+
+
+
+/*
+    제약 사항을 만드는 방법
+    
+    1. 컬럼수준에서 만드는 방법
+        - 위에서 수업한 방법
+        - 컬럼을 정의할 때 제약 사항도 같이 정의하는 방법
+        - seq number(3) constraint tblmemo_seq_pk primary key,
+
+    2. 테이블 수준에서 만드는 방법
+        - 컬럼 정의와 제약 사항 정의를 분리시킨 방법
+        - 제약 사항만 따로 정의 > 관리 차원 > 코드 분리
+        
+    3. 외부에서 만드는 방법
+    -alter 명령어
+*/
+drop table tblMemo;
+
+create table tblMemo (  
+    seq number(3),
+    name varchar2(30) not null,
+    memo varchar2(1000) null,
+    regdate date, 
+   
+    --제약사항명 : 테이블명_컬럼명_제약사항
+    --테이블 수준의 제약사항 정의
+    constraint tblmemo_seq_pk primary key(seq),
+    constraint tblmemo_name_uq unique(name),
+    constraint tblmemo_memo_ck check(length(memo) >= 10)
+);
+
+-- ORA-00001: unique constraint (HR.SYS_C007083) violated (컬럼수준의 정의 pk 오류)
+-- ORA-00001: unique constraint (HR.TBLMEMO_SEQ_PK) violated
+-- ORA-02290: check constraint (HR.TBLMEMO_MEMO_CK) violated
+insert into tblMemo(seq, name, memo, regdate) values (1, '홍길동', '메모입니다.홍길동의 메모입니다.', sysdate);
+insert into tblMemo(seq, name, memo, regdate) values (2, '홍길당', '메모입니다.홍길동의 메모입니다.', sysdate);
+
+
+
+
+
+
+
+
+
+
+
