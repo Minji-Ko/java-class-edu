@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--  
+        Emmet, Zen-Coding
+        - CSS 선택자 문법을 사용해서 HTML/CSS 코드를 손쉽게 작성하는 기능
+        - 생산성 도구
+        - https://emmet.io
+
+    -->
+
+    <h1>태그 선택자</h1>
+    
+    div {}
+    <div></div>
+    
+    a
+    <a href="url">PCDATA</a>
+
+    img
+    <img src="url" alt="이미지">
+
+    input
+    <input type="text">
+
+
+    <h1>ID 선택자</h1>
+
+    div#box {}
+    <div id="box"></div>
+
+    h1#title    
+    <h1 id="title"></h1>
+
+
+    <h1>Class 선택자</h1>
+   
+    div.box
+    <div class="box"></div>
+
+    a.link
+    <a href="url" class="link"></a>
+
+    img.cat
+    <img src="고양이.jpg" alt="고양이" class="cat">
+
+    div.one.two.three 
+    <div class="one two three"></div>
+
+    div#box1.box
+    <div id="box1" class="box"></div>
+
+    img#cat1.pic.animal
+    <img src="" alt="" id="cat1" class="pic animal">
+    
+
+    <h1>속성 선택자</h1>
+
+    div[title]
+    <div title=""></div>
+
+    div[title=상자]
+    <div title="상자"></div>
+
+    img[width height]
+    <img src="a" alt="b" width="c" height="d">
+
+    img[width=250 height=200]
+    <img src="a" alt="b" width="250" height="200">
+
+
+    <h1>PCDATA</h1>
+
+    div{상자} <!-- {상자}는 emmet기능 --> 
+    <div>상자</div>
+
+    div#box1.box[title=상자]{상자입니다.}
+    <div id="box1" class="box" title="상자">상자입니다.</div>
+
+
+    div*5 <!--emmet기능-->
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    div.item*5
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+
+    div.item[title]{아이템}*5
+    <div class="item" title="">아이템</div>
+    <div class="item" title="">아이템</div>
+    <div class="item" title="">아이템</div>
+    <div class="item" title="">아이템</div>
+    <div class="item" title="">아이템</div>
+
+    div#box1{상자}*5
+    <div id="box1">상자</div>
+    <div id="box1">상자</div>
+    <div id="box1">상자</div>
+    <div id="box1">상자</div>
+    <div id="box1">상자</div>
+
+    div#box${상자}*5
+    <div id="box1">상자</div>
+    <div id="box2">상자</div>
+    <div id="box3">상자</div>
+    <div id="box4">상자</div>
+    <div id="box5">상자</div>
+    
+    div#box$${상자$}*3
+    <div id="box01">상자1</div>
+    <div id="box02">상자2</div>
+    <div id="box03">상자3</div>
+
+    <h1>형제 선택자</h1>
+    a + b : 바로 위의 형제
+    a ~ b : 위의 형제
+
+    div+p
+    <div></div>
+    <p></p>
+
+    div~p
+    
+    h1+p+p+p
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    h1+p*3
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p> 
+
+    (h1+p)*3
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+
+    h1#title1.title{제목입니다.}+p.content{설명입니다.}*3
+    <h1 id="title1" class="title">제목입니다.</h1>
+    <p class="content">설명입니다.</p>
+    <p class="content">설명입니다.</p>
+    <p class="content">설명입니다.</p>
+
+    cat01.jpg ~ cat06.jpg
+    (img[src=images/cat$$.jpg alt=고양이$ title=고양이$ width=250]+br)*6
+    <img src="images/cat01.jpg" alt="고양이1" title="고양이1" width="250"><br>
+    <img src="images/cat02.jpg" alt="고양이2" title="고양이2" width="250"><br>
+    <img src="images/cat03.jpg" alt="고양이3" title="고양이3" width="250"><br>
+    <img src="images/cat04.jpg" alt="고양이4" title="고양이4" width="250"><br>
+    <img src="images/cat05.jpg" alt="고양이5" title="고양이5" width="250"><br>
+    <img src="images/cat06.jpg" alt="고양이6" title="고양이6" width="250"><br>
+
+
+    <h1>자식 선택자</h1>
+    a > b :자식
+    a b : 자손
+
+    div>a
+    <div><a href=""></a></div>
+
+    div a
+
+    ul>li*5
+    ul#list>li.item*5
+    ul#list>li.item{항목$}*5
+    h1{오늘의 할일}+ul#list>li.item{항목$}*5
+    <h1>오늘의 할일</h1>
+    <ul id="list">
+        <li class="item">항목1</li>
+        <li class="item">항목2</li>
+        <li class="item">항목3</li>
+        <li class="item">항목4</li>
+        <li class="item">항목5</li>
+    </ul>
+
+
+    table>tr>td
+    table>tr*3>td*5
+    table#tbl1>tr*3>td.cell${항목$}*5
+    <table id="tbl1">
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+    </table>
+
+
+    Lorem Ipsum 
+    lorem <!--emmet 더미데이터 예약어-->
+    
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste quisquam similique, unde voluptatum sed non maiores totam facilis fugit eaque praesentium. Enim earum quod tempore est, voluptas officiis doloremque ratione?
+
+    lorem1
+    Lorem.
+
+    lorem5
+    Lorem ipsum dolor sit amet.
+
+    lorem20
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, incidunt dolore nihil minus explicabo at libero autem deserunt consectetur debitis.
+
+
+    h1{제목입니다.}
+    <h1>제목입니다.</h1>
+
+    <!-- h1{lorem5}
+    <h1>lorem5</h1> -->
+    h1>lorem5
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+    <!-- h1>lorem8+p>lorem50*3 -->
+    (h1>lorem8)+(p>lorem20)*3
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt culpa ab quis recusandae nesciunt provident, quibusdam esse deleniti quos voluptate!</p>
+    <p>Esse, aut doloribus non fuga dicta voluptatem natus facere illo quasi, quisquam ullam. Qui minus asperiores voluptatum aspernatur officiis necessitatibus!</p>
+    <p>Exercitationem minus accusamus impedit inventore provident iure recusandae. Non nihil nostrum nulla pariatur distinctio dolores debitis delectus est iste magni.</p>
+
+
+</body>
+</html>
