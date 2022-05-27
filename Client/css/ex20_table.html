@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Verdana;
+            width: 1000px;
+        }
+        #subj {
+            font-variant: small-caps;
+            color: #444;
+            border-bottom: 1px dashed #999;
+            margin-top: 30px;
+        }
+
+        #init { color: #6495ED; }
+        #init.yellow { color: #FED600 }
+        #init.lawgreen { color: #C1E570 }
+        #init.purple { color: #C591E8 }
+        #init.green { color: #73B5AF }
+
+
+        #tbl {
+            border: 1.5px solid #CCC ;
+            border-collapse: collapse;
+        }
+        #tbl.purple {
+            border-left: none;
+            border-right: none;
+        }
+        #tbl.green {
+            border: none;
+            border-collapse: separate;
+        }
+
+        #tbl th {
+            border: 1px solid #CCC;
+            background-color: #DDD;
+            font-size: 14px;            
+            color: #444;
+            padding: 5px;
+        }
+       
+        #tbl tr, #tbl td {
+            border: 1px solid #CCC;
+            padding: 3px;
+        }
+        
+        #tbl.yellow tr.even {
+            background-color: #EEE;
+        }
+        #tbl.lawgreen tr:hover {
+            background-color: #EEE;
+        }
+        #tbl.purple th,  #tbl.purple tr,  #tbl.purple td {
+            border-left: none;
+            border-right: none;
+        }
+        tbl.green tr{
+            border : none;
+        }
+        #tbl.green th, #tbl.green td {
+            border-right: none;
+        }
+        #tbl.green #col5, #tbl.green .cell5{
+            border: 1px solid #CCC;
+        }
+
+
+        #tbl #col1 { width: 50px }
+        #tbl #col2 { width: 80px }
+        #tbl #col3 { width: 50px }
+        #tbl #col4 { width: 100px }
+
+        #tbl .cell1 {
+            text-align: center;
+        }
+        #tbl .cell2 {
+            text-align: center;
+        }
+        #tbl .cell3 {
+            text-align: center;
+        }
+        #tbl .cell4 {
+            text-align: center;
+        }
+        #tbl .cell5 {
+            text-align: left;
+            padding-left: 5px;
+            height: 10px; 
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1 id="subj" ><span id="init" class="green">M</span>ember list</h1>
+
+    <table id="tbl" class="green">
+        <tr>
+            <th id="col1">No</th>
+            <th id="col2">Name</th>
+            <th id="col3">Age</th>
+            <th id="col4">ID</th>
+            <th id="col5">Description</th>
+        </tr>
+        <tr>
+            <td class="cell1">01</td>
+            <td class="cell2">Lorem.</td>
+            <td class="cell3">21</td>
+            <td class="cell4">Lorem.</td>
+            <td class="cell5">Lorem ipsum dolor sit amet.</td>
+        </tr>
+        <tr class="even">
+            <td class="cell1">02</td>
+            <td class="cell2">Qui!</td>
+            <td class="cell3">22</td>
+            <td class="cell4">Optio?</td>
+            <td class="cell5">Nesciunt non eos doloremque explicabo!</td>
+        </tr>
+        <tr>
+            <td class="cell1">03</td>
+            <td class="cell2">Qui.</td>
+            <td class="cell3">23</td>
+            <td class="cell4">Vitae!</td>
+            <td class="cell5">Aliquid quam rem esse cupiditate?</td>
+        </tr>
+        <tr class="even">
+            <td class="cell1">04</td>
+            <td class="cell2">Ipsa!</td>
+            <td class="cell3">24</td>
+            <td class="cell4">Veritatis.</td>
+            <td class="cell5">Earum necessitatibus minus ducimus. Rerum?</td>
+        </tr>
+        <tr>
+            <td class="cell1">05</td>
+            <td class="cell2">Pariatur!</td>
+            <td class="cell3">25</td>
+            <td class="cell4">Fugiat.</td>
+            <td class="cell5">Nostrum ipsa eligendi ex sunt?</td>
+        </tr>
+        <tr class="even">
+            <td class="cell1">06</td>
+            <td class="cell2">Consectetur?</td>
+            <td class="cell3">26</td>
+            <td class="cell4">Sint?</td>
+            <td class="cell5">Ullam recusandae nemo voluptas! Veniam?</td>
+        </tr>
+        <tr>
+            <td class="cell1">07</td>
+            <td class="cell2">Error.</td>
+            <td class="cell3">27</td>
+            <td class="cell4">Commodi.</td>
+            <td class="cell5">Aut unde amet fugiat quam.</td>
+        </tr>
+        <tr class="even">
+            <td class="cell1">08</td>
+            <td class="cell2">Nemo.</td>
+            <td class="cell3">28</td>
+            <td class="cell4">Ipsam.</td>
+            <td class="cell5">Repellat aperiam explicabo quasi veritatis.</td>
+        </tr>
+        <tr>
+            <td class="cell1">09</td>
+            <td class="cell2">Ab?</td>
+            <td class="cell3">29</td>
+            <td class="cell4">Inventore.</td>
+            <td class="cell5">Sunt, consequuntur? Minima, ipsum in.</td>
+        </tr>
+        <tr class="even">
+            <td class="cell1">10</td>
+            <td class="cell2">Fuga.</td>
+            <td class="cell3">21</td>
+            <td class="cell4">Possimus.</td>
+            <td class="cell5">Magnam nihil unde velit accusamus?</td>
+        </tr>
+    </table>
+
+</body>
+</html>

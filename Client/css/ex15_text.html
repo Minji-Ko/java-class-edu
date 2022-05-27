@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        @font-face {
+            font-family: '국립박물관문화재단클래식B';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .txt {
+            /* background-color: yellow; */
+
+            /* 텍스트 색상, 전경색(Fore Color) */
+            /* color: black; */
+            color: #444444; /* #333333 ~ #555555 */
+
+            /* #44AAFF  ->  #4AF */
+            color: #444;
+
+            /* 텍스트 정렬(수평 정렬) */
+            text-align: left;
+        
+            /* 텍스트 크기 */
+            /* 평균 : 10~11pt, 12~16px */
+
+            /* font-size: 7pt; 크롬이 최저크기를 제한시켜놓음 */
+            /* font-size: 12px; */
+            font-size: 100%;
+
+            /*
+                HTML 수치 표현법
+                1. 숫자(px, 문자수, 셀병합)
+                2. 백분율(%)
+
+                CSS 수치 표현법
+                - 수치 데이터는 반드시 단위 표기를 해야 한다.
+                -------------------------------------------------------------------
+                1. pt : 포인트(글꼴), 절대값, 1/72인치
+                2. px : 픽셀(크기, 여백, 위치, 글꼴 등), 절대값, pt보다 세밀한조절 가능
+                3. em ***: 기본 글꼴 크기를 기준으로 하는 상대 크기(%), 상대값, 알파벳 대문자M의 높이를 100%로 하는 상대크기, 상속을 받음, 모바일 시장이 커지면서 부각된 단위 > 장치기반으로 크기를 설정함
+                4. rem : em과 동일. 상속을 안받음
+                5. % : 백분율(크기, 여백, 위치, 정렬 등..)
+                ------------------------------------------------------------------
+                6. ex : 알파벳 소문자 x의 높이를 100%로 하는 상대크기
+                7. mm : 밀리미터 
+                8. cm : 센티미터
+                9. in : 인치
+                10. pc : 파이카(12pt)
+                ...
+            */
+
+            /*
+                줄간격 
+                - %, em(rem)
+                - px
+            */
+            /* line-height: 16px; */
+            /* line-height: 100%; */
+            line-height: 1.5em;
+
+            /* 스타일(normal, italic) */
+            font-style: normal;
+
+            /* 두께(normal, bold) */
+            font-weight: normal;
+
+            /* 단어간격(스페이스 크기) */
+            word-spacing: 0em;
+        
+            /* 자간(문자 간격) */
+            letter-spacing: -1px;
+
+            /* 꾸밈(none, underline, overline, line-through) */
+            text-decoration: none;
+
+            /* 글꼴 
+                - 페이지의 폰트는 서버측 폰트를 사용하는 것이 아니라, 브라우저가 동작 중인 컴퓨터의 폰트를 사용한다.
+
+                폰트 예약어
+                - 폰트의 종류를 나타내는 용어
+                1. serif : 획끝에 장식이 있는 폰트(궁서체, 바탕체)
+                2. sans-serif : 획끝에 장식이 없는 폰트(돋움체, 고딕체)
+                3. monospace : 문자폭이 균일(OO체, 궁서체)
+                4.cursive : 장식체
+                5. fantasy : 장식체
+
+                웹폰트
+                - 폰트를 서버로부터 다운로드 받아서 사용하는 기술
+                - 사용 기간은 일시적 > 서핑 중에 해당 페이지에서만 적용
+                - 자체 제작(*.eof..)
+                - 서비스 업체를 사용
+            */
+            font-family:  '국립박물관문화재단클래식B', 'Gowun Dodum', helvetica, '궁서체';
+            
+        }
+
+        p {
+            /* 들여쓰기 */
+            text-indent: 1em;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>텍스트 관련 속성</h1>
+
+    <p>전경련은 최저임금 합리성 제고를 위해 경제성장률, 근로자 전체 임금 수준 등을 종합적으로 고려한 인상속도 조절을 해야 한다고 주장했다. 또 지불능력, 생산성 등을 고려한 업종·지역별 차등적용, 최저임금 특례업종 지정, 주휴수당 폐지 또는 최저임금 범위에 포함, 위반시 징역형 폐지 등을 제시했다.</p>
+
+    <p class="txt">전경련은 최저임금 합리성 제고를 위해 경제성장률, 근로자 전체 임금 수준 등을 종합적으로 고려한 인상속도 조절을 해야 한다고 주장했다. 또 지불능력, 생산성 등을 고려한 업종·지역별 차등적용, 최저임금 특례업종 지정, 주휴수당 폐지 또는 최저임금 범위에 포함, 위반시 징역형 폐지 등을 제시했다.</p>
+
+    <p>전경련은 최저임금 합리성 제고를 위해 경제성장률, 근로자 전체 임금 수준 등을 종합적으로 고려한 인상속도 조절을 해야 한다고 주장했다. 또 지불능력, 생산성 등을 고려한 업종·지역별 차등적용, 최저임금 특례업종 지정, 주휴수당 폐지 또는 최저임금 범위에 포함, 위반시 징역형 폐지 등을 제시했다.</p>
+
+    <hr>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi cupiditate, beatae sunt facere, recusandae repudiandae incidunt ad ab, nisi in quibusdam optio praesentium impedit explicabo corrupti distinctio. Ea velit molestias, eligendi explicabo illum illo ad ullam voluptate! Possimus, laboriosam explicabo.</p>
+    
+    <p class="txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi cupiditate, beatae sunt facere, recusandae repudiandae incidunt ad ab, nisi in quibusdam optio praesentium impedit explicabo corrupti distinctio. Ea velit molestias, eligendi explicabo illum illo ad ullam voluptate! Possimus, laboriosam explicabo.</p>
+    
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi cupiditate, beatae sunt facere, recusandae repudiandae incidunt ad ab, nisi in quibusdam optio praesentium impedit explicabo corrupti distinctio. Ea velit molestias, eligendi explicabo illum illo ad ullam voluptate! Possimus, laboriosam explicabo.</p>
+
+</body>
+</html>
