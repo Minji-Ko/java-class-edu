@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- [Summary] 클라이언트의 데이터 전송하기(Form) (2022-05-25 21:17:57) -->
+    
+    <!-- method : 데이터를 전송하는 방식[GET | POST] -->
+    <!-- action : 데이터를 수신할 서버의 프로그램 -->
+   
+    <!-- 
+        1. GET 
+         http://localhost:8090/client/clientRework/exSever.jsp?txtName=OOO 
+        2. POST
+         http://localhost:8090/client/clientRework/exSever.jsp 
+    -->
+    <form method="GET" action="exServer.jsp">
+        <input type="text" name="txtName">
+        <input type="submit" value="전송">
+    </form> 
+
+    
+</body>
+</html>
