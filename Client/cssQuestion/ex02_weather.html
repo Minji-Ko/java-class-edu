@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 590px;
+            border: 1px solid #E3E8EE;
+            font-family: -apple-system,BlinkMacSystemFont, "Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+        }
+        h1 {
+            
+            padding-left: 25px;
+            font-size: 14px;
+        } 
+        #weather {
+            /* border: 1px solid black; */
+            margin:20px 0px;
+            column-count: 5;
+            column-gap: 0px;
+            page-break-inside: avoid;
+        }
+        #weather > div {
+            border-right: 1px solid #E3E8EE;
+        }
+        #weather > div > div {
+            color: #505050;
+            height: 29px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #weather .date, #weather .temper {
+            margin-bottom: 6px;
+        }
+        #weather .temper {
+            height: auto;
+            margin-bottom: 0;
+        }
+        #weather .date > span:last-child {
+            font-size: 12px;
+            font-weight: normal;
+            color: #808080;
+        }
+        #weather .date > #today {
+            color: #EDFFF9;
+            font-weight: bold;
+            padding: 1.4px 7.5px;
+            background-color: #00C63C;
+            border-radius: 10px;
+        }
+
+        #weather img {
+            padding-left: 28px;
+            float: left;
+            width: 30px;
+        }
+        #weather img + div {
+            float: left;
+            font-size: 12px;
+            font-weight: normal;
+            color: #A1A1A1;
+            padding-left: 10px;
+            padding-top: 7px;
+        }
+        #weather img + div.rain {
+            color: #A0DAF6;
+        }
+        #weather div > div:last-child {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>주간날씨</h1>
+    <div id="weather">
+        <div>
+            <div class="date">
+                <span>목</span>
+                <span id="today">오늘</span>
+            </div>
+            <div>
+                <img src="images/icon_wt_22.svg" alt="">
+                <div class="rain">70%</div>
+            </div>
+            <div>
+                <img src="images/icon_wt_22.svg" alt="">
+                <div class="rain">60%</div>
+            </div>
+            <div class="temper">21º/25º</div>
+        </div>
+        <div>
+            <div class="date">
+                <span>금</span>
+                <span>내일</span>
+            </div>
+            <div>
+                <img src="images/icon_wt_22.svg" alt="">
+                <div class="rain">60%</div>
+            </div>
+            <div>
+                <img src="images/icon_wt_07.svg" alt="">
+                <div>30%</div>
+            </div>
+            <div class="temper">21º/25º</div>
+        </div>
+        <div>
+            <div class="date">
+                <span>토</span>
+                <span>모레</span>
+            </div>
+            <div>
+                <img src="images/icon_wt_07.svg" alt="">
+                <div>30%</div>
+            </div>
+            <div>
+                <img src="images/icon_wt_05.svg" alt="">
+                <div>30%</div>
+            </div>
+            <div class="temper">21º/29º</div>
+        </div>
+        <div>
+            <div class="date">
+                <span>일</span>
+                <span>6.28.</span>
+            </div>
+            <div>
+                <img src="images/icon_wt_05.svg" alt="">
+                <div>30%</div>
+            </div>
+            <div>
+                <img src="images/icon_wt_09.svg" alt="">
+                <div class="rain">60%</div>
+            </div>
+            <div class="temper">21º/31º</div>
+        </div>
+        <div>
+            <div class="date">
+                <span>월</span>
+                <span>6.29.</span>
+            </div>
+            <div>
+                <img src="images/icon_wt_05.svg" alt="">
+                <div>30%</div>
+            </div>
+            <div>
+                <img src="images/icon_wt_09.svg" alt="">
+                <div class="rain">60%</div>
+            </div>
+            <div class="temper">21º/29º</div>
+        </div>
+    </div>
+</body>
+</html>

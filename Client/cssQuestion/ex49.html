@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            /* border: 1px solid black; */
+            width: 750px;
+            padding: 18px;
+            margin: 100px auto;
+            padding: 0;
+            font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+        }
+       
+        header > nav > ul {
+            border: 1px solid #DAE1E6;
+            height: 50px;
+            text-align: left center;
+            background-color: #F7F9FA;
+            padding: 0;
+            font-size: 0;
+        }
+        header > nav li {
+            display: inline-block;
+            text-align: center;
+            padding: 15px 20px;
+            margin: 0;
+            font-size: 13px;
+            font-weight: bold;
+            color: #202020;
+        }
+        header > nav li:first-child {
+            color: #E65DA0;
+            border-right: 1px solid #E4E8EB;
+        }
+
+        
+        #video {
+            column-count: 3;
+            column-gap: 27px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #E4E8EB;
+        }
+        #video > div {
+            width: 232px;
+            line-height: 20px;
+            padding-top: 7px;
+            padding-bottom: 15px;
+            page-break-inside: avoid;
+        }
+        #video img {
+            padding: 14px 0px;
+            width: 232px;
+            height: 130px;
+        }
+        #video .theme {
+            font-size: 13px;
+            color: #E65DA0;
+            font-weight: bold;
+        }
+        #video h1 {
+            font-size: 13px;
+            color: #202020;
+            margin: 0;
+        }
+        #video span {
+            font-size: 12px;
+            color: #505050;
+        }
+        #video span:last-child::before {
+            content: '· ';
+            color: #808080;
+        }
+
+        #music {
+            padding-bottom: 25px;
+            border-bottom: 1px solid #E4E8EB;
+        }
+
+        #music > h1 {
+            font-size: 14px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        #music > h1:after {
+            content: ' >'
+        }
+        #music ol {
+            margin: 0;
+            padding: 0;
+            margin: 0px;
+            column-count: 2;
+            column-gap: 30px;
+        }
+        #music li {
+            height: 48px;
+            padding: 14px 0px;
+            border-bottom: 1px solid #DDD;
+            list-style-type: none;
+        }
+        #music li:nth-child(5n) {
+            border-bottom: 0px solid;
+        }
+
+        #music li > span {
+            width: 50px;
+            color: #000;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 5px;
+            float: left;
+        }
+        #music li > img {
+            float: left;
+            width: 48px;
+            height: 48px;
+            margin-right: 15px;
+        }
+        #music li > div > h2 {
+            color: #202020;
+            font-size: 13px;
+            margin-top: 0;
+            margin-bottom: 1px;
+        }
+        #music li > div > span {
+            color: #808080;
+            font-size: 12px;
+        }
+        #music li > div .singer {
+            color: #505050;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul>
+                    <li>연예 홈</li>
+                    <li>네이버 NOW.</li>
+                    <li>네이버 TV홈</li>
+                    <li>TOP100</li>
+                    <li>시리즈온</li>
+                    <li>V LIVE</li>
+                    <li>VIBE </li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            <section id="video">
+                <div>
+                    <img src="images_naver/다운로드 (4).jpg" alt="">
+                    <div class="theme">웹드라마</div>
+                    <h1>국경을 초월한 고퀄 애니! 갓 오브 하이스쿨 해외 반응 모음</h1>
+                    <span>네이버 웹툰</span>
+                    <span>6분 전</span>
+                </div>
+                <div>
+                    <img src="images_naver/다운로드 (1).png" alt="">
+                    <div class="theme">웹드라마</div>
+                    <h1>광고 포함) 거절한 남자한테 반해버렸다 [플렌즈] 서연대 22학번 편 – EP.02</h1>
+                    <span>플레이리스트 오리지널 PLAYLIST </span>
+                    <span>6분 전</span>
+                </div>
+                <div>
+                    <img src="images_naver/다운로드.png" alt="">
+                    <div class="theme">웹예능</div>
+                    <h1>[홀인러브] 차갑게만 보이던 그녀는 스윗한 ‘가죽공방 선생님’?😲</h1>
+                    <span>홀인러브 (Hole in Love Part1)</span>
+                    <span>6분 전</span>
+                </div>
+                <div>
+                    <img src="images_naver/다운로드 (4).jpg" alt="">
+                    <div class="theme">웹드라마</div>
+                    <h1>(공식) 2020 네이버 웹툰 3번째 대작애니! ‘노블레스’ coming soon</h1>
+                    <span>네이버 웹툰</span>
+                    <span>6분 전</span>
+                </div>
+                <div>
+                    <img src="images_naver/다운로드 (1).jpg" alt="">
+                    <div class="theme">TV 예능</div>
+                    <h1>임창정, 아들 시선 강탈하는 춤 실력에 뿌듯한 미소</h1>
+                    <span>동상이몽2_너는 내 운명</span>
+                    <span>16시간 전</span>
+                </div>
+                
+            </section>
+            <section id="music">
+                <h1>뮤직 급상승 차트</h1>
+                <ol>
+                    <li>
+                        <span>1</span>
+                        <img src="images_naver/다운로드 (7).jpg" alt="">
+                        <div>
+                            <h2>우리들의 블루스</h2>
+                            <span class="singer">임영웅 </span>
+                            <span>IM HERO</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>2</span>
+                        <img src="images_naver/다운로드 (9).jpg" alt="">
+                        <div>
+                            <h2>Beatbox</h2>
+                            <span class="singer">NCT DREAM </span>
+                            <span>Beatbox - The 2nd Album Repackage</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>3</span>
+                        <img src="images_naver/다운로드 (9).jpg" alt="">
+                        <div>
+                            <h2>마지막 인사 (To My First)</h2>
+                            <span class="singer">NCT DREAM </span>
+                            <span>Beatbox - The 2nd Album Repackage</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>4</span>
+                        <img src="images_naver/다운로드 (10).jpg" alt="">
+                        <div>
+                            <h2>다시 만날 수 있을까</h2>
+                            <span class="singer">임영웅 </span>
+                            <span>IM HERO</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>5</span>
+                        <img src="images_naver/다운로드 (11).jpg" alt="">
+                        <div>
+                            <h2>Here We Are</h2>
+                            <span class="singer">김필 </span>
+                            <span>나의 해방일지 OST Part 11</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>6</span>
+                        <img src="images_naver/다운로드 (12).jpg" alt="">
+                        <div>
+                            <h2>We Sink</h2>
+                            <span class="singer">SWAY(스웨이) </span>
+                            <span>나의 해방일지 OST Part 6</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>7</span>
+                        <img src="images_naver/다운로드 (13).jpg" alt="">
+                        <div>
+                            <h2>ONCE AGAIN</h2>
+                            <span class="singer">윈터(WINTER), 닝닝(NINGNING) </span>
+                            <span>우리들의 블루스 OST Part 10</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>8</span>
+                        <img src="images_naver/다운로드 (6).jpg" alt="">
+                        <div>
+                            <h2>행복한 나를</h2>
+                            <span class="singer">WSG워너비 </span>
+                            <span>조별경연(신선봉) WSG워너비 조별경연</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>9</span>
+                        <img src="images_naver/다운로드 (7).jpg" alt="">
+                        <div>
+                            <h2>알 것도 같아</h2>
+                            <span class="singer">홍이삭 </span>
+                            <span>나의 해방일지 OST Part 10</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>10</span>
+                        <img src="images_naver/다운로드 (8).jpg" alt="">
+                        <div>
+                            <h2>일종의 고백 (Female Ver.)</h2>
+                            <span class="singer">헨(Hen) </span>
+                            <span>나의 해방일지 OST P</span>
+                        </div>
+                    </li>
+                </ol>
+
+            </section>
+        </article>
+    </main>
+</body>
+</html>

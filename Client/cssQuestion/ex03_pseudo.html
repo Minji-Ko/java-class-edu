@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        img {
+            padding-right: 10px;
+            padding-bottom: 10px;
+            float: left;
+        }
+        div {
+            border: 1px solid #808080;
+            width: 600px;
+            font-size: 0px;
+        }
+        label > div {
+            border: 0px;
+            text-align: center;
+            width: 103px;
+            padding: 20px;
+            display: inline-block;
+            color: #828282;
+            font-size: 14px;
+        }
+        input[type=radio] {
+            display: none;
+        }
+        input[type=radio]:checked + label>div {
+            background-color: #5F9EA0;
+            color: #FCFDFE
+        }
+
+        p {
+            margin: 0;
+            width: 560px;
+            padding: 20px;
+            border-top: 1px solid #808080;
+            display: none;
+            font-size: 14px;
+        }
+        
+        #hong:checked~#hong1, #ah:checked~#ah1, #ha:checked~#ha1, #ho:checked~#ho1{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>List</h1>
+    
+    <div id="main">
+        <input type="radio" name="person" checked id="hong">
+        <label for="hong"><div>홍길동</div></label>
+        <input type="radio" name="person" id="ah">
+        <label for="ah"><div>아무개</div></label>
+        <input type="radio" name="person" id="ha">
+        <label for="ha"><div>하하하</div></label>
+        <input type="radio" name="person" id="ho">
+        <label for="ho"><div>호호호</div></label>
+        <p id="hong1">
+            <img src="../css/images/man_01.png" alt="남자1">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, mollitia? Accusantium earum quam officiis illo, totam inventore id? Voluptas, explicabo quas perferendis maiores incidunt, iste molestiae cumque distinctio, laboriosam cum voluptatem quo inventore? Quae assumenda saepe natus velit blanditiis unde sed suscipit inventore nulla dolor rerum illo, fugit dolores sequi corrupti architecto voluptate aliquam eius culpa pariatur expedita minus! Inventore molestiae vitae commodi nemo dolorem fugiat incidunt labore et, totam numquam quasi iusto cumque quidem aliquam assumenda esse voluptatum. Omnis eos culpa molestiae perferendis, minus excepturi facere est modi dolores ad quidem, nobis praesentium veritatis vero! Possimus, labore. Maiores, modi.
+        </p>
+        <p id="ah1">
+            <img src="../css/images/man_02.png" alt="남자2">
+            Sunt quis ab, illum numquam dolorum ad vitae architecto sapiente expedita consequatur labore iusto adipisci, vero aliquam fugit cupiditate velit ratione voluptas inventore reiciendis non. Deserunt reiciendis vel maxime laboriosam laudantium. Ipsum rerum eos numquam quo illo quasi sint vel pariatur ratione corrupti repellendus odio similique ut, quaerat eveniet deserunt ad placeat dignissimos. Quaerat magni beatae sint laboriosam, at excepturi? Dignissimos nesciunt ab dicta dolorem placeat consectetur est ex fuga delectus error dolores, vitae quos provident suscipit sunt! Optio ad ab quas enim alias mollitia nostrum aliquid. Blanditiis incidunt dolores quas earum accusamus possimus dolorem fugit, dignissimos ullam in repellat.
+        </p>
+        <p id="ha1">
+            <img src="../css/images/man_03.png" alt="남자3">
+            Doloremque, non nihil praesentium, at voluptates soluta sed minus, illo totam cumque sit qui! Laborum voluptatibus, optio placeat asperiores numquam libero molestiae praesentium veniam magnam impedit laboriosam! Ipsa velit illum, nisi quos similique quidem aperiam excepturi consequuntur autem non quibusdam facere laudantium soluta veritatis aut repellendus sit dicta neque esse quaerat magni accusantium deserunt. Amet harum expedita earum eos dolore maiores. Excepturi perspiciatis velit, sit illum magni quidem consequatur sint aliquid nulla recusandae obcaecati eum molestiae suscipit error dolor. Ratione, repudiandae numquam quod natus tempora eveniet corporis amet ab, rem ipsa distinctio cumque autem dignissimos molestiae dolorem exercitationem, ullam fugiat.
+        </p>
+        <p id="ho1">
+            <img src="../css/images/woman_01.png" alt="여자1">
+            Iusto perspiciatis deleniti odio cupiditate velit, nam alias. Minus ipsum minima fuga assumenda corrupti, repellat dolor mollitia maiores magnam molestias? Minus optio delectus recusandae incidunt voluptatibus! Vel eaque harum quibusdam nobis architecto atque repellat voluptatem obcaecati illum rerum! Aspernatur error quos earum neque quaerat at autem enim ullam nemo delectus hic magni libero dolores tempore, officia possimus illo, dolor placeat consequuntur quasi in? Possimus delectus quod ex reprehenderit quaerat at praesentium, fugiat esse eius amet et. Similique consequuntur nam eius deleniti ullam nesciunt numquam officiis corrupti, dicta dolore, accusamus esse, totam veniam quia ea dignissimos alias! Ab temporibus tempora velit.
+        </p>
+    </div>
+</body>
+</html>
