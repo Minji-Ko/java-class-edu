@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span:nth-child(1) { 
+            color: tomato; 
+            /* float: left; */
+            float: right;
+        }
+        span:nth-child(2) { 
+            color: gold; 
+            /* float: left; */
+            float: right;
+        }
+        span:nth-child(3) { 
+            color: cornflowerblue; 
+            /* flower: left; */
+            float: right;   /*실행순서에 따라 켠켠히 쌓임*/
+        }
+        .box {  
+            width: 100px;
+            height: 100px;
+            /* display: inline-block; */
+            float: left;  /*요소들이 인라인의 성질을 가지게 된다.*/
+        }
+        #box1 {
+            background-color: red;
+        }
+        #box2 {
+            background-color: orange;
+        }
+        #box3 {
+            background-color: yellow;
+        }
+        #box4 {
+            background-color: green;
+        }
+        #box5 {
+            background-color: blue;
+        }
+        #box6 {
+            background-color: indigo;
+        }
+        #box7 {
+            background-color: purple;
+        }
+
+        /* #list {
+            font-size: 0;
+        }
+
+        #list .box {
+            font-size: 1rem;
+        } */
+
+        #list::after {
+            content: ''; /*list안에 div와 형제로 들어감*/
+            display: block;
+            clear: both;
+        }
+
+        #list {
+            border: 5px solid black;
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium aliquid sequi <span>illo</span> quos eos et <span>quod ipsum</span> blanditiis <span>similique</span> facere iusto quia obcaecati molestiae quidem nemo, quaerat sunt harum maiores?
+    </p>
+
+    <hr>
+
+    <!-- 동일한 역할을 하는 태그가 2개 이상나오면 무조건 태그로 하나 묶어두기! -->
+    <div id="list">
+        <div id="box1" class="box">빨</div>
+        <div id="box2" class="box">주</div>
+        <div id="box3" class="box">노</div>
+        <div id="box4" class="box">초</div>
+        <div id="box5" class="box">파</div>
+        <div id="box6" class="box">남</div>
+        <div id="box7" class="box">보</div>
+        <!-- <div style="clear: both;"></div> -->
+    </div>
+    
+    <h1>다른 내용들.. </h1>
+
+</body>
+</html>

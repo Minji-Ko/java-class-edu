@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  
+            그림자, shadow
+            1. text-shadow: x y blur color
+            2. box-shadow : x y blur color 
+        
+        */
+        .box {
+            margin: 20px;
+        }
+        #box1 {
+            text-shadow: 2px 2px 3px #999; /*blur가 0일때 가장 흐림*/
+        }
+        #box2 {
+            background-color: yellow;
+            box-shadow: 2px 2px 2px #999;
+        }
+        #box3 {
+            width: 200px;
+            height: 200px;
+            box-shadow: 5px 5px 5px #999;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            /* https://getcssscan.com/css-box-shadow-examples */
+            /* https://www.cssmatic.com/box-shadow */
+        }
+
+        p:hover > span {
+            text-shadow: 2px 2px 2px #999;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1" class="box">상자1입니다.</div>
+    <div id="box2" class="box">상자2입니다.</div>
+    <div id="box3" class="box">상자3입니다.</div> 
+
+    <hr>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore non odit <span>consequuntur</span> rerum ut quos <span>doloremque</span>, pariatur velit? <span>Quam</span> tenetur possimus magnam laudantium expedita aut soluta, vero facilis temporibus reprehenderit.</p>
+</body>
+</html>

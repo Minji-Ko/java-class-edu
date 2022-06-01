@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/595a929853.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        body {
+            border-top: 1px solid #777;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        #news_box {
+            width: 648px;
+            border-left: 1px solid #CCC;
+            border-right: 1px solid #CCC;
+            margin: 0 auto;
+            padding: 15px 26px;
+        }
+        #news_box > h1 {
+            font-size: 15px;
+            color: #444;
+            padding: 6px;
+        }
+        #news_box > h1 > i {
+            margin-right: 5px;
+        }
+        .news::before {
+            content: '';   
+            display: block;
+            border-top: 1px solid #E5E5E5;
+            padding-top: 10px ;
+        }
+        .news > h1 {
+            color: #3F63BF;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: -1px;
+            font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",Dotum,"돋움",sans-serif;
+            margin-bottom: 16px;
+        }
+        .news > h1 > i {
+            padding-right: 10px;
+        }
+        .news > div {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #DDD;
+        }
+        .news > div:last-child {
+            border-bottom: 0;
+        }
+        .news > div > img {
+            float: left;
+            margin-right: 16px;
+            border: 1px solid #EEE;
+        }
+        .news > div > div {
+            float: left;
+            width: 498px;
+        }
+        .news > div::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .news div > div > h2 {
+            font-size: 15px;
+            margin: 0;
+            margin-top: 4px;
+            margin-bottom: 6px;
+        }
+        
+        .news > div > div > div:nth-child(2) {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+        .news > div > div > div:last-child {
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="news_box">
+
+        <h1><i class="fa-solid fa-circle-info"></i>헤드라인 뉴스</h1>
+        
+        <div class="news">
+            <h1><i class="fa-solid fa-note-sticky"></i>구글 인앱결제 본격화 D-1 결국 피해는 소비자의 몫</h1>
+            <div>
+                <img src="images/googleinapp01.jpg" alt="">
+                <div>
+                    <h2>구글 인앱결제 강제에 콘텐츠 사용료 줄인상...음악콘텐츠 유튜브 쏠림도</h2>
+                    <div>구글이 플레이스토어 신규 결제정책 적용을 앞둔 가운데 국내 음악콘텐츠·웹툰 등 업계의 우려가 커지고 있다. 구글 수수료 인상이 이용자에 전가되고 창작자 …</div>
+                    <div>전자신문</div>
+                </div>
+            </div>
+        
+            <div>
+                <img src="images/googleinapp02.jpg" alt="">
+                <div>
+                    <h2>결국 못 막은 구글 인앱결제…소비자 부담액 年2300억원</h2>
+                    <div>내일부터 구글 인앱결제 정책을 따르지 않은 애플리케이션(앱)은 플레이 스토어에서 퇴출된다. 이미 구글은 지난달부터 플레이스토어에서 외부 결제 페이지로 연 …</div>
+                    <div>아시아경제</div>
+                </div>
+            </div>
+        </div>
+        <div class="news">
+        
+            <h1><i class="fa-solid fa-note-sticky"></i>구글 인앱결제 본격화 D-1 결국 피해는 소비자의 몫</h1>
+            <div>
+                <img src="images/googleinapp01.jpg" alt="">
+                <div>
+                    <h2>구글 인앱결제 강제에 콘텐츠 사용료 줄인상...음악콘텐츠 유튜브 쏠림도</h2>
+                    <div>구글이 플레이스토어 신규 결제정책 적용을 앞둔 가운데 국내 음악콘텐츠·웹툰 등 업계의 우려가 커지고 있다. 구글 수수료 인상이 이용자에 전가되고 창작자 …</div>
+                    <div>전자신문</div>
+                </div>
+            </div>
+        
+            <div>
+                <img src="images/googleinapp02.jpg" alt="">
+                <div>
+                    <h2>결국 못 막은 구글 인앱결제…소비자 부담액 年2300억원</h2>
+                    <div>내일부터 구글 인앱결제 정책을 따르지 않은 애플리케이션(앱)은 플레이 스토어에서 퇴출된다. 이미 구글은 지난달부터 플레이스토어에서 외부 결제 페이지로 연 …</div>
+                    <div>아시아경제</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
