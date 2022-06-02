@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock {
+            border: 20px dashed #999;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        #clock div {
+            position: absolute;
+            width: 30px;
+            border: 10px solid #555;
+            border-radius: 30px;
+            transition: 300s all linear;
+        }
+        #clock div:first-child {
+            background-color: tomato;
+            height: 100px;
+            top:130px;
+            left: 225px;
+            transform-origin: 25px 120px;
+        }
+        #clock div:nth-child(2) {
+            background-color: cornflowerblue;
+            height: 140px;
+            top: 90px;
+            left: 225px;
+            transform-origin: 25px 160px;
+        }
+        #clock div:last-child {
+            background-color: gold;
+            height: 180px;
+            top: 50px;
+            left: 225px;
+            transform-origin: 25px 200px;
+        }
+        #clock:hover div:first-child {
+            transform: rotate(360deg);
+        }
+        #clock:hover div:nth-child(2) {
+            transform: rotate(4320deg);
+        }
+        #clock:hover div:last-child {
+            transform: rotate(259200deg);
+        }
+        #center {
+            position: absolute;
+            top: 250px;
+            left: 250px;
+            background-color: #555;
+            border-radius: 100%;
+            width: 60px;
+            height: 60px;
+        }
+
+
+        #time {
+            position: absolute;
+            top: 245px;
+            left: 265px;
+        }
+        #time > div {
+            color: #555;
+            font-size: 50px;
+            font-weight: bold;
+            position: absolute;
+        }
+        #time div:nth-child(1) { transform: translate(225px, 0); }
+        #time div:nth-child(2) { transform: translate(125px, -190px); }
+        #time div:nth-child(3) { transform: translate(195px, -110px); }
+        #time div:nth-child(4) { transform: translate(195px, 110px); }
+        #time div:nth-child(5) { transform: translate(125px, 190px); }
+        #time div:nth-child(6) { transform: translate(0, 225px); }
+        #time div:nth-child(7) { transform: translate(-125px, 190px); }
+        #time div:nth-child(8) { transform: translate(-195px, 110px); }
+        #time div:nth-child(9) { transform: translate(-225px, 0); }
+        #time div:nth-child(10) { transform: translate(-195px, -110px); }
+        #time div:nth-child(11) { transform: translate(-125px, -190px); }
+        #time div:nth-child(12) { transform: translate(-15px, -225px); }
+    </style>
+</head>
+<body>
+    <div id="clock" style="width: 500px; height:500px;">
+        <div>Hour</div>
+        <div>Min</div>
+        <div>Src</div>
+    </div>
+    <div id="center"></div>
+
+    <div id="time">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+</body>
+</html>

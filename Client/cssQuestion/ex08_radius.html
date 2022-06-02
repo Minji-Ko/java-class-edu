@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 85%;
+            height: 85%;
+            
+            position: absolute;
+            top: 7.5%;
+            left: 7.5%;
+            transition: 1s all;
+        }
+        #red {
+            width: 500px;
+            height: 500px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        #red { background-color: red; }
+        #orange { background-color: orange; }
+        #yellow { background-color: yellow; }
+        #green { background-color: green; }
+        #blue { background-color: blue; }
+        #purple { background-color: purple; }
+        #pink { background-color: pink; }
+        
+        #red:hover div { border-radius: 10%; }
+        #orange:hover div { border-radius: 20%; }
+        #yellow:hover div { border-radius: 30%; }
+        #green:hover div { border-radius: 40%; }
+        #blue:hover div { border-radius: 50%; }
+        #purple:hover div { border-radius: 60%; }
+        #pink:hover div { border-radius: 70%; }
+        </style>
+</head>
+<body>
+    <div id="rainbow">
+        <div id="red">
+            <div id="orange">
+                <div id="yellow">
+                    <div id="green">
+                        <div id="blue">
+                            <div id="purple">
+                                <div id="pink"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

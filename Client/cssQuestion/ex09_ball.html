@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box > div {
+            border: 1px solid black;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .ball {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            margin-top: 50px;
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #box:hover .ball {
+            transition: 3s all;
+            transform: translate(898px, 0) rotate(3600deg);
+        }
+        #box:hover #ball1 { transition-timing-function: linear; }
+        #box:hover #ball2 { transition-timing-function: ease; }
+        #box:hover #ball3 { transition-timing-function: ease-in; }
+        #box:hover #ball4 { transition-timing-function: ease-out; }
+        #box:hover #ball5 { transition-timing-function: ease-in-out; }
+        
+        
+        #ball1 { background-color: tomato; }
+        #ball2 {background-color: gold; }
+        #ball3 { background-color: orange; }
+        #ball4 { background-color: yellowgreen; }
+        #ball5 { background-color: cornflowerblue; }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div>
+            <div id="ball1" class="ball">A</div>
+        </div>
+        <div>
+            <div id="ball2" class="ball">B</div>
+        </div>
+        <div>
+            <div id="ball3" class="ball">C</div>
+        </div>
+        <div>
+            <div id="ball4" class="ball">D</div>
+        </div>
+        <div>
+            <div id="ball5" class="ball">E</div>
+        </div>
+    </div>
+</body>
+</html>

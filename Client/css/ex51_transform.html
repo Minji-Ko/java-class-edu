@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mainmenu {
+            /* border: 1px solid black; */
+            width: 630px;
+            /* font-size: 0; */
+            margin: 0 auto;
+            
+            transform: translate(0px,-100px);
+        }
+        #mainmenu:hover {
+            /* transform: translate(0px,-10px); */
+        }
+        #mainmenu > img {
+            float: left;
+        }
+        #mainmenu > img:hover {
+            transform: translate(0px, 90px);
+        }
+        #mainmenu::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #footmenu {
+            /* border: 1px solid black; */
+            width: 630px;
+            
+            position: fixed;
+            /* margin: 0 auto; */
+            /* left: 0;
+            right: 0; */
+            left: calc(50% - 315px);
+            bottom: 0;
+
+            transform: translate(0px, 90px);
+        }
+        #footmenu > img {
+            float: left;
+        }
+        #footmenu > img:hover {
+            transform: translate(0px, -90px);
+        }
+        #footmenu::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav id="mainmenu">
+        <img src="images/rect_icon01.png" alt="아이콘1">
+        <img src="images/rect_icon02.png" alt="아이콘2">
+        <img src="images/rect_icon03.png" alt="아이콘3">
+        <img src="images/rect_icon04.png" alt="아이콘4">
+        <img src="images/rect_icon05.png" alt="아이콘5">
+    </nav>
+    
+    <nav id="footmenu">
+        <img src="images/rect_icon01.png" alt="아이콘1">
+        <img src="images/rect_icon02.png" alt="아이콘2">
+        <img src="images/rect_icon03.png" alt="아이콘3">
+        <img src="images/rect_icon04.png" alt="아이콘4">
+        <img src="images/rect_icon05.png" alt="아이콘5">
+    </nav>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+            - 객체의 송성(상태) 값이 변화되는 과정을 시간 순서대로 보여주는 속성
+            - 수치형 속성에만 적용 가능(숫자, 색상)
+        */
+        #box {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 200px;
+            /* transition-property: width, height, background-color; */
+            transition-property: all;
+            transition-duration: 3s;
+            overflow: hidden;
+
+            /* position: relative;
+            left: 0px;
+            top: 0px; */
+
+            /* transform-origin: 400px center; */
+
+            /* 원근감 */
+        }
+        #box:hover {
+            /* background-color: black; */
+            /* width: 400px; */
+            /* height: 400px; */
+            /* font-size: 5em; */
+            /* font-family: '궁서';  */ /*중간과정을 보여주진 않음 */
+            /* opacity: 0; */
+            /* border-radius: 50%; */
+            /* box-shadow: 10px 10px 5px #555; */
+            /* margin-left: 100px; */
+            /* padding: 100px; */
+            /* border-width: 50px; */
+            /* border-color: tomato; */
+            /* left: 200px;
+            top: 100px; */
+            /* transform: translate(500px, 0px); */
+            /* transform: rotate(45deg); */
+            transform: rotate(360deg);
+            /* transform: scale(-1, 1); */
+        } 
+
+        #cat img {
+            transition: 3s all;
+        }
+        #cat:hover img {
+            /* transform: translate(0px, -20px); */
+            /* transform: rotate(360deg); */
+            transform: scale(1.5, 1.5);
+        }
+
+        /* 
+            에니메이션을 어떤 환경에서 주느냐를 생각해야함
+            모바일같은 경우, hover 등이 원하는대로 적용되기 어렵기도 함
+        */
+    </style>
+</head>
+<body>
+    <div id="box">상자</div>
+
+    <h1>고양이</h1>
+    <div id="cat">
+        <img src="images/catty01.png">
+        <img src="images/catty02.png">
+        <img src="images/catty03.png">
+        <img src="images/catty04.png">
+        <img src="images/catty05.png">
+    </div>
+</body>
+</html>

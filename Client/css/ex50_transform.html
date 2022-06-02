@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /*  
+            transform, 변형
+            - 위치, 크기(배율), 회전, 왜곡
+
+            1. translate(): 위치 변형(이동)
+            2. scale()   : 배율 변형(확대, 축소)
+            3. rotate()  : 회전 변형
+            ---
+            4. skew()    : 왜곡(비틀기)
+            5. matrix() : 1~4번 포함. 사용자 정의형 > 행렬
+        */
+        .box {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            margin-left: 200px;
+        }
+        #box1 {
+            background-color: tomato;
+
+            /* transform: translate(100px, 300px); */
+
+            /* 테두리와 내용물이 모두 2배로 늘어남 */
+            /* transform: scale(x, y);  */
+            /* transform: scale(2, 1);  */
+            /* transform: scale(0.1, 0.1);  */
+            /* transform: scale(0, 0);  */
+            /* transform: scale(1, -1);  */
+
+            /* transform: skew(50deg, 0deg); */
+            /* transform: skew(90deg, 0deg); */
+            transform: skew(0deg, 10deg);
+
+        }
+        #box1:hover {
+            /* transform: translate(100px, 100px); */
+            
+            /* transform: rotate(45deg); */
+            transform: rotate(370deg);
+        }
+        #box2 {
+            background-color: gold;
+            width: 400px;
+            /* transform: scale(1, 2); */
+        }
+
+        #cat > img:hover {
+            /* transform: translate(0px,-10px); */
+            /* transform: scale(1.2, 1.2); */
+            transform: translate(0px,-20px) scale(1.2, 1.2);
+            transform: rotate(15deg);
+        }
+
+        input[type=text] {
+            font-size: 2em;
+            padding: 5px;
+            outline: none;
+            margin: 100px;
+            /* transform: scale(-1, 1); */
+            /* transform: rotate(45deg); */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        Ctrl +Shift + L 
+        Ctrl + K, Ctrl + D 
+    -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <h1>고양이</h1>
+    <div id="cat">
+        <img src="images/catty01.png" alt="고양이1">
+        <img src="images/catty02.png" alt="고양이2">
+        <img src="images/catty03.png" alt="고양이3">
+        <img src="images/catty04.png" alt="고양이4">
+        <img src="images/catty05.png" alt="고양이5">
+    </div>
+
+    <hr>
+
+    <input type="text">
+
+</body>
+</html>
