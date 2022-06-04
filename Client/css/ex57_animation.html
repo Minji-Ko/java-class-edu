@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/595a929853.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style> 
+    /* TODO */
+        #icon {
+            font-size: 5em; 
+            color: tomato;
+            width: 300px;
+            text-align: center;
+            display: block;
+            margin: 150px auto;
+
+            transform: scale(100, 100);
+            opacity: 0; /*초기값이 0아니면 주는데, 기억이 안남 */
+
+            animation-name: key-icon;
+            animation-duration: 1 s;    
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-out;
+        }
+        @keyframes key-icon {
+            from {
+               transform: tanslate(100px, 100px);
+               opacitiy: 0;
+            }
+            to {
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <i class="fa-brands fa-java"></i> -->
+
+    <i class="fa-brands fa-html5" id="icon"></i>
+    <!-- <i class="fa-brands fa-css3-alt"></i> -->
+    <!-- <i class="fa-brands fa-js"></i> -->
+
+</body>
+</html>
