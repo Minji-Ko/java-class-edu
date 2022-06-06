@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #music {
+            width: 500px;
+            font-variant: small-caps;
+            font-family: 'Malgun Gothic';
+            margin: 0 auto;
+            
+        }
+        #music > h1 {
+            font-size: 2rem;
+        }
+        #music > div {
+            border: 1px solid #888;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 0;
+            width: 350px;
+            overflow: hidden;
+        }
+        #music > div::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #music input {
+            display: none;
+        }
+        #music label {
+            display: block;
+            float: left;
+            text-align: center;
+            width: 150px;
+            height: 130px;
+            padding-top: 20px;
+            background-color: #EEE;
+            font-weight: bold;
+            font-size: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+        #music img {
+            width: 150px;
+            height: 150px;
+            padding: 0 20px;
+        }
+
+        @keyframes key-playing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        #music input:checked + label {
+            background-color: tomato;
+            color: white;
+        }
+        #music input:checked ~ img { /* >img  vs ~img ******/
+            display: inline-block;
+            animation-name: key-playing;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="music">
+        <h1>Music</h1>
+        <div>
+            <input type="radio" name="play" id="play1">
+            <label for="play1">Play</label>
+            <img src="images/lp01.png" alt="">
+        </div>
+        <div>
+            <input type="radio" name="play" id="play2">
+            <label for="play2">Play</label>
+            <img src="images/lp02.png" alt="">
+        </div>
+        <div>
+            <input type="radio" name="play" id="play3">
+            <label for="play3">Play</label>
+            <img src="images/lp03.png" alt="">
+        </div>
+        <div>
+            <input type="radio" name="play" id="play4">
+            <label for="play4">Play</label>
+            <img src="images/lp04.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
