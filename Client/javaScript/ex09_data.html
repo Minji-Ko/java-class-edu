@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 자바스크립트는 클래스가 없다.
+        // 내장 객체라는 것을 제공해서 > 일부 객체를 생성할 수는 있다.
+
+        // 날짜시간
+        // - Date 객체
+        // - 내장 객체
+        // - 자료형: object
+
+        // 현재 시각
+        var now = new Date(); //new 생성자 함수();
+        console.log(now);
+        console.log(now.toString());
+
+        // 요소 추출
+        // - now.get(Calendar.YEAR)
+        // 년, 일, 시, 분, 초 : 숫자 > 1부터
+        // 월, 요일 : 배열 > 0 부터
+        console.log(now.getYear());     // 122
+        console.log(now.getFullYear()); //  2022
+        console.log(now.getMonth());    //  5 (0부터)
+        console.log(now.getDate());     //  7
+        console.log(now.getDay());      //  2 (일(0)~토(6))
+        console.log(now.getHours());    //  16
+        console.log(now.getMinutes());  //  47
+        console.log(now.getSeconds());  //  38
+        console.log(now.getMilliseconds());//  893
+        console.log(now.getTime());     //  1654588058893 틱(ms)
+
+        // 출력 > %tF, %tT, %tA
+        console.log(now.toLocaleString());
+        console.log(now.toLocaleDateString());
+        console.log(now.toLocaleTimeString());
+
+
+        console.clear();
+        // 특정 시각 만들기
+        var christmas = new Date();
+        christmas.setFullYear(2022);
+        christmas.setMonth(11);
+        christmas.setDate(25);
+        
+        console.log(christmas.toLocaleDateString());
+        
+        var birthday = new Date(1995, 10, 25);
+        console.log(birthday.toLocaleString());
+        var birthday = new Date(1995, 10, 25, 12, 30 ,0);
+        console.log(birthday.toLocaleString());
+
+        // 연산 > 시각 - 시각
+        console.log(now - birthday); //SQL(일), JavaScript(ms)
+        console.log((now - birthday) / 1000 / 60 / 60 / 24); 
+
+        // 시각 + 시간
+        // 오늘 만난 커플 100일 기념일?
+        var ani = new Date();
+        ani.setTime(now.getTime() + (100 * 24 * 60 * 60 * 1000));
+        console.log(ani.toLocaleString());
+        
+        
+        var ani2 = new Date(2020,7,25);
+        ani2.setTime(ani2.getTime() + (100 * 24 * 60 * 60 * 1000));
+        console.log(ani2.toLocaleString());
+
+
+    </script>
+</body>
+</html>
