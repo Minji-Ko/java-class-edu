@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- [Summary] CSS 박스모델 테두리 표현하기 (2022-05-30 01:31:27) -->
+    <style>
+  
+        #box1 {
+            /* 선 색상 */
+            border-color: gold; 
+          
+            /* 선 두께 */
+            border-width: 5px;     
+          
+            /* 선 종류(solid, dashed, dotted) */
+            border-style: solid;  
+
+            /* 종합 > 순서 상관없음 */
+            border: 5px solid goldenrod;
+
+        }
+        
+
+        #box2 {
+            /* 선 위치 */
+            border-top: 2px solid red;
+            border-right: 4px solid orange;
+            border-bottom: 6px solid green;
+            border-left: solid;
+        }
+  
+        #box3 {
+           border-color: blue green yellow red;
+           border-width: 2px 6px 10px;
+           border-style: dashed solid;
+        }
+        
+        #box4 {
+            border: 1px solid black;
+            
+            /* 선 모서리 둥글기 (px-원, %-사각형 비율)  > 최대값 = 단축의 1/2 */
+            border-radius: 10px;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius : 50px;
+        }
+
+     </style>
+
+
+</head>
+<body>
+    
+    <div id="box1" class="box">상자1</div><br>
+    <div id="box2" class="box">상자2</div><br>
+    <div id="box3" class="box">상자3</div><br>
+    <div id="box4" class="box">상자4</div><br>
+
+    <input type="text" id="txt1"><br>
+
+</body>
+</html>

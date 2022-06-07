@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <!-- [Summary] CSS 선택자에 가상 클래스 사용하기 (2022-05-29 20:34:10, 2022-06-03 02:27:17)  -->
+     <style>
+
+        /* 브라우저가 한번도 방문하지 않은 링크 */
+        a:link { color: red; }
+        
+        /* 브라우저가 방문한 이력이 있는 링크 */
+        a:visited { color: orange; }
+        
+        /* 마우스 커서를 올린 상태 */
+        a:hover { color: aqua; }
+        
+        
+
+        /* 첫번째 태그 선택 */
+        li:first-child { background-color: gold;}
+       
+        /* 마지막 태그 선택 */
+        li:last-child { background-color: cornflowerblue; }
+       
+        /* n번째 태그 선택 */
+        li:nth-child(even) { background-color: whitesmoke; }    /* even, odd */
+        li:nth-child(4n-1) { background-color: darkseagreen; }  /* 수열 */
+       
+        /* 끝에서부터 n번째 태그 선택 */
+        li:nth-last-child(3){ background-color: plum; }         /* 숫자*/
+
+
+     </style>
+
+
+</head>
+<body>
+
+    <a href="https://naver.com" target="_blank">네이버로 이동하기</a>
+
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+
+</body>
+</html>

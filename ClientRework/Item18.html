@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- [Summary] 선택자 우선순위 파악하기 (2022-05-29 21:27:50) -->
+    <style>
+       /*
+            1. 아이디 점수 비교(+100) 
+            2. 클래스 점수 비교(+10)
+            3. 태그 점수 비교(+1)
+            4. 순서 비교
+        */
+        
+        #box1 { color: green; } 
+        .box { color: blue; }
+        
+        div { color: red; }
+        div { color: orange; }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div id="box1" class="box">상자</div>
+    
+    <div>상자2
+        <div class="box">상자3</div>
+    </div>
+
+</body>
+</html>

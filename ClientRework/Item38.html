@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- [Summary] 태그와 내용물 수평 정렬하기 (2022-06-02 09:09:08) -->
+    <style>
+        #span1, #div1 { background-color: gold; }
+
+
+    /* 인라인태그 */
+        /* 1. 내용물 정렬 불가 */
+        /* 2. 태그 정렬 */
+        .block { text-align: center; }
+
+
+    /* 블럭태그 */
+        #div1 {
+        /* 1. 내용물 정렬 */
+            text-align: center;
+        /* 2. 태그 정렬 */
+            margin-left : 30px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="block">
+        앞의 내용물
+        <span id="span1">인라인 태그</span>
+        뒤의 내용물
+    </div>
+
+    <div style="border: 10px solid black;">
+        <div id="div1">블럭태그</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- [Summary] CSS 박스모델 테두리 표현하기(outline) (2022-06-06 18:33:26)-->
+    <style>
+        #txt1 {
+            background-color: pink;
+           
+            /* border */
+            /* - 객체 영역에 포함o */
+            border: 10px solid #999;
+           
+            /* outline */
+            /* - 객체 영역에 포함x */
+            /* - top,right,bottom,left이 없음*/
+            outline: 10px solid red;
+         }
+         #txt2 {
+            outline: 30px solid orange;
+         }
+    </style>
+
+
+</head>
+<body>
+    <input type="text" id="txt1">
+    <input type="text" id="txt2">
+</body>
+</html>

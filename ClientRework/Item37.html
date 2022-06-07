@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- [Summary] 요소의 위치 지정하기(position) (2022-06-01 19:18:25) -->
+    <style>
+        #b, #b1, #b2, #b3, .b4, #b5 {
+            border: 10px solid black;
+        }
+
+        
+        /* 1. static 
+            > (기본)정적 좌표
+            >  FlowLayout으로 좌표값이 작동하지 않음 */
+        #b {
+            width: 500px;
+            height: 400px;
+            background-color: green;
+            /* left: 400px; (X) */
+        }
+
+
+        /* 2. absolute 
+            > 절대 좌표 
+            > position!= static 부모 태그의 테두리안쪽 좌표를 원점으로
+            > 원래있던 공간은 사라짐
+            > width를 지정하지 않으면 inline 요소와 같이 content크기와 동일 */
+        #b1 {
+            width: 400px;
+            height: 300px;
+            background-color: tomato;
+            position: absolute;
+            left: 200px;
+            top: 100px;
+        }
+        #b2 {
+            width: 300px;
+            height:200px;
+            background-color: gold;
+            position: absolute;
+            top: 0px;
+            left: -100px;
+        }
+
+        /* 3. relative
+            > 상대 좌표
+            > 자신의 기존 위치를 원점으로
+            > 원래있던 공간 유지 
+            > width를 지정하지 않으면 inline 요소와 같이 content크기와 동일  */
+        #b3 {
+            width: 200px;
+            height: 40px;
+            background-color: cornflowerblue;
+            
+            /* position: absolute; */
+            position: relative;
+            top :-160px;
+        }
+
+
+        /* 4. fixed
+            > 고정 좌표
+            > 브라우저 창의 좌측 상단을 원점으로 
+            > 원래있던 공간은 사라짐 */
+        #b5 {
+            width: 100px;
+            height: 20px;
+            background-color: purple;
+            
+            position: fixed;
+        }
+    
+    </style>
+
+
+</head>
+<body>
+    <div id="b">
+        <div id="b1">
+            박스1
+            <div id="b2">
+                박스2
+                <div class="b4">박스</div>
+                <div id="b3">
+                    박스3
+                </div>
+                <div class="b4">박스</div>
+                <div id="b5">박스</div>
+            </div>
+        </div>
+    </div>
+
+
+    <p> 스크롤
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis maxime optio at debitis illum ex ducimus accusamus adipisci blanditiis, amet animi assumenda quisquam commodi repudiandae dolor quis totam doloribus repellendus perspiciatis nam quos sit incidunt beatae eligendi! Labore impedit provident natus quos magnam tempore dolor itaque in autem, exercitationem sequi, sed ut, inventore id veritatis. Pariatur amet facilis harum ullam incidunt doloremque id fugit ipsa architecto dolor doloribus totam, ad tempora nostrum laborum quia ut? Reiciendis nobis vitae culpa! Quisquam totam consequuntur, ut temporibus deserunt recusandae accusamus est, voluptates fugiat facere blanditiis odit quidem, aliquid illum consequatur id at dicta molestias. Velit officiis, suscipit totam inventore, eligendi molestiae dolores officia molestias pariatur, quibusdam quasi! Sed enim et quae doloribus ratione rem esse voluptate unde repudiandae modi, totam, id voluptatum nostrum quibusdam consequuntur non? Veniam facere itaque recusandae rerum ad voluptates culpa autem, repellat a voluptatem nihil quaerat possimus, error provident porro natus enim architecto mollitia tempore reiciendis? Vel dolores culpa obcaecati, animi nihil dicta, adipisci sequi quos porro atque dolor delectus odit nulla. Autem similique ratione distinctio animi quia accusamus numquam quasi labore, ipsa velit? Rerum totam amet doloribus, optio nobis perspiciatis. Dolores, voluptate similique ipsa veritatis veniam earum reiciendis?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis maxime optio at debitis illum ex ducimus accusamus adipisci blanditiis, amet animi assumenda quisquam commodi repudiandae dolor quis totam doloribus repellendus perspiciatis nam quos sit incidunt beatae eligendi! Labore impedit provident natus quos magnam tempore dolor itaque in autem, exercitationem sequi, sed ut, inventore id veritatis. Pariatur amet facilis harum ullam incidunt doloremque id fugit ipsa architecto dolor doloribus totam, ad tempora nostrum laborum quia ut? Reiciendis nobis vitae culpa! Quisquam totam consequuntur, ut temporibus deserunt recusandae accusamus est, voluptates fugiat facere blanditiis odit quidem, aliquid illum consequatur id at dicta molestias. Velit officiis, suscipit totam inventore, eligendi molestiae dolores officia molestias pariatur, quibusdam quasi! Sed enim et quae doloribus ratione rem esse voluptate unde repudiandae modi, totam, id voluptatum nostrum quibusdam consequuntur non? Veniam facere itaque recusandae rerum ad voluptates culpa autem, repellat a voluptatem nihil quaerat possimus, error provident porro natus enim architecto mollitia tempore reiciendis? Vel dolores culpa obcaecati, animi nihil dicta, adipisci sequi quos porro atque dolor delectus odit nulla. Autem similique ratione distinctio animi quia accusamus numquam quasi labore, ipsa velit? Rerum totam amet doloribus, optio nobis perspiciatis. Dolores, voluptate similique ipsa veritatis veniam earum reiciendis?
+    </p>
+</body>
+</html>

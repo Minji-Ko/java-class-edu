@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+    
+        <!-- [Summary] 인라인 태그 사이 공백 제거하기(display) (2022-06-01 17:27:18) -->
+        <style>
+            #cats {
+                border: 10px solid gold;
+                
+            /* 1. 공백의 크기를 0으로 조정 */
+                font-size: 0;
+            }
+
+            /* 2. block태그로 변경 */
+            #cats .cat {
+                display: block;
+            }
+        </style>
+
+
+</head>
+<body>
+    <div id="cats">
+        <img src="cat.jpg" class="cat">
+        <img src="cat.jpg" class="cat">
+        <img src="cat.jpg" class="cat">
+        <img src="cat.jpg" class="cat">
+        <img src="cat.jpg" class="cat">
+        <img src="cat.jpg" class="cat">
+        <img src="cat.jpg" class="cat">
+        <img src="cat.jpg" class="cat">
+        <img src="cat.jpg" class="cat">
+        <img src="cat.jpg" class="cat">
+    </div>
+</body>
+</html>

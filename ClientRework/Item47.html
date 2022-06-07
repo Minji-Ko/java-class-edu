@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- [Summary] CSS 선택자에 가상 요소 사용하기  (after, before) (2022-06-06 17:11:53) -->
+    <style>
+        p > span { color : blue; }
+    
+        /* 1. ::before   > 첫번째 자식태그로 삽입 */
+        p > span::before {
+            content: '<b>';
+            color: orange;
+            font-weight: bold;
+        }
+        
+        /* 2. ::after   > 마지막 자식태그로 삽입 */
+        p > span::after { 
+            content: '';  
+            display: block;
+            clear: both;
+        }
+    </style>
+
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing elit. Inventore et deserunt nemo blanditiis <span>ratione</span>, accusantium, consectetur, similique tempore omnis vitae <span>aliquid</span> minus fuga sequi eum quis officiis alias molestiae nesciunt?
+    </p>
+</body>
+</html>

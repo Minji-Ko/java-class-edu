@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <!-- [Summary] CSS 선택자에 가상 클래스 사용하기(input) (2022-06-03 13:39:17)  -->
+    <style>
+
+        /* 활성화 상태 : 커서가 올라가있는 상태 */
+        #search:focus { background-image: url(bullet01.png); }
+       
+         /* 활성화 상태 : 클릭 중인 상태 */
+        #search:active { background-image: url(bullet02.png); }
+
+
+        #list input { display: block; }
+
+        /* 필수 입력 : required <-> optional */
+         #list input:required { background-color: tomato; }
+         #list input:optional { background-color: orange; }
+
+        /* 입력 불가능 : disabled <-> enabled */
+        #list input:disabled { background-color:gold; }
+        #list input:enabled { background-color:yellowgreen; }
+        
+        /* 읽기 전용: read-only */
+        #list input:read-only { background-color:cornflowerblue; }
+        
+        
+        /* 체크된 상태: checked */
+        input[type=checkbox]:checked { opacity: 1; }
+
+    </style>
+
+
+
+</head>
+<body>
+    
+    <input type="text" id="search">
+    <hr>
+
+    <div id="list"> 
+        <form action="../html/ex18.jsp" method="GET">
+            <input type="text" value="1" required>
+            <input type="text" value="2" readonly>
+            <input type="text" value="3" readonly>
+            <input type="text" value="4">
+            <input type="text" value="5" required>
+            <input type="text" value="6" disabled>
+            <input type="text" value="7" disabled>
+            <input type="text" value="8">
+            <input type="text" value="9">
+            <input type="text" value="10" required>
+        </form>
+    </div>
+    
+    <hr>
+    <div>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+
+   
+</body>
+</html>

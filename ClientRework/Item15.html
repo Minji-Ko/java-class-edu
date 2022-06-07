@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+     <!-- [Summary] CSS 선택자 정밀하게 사용하기 (2022-05-29 20:34:10)  -->
+     <style>
+
+         /* 1. 자식 선택자 */
+          #date > ul > li { background-color: gray; }
+
+         /* 2. 자손 선택자 */
+         #date li { color: red; }
+
+         /* 3. 인접 형제 선택자 */
+         #num2 + li { font-size: 20px; }
+
+         /* 4. 형제 선택자 */
+         #num2 ~ li { text-decoration: underline; }
+
+     </style>
+
+
+</head>
+<body>
+
+    <h1>TODO List</h1>
+    
+    <ol>
+        <li id="date">2022.05.28
+            <ul>
+                <li>할일1</li>
+                <li id="num2">할일2</li>
+                <li id="num3">할일3</li>
+                <li>할일3</li>
+            </ul>
+        </li>
+        <li>2022.05.29
+            <ul>
+                <li>할일1</li>
+                <li>할일2</li>
+                <li>할일3</li>
+            </ul>
+        </li>
+    </ol>
+
+    <div class="content">끝</div>
+
+</body>
+</html>

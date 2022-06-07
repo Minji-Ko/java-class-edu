@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- [Summary] 요소 숨기기(visibility, display) (2022-06-01 17:11:57) -->
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        #cat { visibility: visible; }
+        
+        /* visibility: hidden >  숨겨져도 영역유지*/
+        #cat:hover + img { visibility: hidden; }
+
+        /* display: none > 숨겨지면 영역도 사라짐 */
+        #dog:hover { display: none;}
+
+    </style>
+
+
+</head>
+<body>
+    <img src="cat.jpg" id="cat">
+    <img src="dog.jpg" id="dog">
+    <img src="cat.jpg">
+</body>
+</html>
