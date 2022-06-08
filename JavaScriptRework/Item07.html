@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- [Summary] 메소드 사용하기 (2022-06-08 00:21:25) -->
+    <script>
+        // 1. 매개변수 없음
+        function m1() {
+            console.log('Hello World!!');
+        }
+
+        m1(); 
+
+
+        // 2. 매개변수 있음
+        function m2(name) {
+            console.log('name: ' + name);
+        }
+
+        m2();                           // name : undefined
+        
+        m2('홍길동');                    // name : 홍길동
+        
+        m2('호호호', '후후후', '헤헤헤'); // name : 호호호 > 비권장!!!
+        
+        // console.log(arguments); //매개변수 값을 담은 내장배열 예약어
+        // console.log(arguments[0]); > 호호호
+        // console.log(arguments[1]); > 후후후
+        // console.log(arguments[2]); > 헤헤헤
+
+
+    </script>
+
+
+</body>
+</html>

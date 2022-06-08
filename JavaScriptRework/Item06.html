@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- [Summary] JavaScript 자료형 형변환하기 -->
+    <script>
+    
+    //1. 자동 형변환
+        //JavaScript > Weak Type > 자동 형변환을 잘한다.
+        //console.log('10' + 2);  //102 (형변환x) 
+        console.log('10' - 2);  //8
+        console.log('10' * 2);  //20
+        console.log('10' / 2);  //5
+
+
+    //2. 명시적 형변환
+        // 1. number parseInt(value)
+        // 2. number parseFloat(value)
+        var width = '200px';
+        console.log(width + 100);           //200px100
+        console.log(parseInt(width) + 100); //300
+
+        var size = '1.5em'; 
+        console.log(parseInt(size));    //1
+        console.log(parseFloat(size));  //1.5
+    </script>
+
+
+</body>
+</html>

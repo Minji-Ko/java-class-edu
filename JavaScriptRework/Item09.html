@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- [Summary] 변수의 생명주기 (2022-06-08 00:44:38) -->
+    <script>
+
+    // 1. 전역 변수 
+        // > html 전역 > 선언문 실행(탄생) ~ 브라우저 페이지 종료(소멸)
+        var num = 100;
+        console.log(num); //(o) 100
+
+
+    // 2. 지역 변수 
+        // > 함수 전역 
+        function m1() {
+            var num2 = 200;
+            console.log(num2);      //(o) 200
+        }
+
+        m1();
+        console.log(num2);          //(x) num2 is not defined
+
+        //***** 주의할 점
+        //1. 제어문 영역 인식 못함!! 함수만 영역으로 인식*****
+        function m2() {
+
+            if(num > 0){
+                var num3 = 300;
+                console.log(num3);  //(o) 300
+            }
+            console.log(num3);      //(o) 300
+        }
+
+        m2();
+        console.log(num3);          //(x) num3 is not defined
+
+        //2. 변수 선언문(var) 없이 선언시 무조건 전역 변수!!
+        function m2() {
+            num4 = 400; 
+        }
+
+        m2();
+        console.log(num4);           //(o) 400
+
+    </script>
+
+
+</body>
+</html>
