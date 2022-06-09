@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>체크 박스</h1>
+    <form name="form1">
+        <input type="checkbox" name="cb1" value="yes">
+        <input type="button" value="버튼1" name="btn1">
+    </form>
+    
+    <hr>
+    <h1>회원 가입</h1>
+    <h2>이용 약관</h2>
+    <div style="width:500px; height:150px; overflow:auto; border:1px solid black; padding:10px">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque saepe quis, vel id itaque fugit voluptas distinctio, perferendis aspernatur pariatur illum? Commodi nam adipisci deserunt, necessitatibus autem quaerat error eveniet dolorem animi similique alias quidem enim? Necessitatibus, sapiente accusamus, exercitationem esse a perferendis distinctio atque nam suscipit, deleniti maiores sint repellendus praesentium beatae? Et nisi non ratione, cumque dicta eaque dolorem, iste qui eos minima magnam ullam temporibus numquam deleniti repudiandae, ab repellat consequuntur dolore? Magnam laboriosam obcaecati corporis omnis modi. Quibusdam, nemo, assumenda dicta dolor voluptatum magnam cum facere doloribus cupiditate recusandae at adipisci sed deserunt voluptates fuga veritatis molestiae eius. Quo, numquam maxime nobis nihil excepturi exercitationem nemo, aliquam tempora repellat sapiente, optio nulla natus et eligendi delectus omnis rerum quos. Harum beatae dolores magnam distinctio nobis quia voluptatum eum numquam quod placeat ipsum eveniet officia, totam suscipit error ut. Minus eligendi eos vero libero inventore praesentium omnis dolor. Est, animi impedit, hic eum beatae nam dolores officia numquam quos in omnis temporibus. Consectetur maxime dolor eligendi numquam ea, aliquam voluptas quas minima. Id possimus nihil maiores, similique, esse omnis labore recusandae, dolores incidunt exercitationem veniam quis. Voluptate commodi recusandae assumenda accusamus impedit corrupti autem illo id praesentium reiciendis repudiandae distinctio omnis nulla perferendis beatae ad facilis repellendus sint quo, soluta explicabo officia? Pariatur sit dolorum impedit, consequatur numquam praesentium sapiente voluptatum sed ullam rem beatae similique natus soluta quaerat ut vitae doloremque molestiae quas, quod assumenda ab cumque. Quo, qui! Et deleniti corporis inventore provident qui quod similique ea expedita culpa, labore eveniet repellat, aspernatur aliquid cumque distinctio delectus fugit suscipit laudantium repellendus dolorum explicabo asperiores laborum aut? Adipisci quibusdam commodi sed fugiat, unde quos voluptatem molestiae expedita provident exercitationem eos repellendus repellat distinctio deserunt voluptas error in ut eligendi? Unde aliquam sit hic veritatis tempora aut quaerat ratione voluptate reprehenderit voluptas culpa voluptatibus sapiente eos, nisi, ducimus molestiae doloremque maiores in nam adipisci cupiditate. Tempora veniam architecto nobis, nostrum nulla iste sapiente provident unde? Doloribus, voluptatibus ea natus deserunt voluptatum quod, reiciendis quidem quam aliquam ullam incidunt, possimus molestiae! Illo, ex sit et assumenda facere quis voluptas molestiae omnis magni perspiciatis sunt tenetur praesentium hic aut dolor odit exercitationem ipsum repudiandae corrupti cum quaerat saepe voluptates? Temporibus corrupti expedita dolores molestiae laborum consequatur? Perspiciatis eius aliquid voluptates suscipit. Eligendi obcaecati eos itaque sequi laborum nobis molestiae magnam aut aperiam rerum? Odit esse nam corrupti animi. Quas, inventore dolor! Debitis laboriosam eaque aliquam culpa, ex autem minima nobis tempore fuga, beatae, veniam veritatis itaque repellendus quia natus. Asperiores tempore quia, ut facere sint, laboriosam deserunt a vero voluptates temporibus ducimus! Nesciunt voluptatum delectus aliquid? Facilis labore unde culpa at tempore cumque earum architecto magni vitae porro nihil omnis doloribus molestiae aut libero debitis officiis asperiores deserunt, placeat totam saepe praesentium nemo maxime quibusdam? Architecto voluptate, cupiditate quibusdam enim perspiciatis repudiandae autem. Voluptatem eos dolore numquam vel. Veniam provident dolor id quae consequatur adipisci amet ad fugiat, iure cum dolores iusto cumque omnis totam, ipsum corporis beatae recusandae?</div>
+    <hr>
+    <label><input type="checkbox" name="cbagree">약관에 동의합니다.</label>
+    <hr>
+    <input type="button" value="다음으로 진행하기" onclick="location.href=next.html;" name="btnnext" disabled>
+
+    <script>
+        document.form1.btn1.onclick = m1;
+        
+        function m1() {
+            var cb1 = document.form1.cb1;
+
+            // cb1.checked = true;
+            cb1.checked = !cb1.checked;
+        }
+
+        var cbagree = document.form1.cbagree;
+        // document.form1.cbagree.onclick = m2;
+        cbagree.onchange = m2; //값이 변할 때 발생
+
+        function m2() {
+            // alert(cbagree.checked);
+            if(cbagree.checked){
+                document.all.btnnext.disabled = false;
+            } else {
+                document.all.btnnext.disabled = true;
+            }
+        }
+
+        //todo
+    </script>
+
+</body>
+</html>

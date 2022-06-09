@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            border: 1px solid #CCC;
+            background-color: #EEE;
+            padding: 10px;
+            width : 400px;
+            text-align: center;
+            margin: 20px;
+        }
+        .item input[type=button] {
+            border: 1px solid #CCC;
+            background: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>다량의 요소 이벤트 처리</h1>
+
+    <form name="form1">
+        <!-- 1. 정적으로 이벤트 등록 -->
+        <div class="item">1.정적
+            <input type="button" name="btnRed" value="빨강" onclick="m1();">
+            <input type="button" name="btnYellow" value="노랑" onclick="m2();">
+            <input type="button" name="btnBlue" value="파랑" onclick="m3();">
+        </div>
+        <div class="item">2.동적
+            <input type="button" name="btnRed2" value="빨강">
+            <input type="button" name="btnYellow2" value="노랑">
+            <input type="button" name="btnBlue2" value="파랑">
+        </div>
+        <div class="item">3.m(red)
+            <input type="button" name="btnRed" value="빨강" onclick="m4('red');">
+            <input type="button" name="btnYellow" value="노랑" onclick="m4('yellow');">
+            <input type="button" name="btnBlue" value="파랑" onclick="m4('blue');">
+        </div>
+        <div class="item">4.m(this)
+            <input type="button" name="btnRed" value="빨강" onclick="m5(this);">
+            <input type="button" name="btnYellow" value="노랑" onclick="m5(this);">
+            <input type="button" name="btnBlue" value="파랑" onclick="m5(this);">
+        </div>
+        <div class="item">5.m(this)
+            <input type="button" name="btnRed" value="red" onclick="m6(this);">
+            <input type="button" name="btnYellow" value="yellow" onclick="m6(this);">
+            <input type="button" name="btnBlue" value="blue" onclick="m6(this);">
+        </div>
+        <div class="item">6.m(this) + data-color
+            <!-- 사용자 정의 속성? data-속성명 = 값 -->
+            <input type="button" name="btnRed" value="빨강" onclick="m7(this);" data-color="red">
+            <input type="button" name="btnYellow" value="노랑" onclick="m7(this);" data-color="yellow">
+            <input type="button" name="btnBlue" value="파랑" onclick="m7(this);" data-color="blue">
+        </div>
+        <div class="item">7.m(evt) + data-color
+            <input type="button" name="btnRed" value="빨강" onclick="m8();" data-color="red">
+            <input type="button" name="btnYellow" value="노랑" onclick="m8();" data-color="yellow">
+            <input type="button" name="btnBlue" value="파랑" onclick="m8();" data-color="blue">
+        </div>
+        <div class="item">8. 동적 m(evt) + data-color
+            <input type="button" name="btnRed3" value="빨강" data-color="red">
+            <input type="button" name="btnYellow3" value="노랑" data-color="yellow">
+            <input type="button" name="btnBlue3" value="파랑" data-color="blue">
+        </div>
+        <div class="item">9. 배열 + data-color
+            <input type="button" name="btn" value="빨강" data-color="red">
+            <input type="button" name="btn" value="노랑" data-color="yellow">
+            <input type="button" name="btn" value="파랑" data-color="blue">
+        </div>
+        <div class="item">10
+            <input type="button" name="btn2" value="빨강" data-color="red">
+            <input type="button" name="btn2" value="노랑" data-color="yellow">
+            <input type="button" name="btn2" value="파랑" data-color="blue">
+        </div>
+        <div class="cat">
+            <img src="images/catty01.png" name="cat">
+            <img src="images/catty02.png" name="cat">
+            <img src="images/catty03.png" name="cat">
+            <img src="images/catty04.png" name="cat">
+            <img src="images/catty05.png" name="cat">
+            <img src="images/catty01.png" name="cat">
+            <img src="images/catty02.png" name="cat">
+            <img src="images/catty03.png" name="cat">
+            <img src="images/catty04.png" name="cat">
+            <img src="images/catty05.png" name="cat">
+            <img src="images/catty01.png" name="cat">
+            <img src="images/catty02.png" name="cat">
+            <img src="images/catty03.png" name="cat">
+            <img src="images/catty04.png" name="cat">
+            <img src="images/catty05.png" name="cat">
+            <img src="images/catty01.png" name="cat">
+            <img src="images/catty02.png" name="cat">
+            <img src="images/catty03.png" name="cat">
+            <img src="images/catty04.png" name="cat">
+            <img src="images/catty05.png" name="cat">
+            <img src="images/catty01.png" name="cat">
+            <img src="images/catty02.png" name="cat">
+            <img src="images/catty03.png" name="cat">
+            <img src="images/catty04.png" name="cat">
+            <img src="images/catty05.png" name="cat">
+        </div>
+    </form>
+
+
+    <script>
+        // 2. 동적으로 이벤트 등록
+            document.form1.btnRed2.onclick = m1;
+            document.form1.btnYellow2.onclick = m2;
+            document.form1.btnBlue2.onclick = m3;
+
+        function m1() {
+            document.body.bgColor = 'red';
+        }
+        function m2() {
+            document.body.bgColor = 'yellow';
+        }
+        function m3() {
+            document.body.bgColor = 'blue';
+        }
+
+        //1. 정적
+        function m4(color) {
+            document.body.bgColor = color;
+        }
+      
+        function m5(btn) {
+            //alert(btn.name);
+
+            var color;
+            
+            if (btn.name == 'btnRed') {
+                color = 'red';
+            } else if (btn.name =='btnYellow'){
+                color = 'yellow';
+            } else if (btn.name == 'btnBlue'){
+                color = 'blue';
+            }
+
+            document.body.bgColor = color;
+        }
+
+
+        function m6(btn) { //불안한 방법 > 요구사항을 어기면서 구현 > 시도도 하면 안됌!
+            //document.body.bgColor = btn.name.substr(3);
+            document.body.bgColor = btn.value; 
+        }
+
+        function m7(btn) { //권장!!
+            document.body.bgColor = btn.dataset['color'];
+        }
+
+        function m8(evt) { //this를 매개변수로 하는 것보다 좋음! > 동적인 경우에도 사용가능
+            //event 객체
+            //1. event   > 비표준
+            //2. 매개변수 > 표준
+            
+            // 이벤트를 발생시킨 객체 참조 > m11(this)
+            //srcElement > 비표준
+            // alert(event.srcElement);  >정적일때는 안됌
+            alert(event.target);
+
+            document.body.bgColor = event.target.dataset['color'];
+        }
+
+        //2. 동적
+        document.form1.btnRed3.onclick = m9;
+        document.form1.btnYellow3.onclick = m9;
+        document.form1.btnBlue3.onclick = m9;
+
+        function m9() {
+            document.body.bgColor = event.target.dataset['color'];
+        }
+        
+        
+        //태그 name이 동일한 객체가 2개 이상이면 > 배열
+        for(var i=0; i<document.form1.btn.length; i++){
+            document.form1.btn[i].onclick = m10;
+        }
+        function m10() {
+            document.body.bgColor = event.target.dataset['color'];
+        }
+
+        for(var i=0; i<document.form1.btn2.length; i++){
+            document.form1.btn2[i].onmouseover = m15;
+            document.form1.btn2[i].onmouseout = m15;
+            document.form1.btn2[i].onclick = m15;
+        }
+
+        // vs 하나의 이벤트 + 수많은 태그
+        // 수많은 이벤트 + 수많은 태그
+        function m15() { 
+            // 수많은 태그 > 어떤 태그? > event.target
+            // 수많은 이벤트 > 어떤 이벤트? > event.type
+            // >> 권하는 방법은 아님!! > 볼륨이 커지면 함수를 따로 만드는게 나음
+
+            if(event.type == 'mouseover'){
+                document.body.bgColor = event.target.dataset['color'];
+            } else if(event.type =='click') {
+                document.body.bgColor = 'black';
+           } else if (event.type== 'mouseout') {
+                document.body.bgColor = 'white';
+            }
+        }
+
+
+
+
+        for (var i=0; i<document.images.length; i++){
+            if(document.images[i].name == 'cat') {
+                document.images[i].onclick = m11;
+            }
+        }
+
+        function m11() {
+            //alert(event.target.src);
+            if(event.target.width == 128){
+                event.target.width = 300;
+            } else {
+                event.target.width = 128;
+            }
+        }
+
+
+// 참고
+        document.all.btn1.onclick =m21;
+        function m21(evt){
+            alert(evt.target);
+            alert(evt.srcElement);
+        }
+        function m22(evt){
+            // alert(evt.target);
+            // alert(evt.srcElement);
+            alert(event.target);
+            alert(event.srcElement);
+        }
+    </script>
+    <input type="text" value="버튼" name="btn1">
+    <input type="text" value="버튼" name="btn2" onclick="m2();">
+</body>
+</html>
