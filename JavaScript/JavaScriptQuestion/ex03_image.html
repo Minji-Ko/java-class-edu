@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <h1>고양이</h1>
+        <img src="../javascript/images/catty01.png" name="cat">
+        <img src="../javascript/images/catty02.png" name="cat">
+        <img src="../javascript/images/catty03.png" name="cat">
+        <img src="../javascript/images/catty04.png" name="cat">
+        <img src="../javascript/images/catty05.png" name="cat">
+    </form>
+
+    <script>
+        
+        for(var i=0; i<cat.length; i++){
+            window.document.form1.cat[i].onmouseover = expand;
+            window.document.form1.cat[i].onclick = origin;
+            window.onkeydown = originall;
+        }
+
+        function expand(evt) {
+            evt.target.width += 10;
+            // evt.target.height += 10;  //자동조절!!
+        }
+        function origin(evt){
+            evt.target.width = 130;
+            // evt.target.height = 130;
+        }
+        function originall(evt){
+
+            if(evt.keyCode == 27){
+                for(var i=0; i<cat.length; i++){
+                    window.document.form1.cat[i].width = 130;
+                }   
+            } else if(49 <= evt.keyCode  && evt.keyCode <= 53){
+                var n = evt.keyCode-49;
+                window.document.form1.cat[n].width += 10;
+            } else if(97 <= evt.keyCode  && evt.keyCode <= 101){
+                var n = evt.keyCode-97;
+                window.document.form1.cat[n].width += 10;
+        
+            }
+        }
+
+    </script>
+</body>
+</html>

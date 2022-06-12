@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            width: 600px;
+            margin: 20px;
+            text-align: center;
+        }
+        #clock {
+            border: 1px solid #888;
+            font-size: 100px;
+            font-weight: bold;
+            letter-spacing: -15px;
+        }
+        #clock > input {
+            border: 0px;
+            font-size: 100px;
+            font-weight: bold;
+            width: 120px;
+            height: 120px;
+            text-align: center;
+        }
+        #main > input {
+            background-color: white;
+            margin-top: 20px;
+            width: 150px;
+            border: 1px solid #999;
+            text-align: center;
+            padding: 10px 30px;
+        }  
+        #main > input:disabled {
+            background-color: #eee;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1" id="main">
+        <div id="clock">
+            <input type="text" size="2" value='00' name="clock" readonly> :
+            <input type="text" size="2" value='00' name="clock" readonly> :
+            <input type="text" size="2" value='00' name="clock" readonly>
+        </div>
+        <input type="button" value="시작" name="start">
+        <input type="button" value="멈춤" name="stop" disabled>
+        <input type="button" value="종료" name="end" disabled>
+    </form>
+
+    <script>
+        var clock1 = document.form1.clock[0];
+        var clock2 = document.form1.clock[1];
+        var clock3 = document.form1.clock[2];
+
+        var start = document.form1.start;
+        var stop = document.form1.stop;
+        var end = document.form1.end;
+
+        var timer = 0;
+        var n = 0;
+        start.onclick = function() {
+            if(timer == 0){
+                stop.disabled = false;
+                end.disabled = false;
+                start.disable = true;
+                timer = setInterval(function() {
+                    n++;
+                    var min = parseInt(n/60/100);
+                    var sec = parseInt(n/100 % 60);
+                    var ms = n%100;
+                    console.log(min);
+                    console.log(sec);
+                    console.log(ms);
+                    clock1.value = trans(min);
+                    clock2.value = trans(sec);
+                    clock3.value = trans(ms);
+
+                }, 10)                
+            }
+        }
+
+        function trans(num) {
+            if(num < 10) { return '0'+ num; }
+
+            return num;
+        }
+
+        stop.onclick = function() {
+            clearInterval(timer);            
+            timer = 0;
+            stop.disabled = true;
+            start.disable = false;
+        }
+
+        end.onclick = function() {
+            clearInterval(timer);            
+            timer = 0;
+            n = 0;
+
+            clock1.value = '00';
+            clock2.value = '00';
+            clock3.value = '00';
+            
+            stop.disabled = true;
+            end.disabled = true;
+            start.disable = false;
+        }
+        
+
+
+
+    </script>
+</body>
+</html>

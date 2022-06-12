@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            margin: 0 auto;
+        }
+        form > div {
+            text-align: center;
+        }
+        form > div > img {
+            border: 5px solid #ddd;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+        form > div > label {
+            border: 5px solid #808080; 
+            background-color: gainsboro;
+            margin: 5px;
+            margin-top: 20px;
+            width: 165px;
+            display: inline-block;
+        }
+        form > div input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pattern Lock</h1>
+    <form name="form1">
+        <div>
+            <img src="../javascript/images/rect_icon01.png" data-no="1">
+            <img src="../javascript/images/rect_icon02.png" data-no="2">
+            <img src="../javascript/images/rect_icon03.png" data-no="3">
+        </div>
+        <div>
+            <img src="../javascript/images/rect_icon04.png" data-no="4">
+            <img src="../javascript/images/rect_icon05.png" data-no="5">
+            <img src="../javascript/images/rect_icon06.png" data-no="6">
+        </div>
+        <div>
+            <img src="../javascript/images/rect_icon07.png" data-no="7">
+            <img src="../javascript/images/rect_icon08.png" data-no="8">
+            <img src="../javascript/images/rect_icon09.png" data-no="9">
+        </div>
+        <div>
+            <label><input type="checkbox" name="btn1">RESET</label>
+            <label><input type="checkbox" name="btn2">INPUT</label>
+        </div>
+    </form>
+
+    <script>
+        var img = document.images;
+        
+        for (var i=0; i<img.length; i++){
+            img[i].onmouseover = pattern;
+        }
+        
+        var patterns = '';
+
+        function pattern(evt) {
+            var index = evt.target.dataset['no'];
+            img[index-1].src = "../javascript/images/rect_icon10.png";
+
+            for(var i=0; i<patterns.length; i++){
+               if(patterns.includes(index)){
+                   return;
+               } 
+            }
+            patterns += index;
+        }
+
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+
+        btn1.onclick = reset;
+        btn2.onclick = input;
+
+        function reset(){
+            for(var i=0; i<img.length; i++){
+                img[i].src = '../javascript/images/rect_icon0'+(i+1)+'.png';
+            }
+            patterns = '';
+        }
+        function input(){
+            if(patterns == '14789'){
+                window.location.href='https://google.com';
+            } else {
+                alert('Error!!');
+                patterns = '';
+                reset();
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #count {
+            border: 1px solid #ddd;
+            width: 600px;
+            text-align: center;
+        }
+        #count > div {
+            overflow: hidden;
+            width: 586px;
+            margin: 5px auto;
+            padding: 0;
+            text-align: left;
+        }
+        #count input {
+            border: 1px solid #999;
+            border-radius: 1px;
+        }
+        #count textarea {
+            outline: none;
+            width: 580px;
+            height: 300px;
+            display: block;
+        }
+        #count input[type=button]{
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 5px;
+            background-color: #eee;
+            text-align: left;
+            padding: 10px;
+        }
+        hr {
+            width: 580px;
+            border: 0;
+            border-top: 1px solid #999;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="form1" id="count">
+        <div>
+            <textarea name="txt1"></textarea>
+            <hr>
+            <textarea name="txt2">
+네, 낮동안에도 찬바람이 강하게 불고있습니다.
+때문에 체감상 느껴지는 온도는 현재기온보다 2~3도가량 낮게 나타나고 있는데요.
+남부해안지역과 제주도를 중심으로는 강풍주의보도 이어지고 있기 때문에 시설물 피해 없도록 주의하셔야겠습니다.
+쌀쌀했던 어제보다도 기온이 더 오르지 못하고있습니다.
+현재기온 서울 7.3도, 대전 9.3도, 부산 6.8도로 이맘때 평년수준을 밑돌고있고요. 
+찬바람이 더해지면서 체감상 느껴지는 날씨는 더 쌀쌀합니다.
+꽃샘추위는 내일 절정을 보이겠습니다. 
+            </textarea>
+            <input type="button" value="시작" name="start">
+            <input type="button" value="정지" name="stop">
+        </div>
+    </form>
+
+    <script>
+        var txt1 = document.form1.elements[0];
+        var txt2 = document.form1.elements[1];
+        var start = document.form1.elements[2];
+        var stop = document.form1.elements[3];
+        
+        var n = -1;
+        var timer = 0;
+        
+        start.onclick = m1;
+        
+        function m1() {
+            if(timer == 0)
+            timer = setInterval(f1, 20);
+        }
+        function f1() {
+            n++;
+            txt1.value += txt2.value.substr(n, 1);
+            if(n==txt2.value.length){
+                f2();
+            }
+        }
+
+        stop.onclick =  f2;
+        function f2() {
+            clearInterval(timer);
+            timer = 0;
+        }
+        
+
+
+
+        </script>
+
+</body>
+</html>

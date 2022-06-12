@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+        table th, table td {
+            border: 1px solid #999;
+            padding: 5px;
+        }
+        table th {
+            width: 100px;
+            background-color: #EEE;
+        }
+        table input {
+            outline: none;
+        }
+        table tr:nth-child(1) input{
+           width: 60px;
+        }
+        table tr:nth-child(2) input{
+           width: 30px;
+           margin-right: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h1>회원 가입</h1>
+        <table id="tbl1">
+            <tr>
+                <th>주민번호</th>
+                <td>
+                    <input type="text" name="ssn1"> - <input type="text" name="ssn2">
+                </td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td>
+                    <input type="text" name="year">년
+                    <input type="text" name="month">월
+                    <input type="text" name="date">일
+                </td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td>
+                    <label><input type="radio" name="gender" id="man">남자</label>
+                    <label><input type="radio" name="gender" id="woman">여자</label>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        var input = document.form1.elements;
+        var ssn1 = document.form1.ssn1;
+        var ssn2 = document.form1.ssn2;
+        var year = document.form1.year;
+        var month = document.form1.month;
+        var date = document.form1.date;
+        var gender = document.form1.gender;
+
+        ssn1.onkeyup = birth;
+        ssn2.onkeyup = gen;
+
+        function birth(){
+            var value = ssn1.value;
+
+            if(value.length == 6){
+                year.value = '19' + value.substr(0,2);
+                month.value = value.substr(2,2);
+                date.value = value.substr(4,2);
+                ssn2.focus();
+            }
+        }
+        function gen(){
+            if(ssn2.value.length == 1){
+                
+                if(parseInt(ssn2.value) % 2 == 0 ){
+                    gender[1].checked = true;
+                } else {
+                    gender[0].checked = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

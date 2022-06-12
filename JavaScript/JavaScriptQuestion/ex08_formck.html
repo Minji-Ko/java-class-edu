@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form > input {
+            display: block;
+            margin: 20px; 
+            background-color:#EEE; 
+            border: 1px solid #555; 
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <input type="button" value="서울시 강남구 역삼동" data-num="06232">
+        <input type="button" value="서울시 강남구 대치동" data-num="06274">
+        <input type="button" value="서울시 강남구 도곡동" data-num="06873">
+    </form>
+
+    <script>
+        var btn = document.form1.elements;
+
+        for(var i=0; i<btn.length; i++){
+            btn[i].onclick=address;
+        }
+
+        function address(evt) {
+
+            opener.document.form1.num.value = evt.target.dataset['num'];
+            opener.document.form1.address.value = evt.target.value;
+            opener.document.form1.detail.focus();
+            window.close();
+        }
+    </script>
+</body>
+</html>

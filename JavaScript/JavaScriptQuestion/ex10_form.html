@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            border: 1px solid #999;
+            width: 520px;
+            height: 400px;
+            overflow: hidden;
+        }
+        form h1 {
+            font-size: 20px;
+            margin: 20px;
+            letter-spacing: -1px;
+        }
+        form > div {
+            border-right : 1px solid #999;
+            display: inline-block;
+            width: 180px;
+            text-align: center;
+            height: 400px;
+            float: left;
+        }
+        form #select {
+            padding-top: 70px;
+            width: 150px;
+        }
+        form #select input {
+            display: block;
+            width: 120px;
+            padding: 5px;
+            margin: 14px;
+
+        }
+        form div:last-child{
+            border: 0px solid;
+        }
+        form select {
+            width: 130px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <div>
+            <h1>차단된 친구</h1>
+            <select name="sel1" id="" size="12">
+                <option value="">권예진</option>
+                <option value="">권준혁</option>
+                <option value="">김동식</option>
+                <option value="">김세진</option>
+                <option value="">김여정</option>
+                <option value="">노형준</option>
+                <option value="">박민선</option>
+                <option value="">백강현</option>
+                <option value="">변기현</option>
+            </select>
+        </div>
+        <div id="select">
+           <input type="button" value="Add ▷" name="add" onclick="add();"> 
+           <input type="button" value="◁ Remove" name="remove" onclick="remove();"> 
+           <input type="button" value="Add All ▷▷" name="addA"  onclick="add();"> 
+           <input type="button" value="◁◁ Remove All" name="removeA" onclick="remove();"> 
+        </div>
+        <div>
+            <h1>허용된 친구</h1>
+            <select name="sel2" id="" size="12" >
+            </select>
+        </div>
+    </form>
+
+    <script>
+        var add =document.form1.add;
+        var rmv =document.form1.remove;
+        var addA =document.form1.addA;
+        var rmvA =document.form1.removeA;
+
+        function add(evt){
+            if(evt.target.name == 'add') {
+                var index = document.form1.sel1.selectedIndex;
+                
+                var op = new option();
+                op.text = sel1[index].text;
+                sel2.options.add(op);
+                
+                sel1.remove(index);
+            } else {
+                for()
+            }
+
+            
+        }
+        function remove(evt){
+
+        }
+
+
+    </script>
+</body>
+</html>

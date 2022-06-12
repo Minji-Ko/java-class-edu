@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 200px;
+            margin: 20px auto;
+            color: #777;
+        }
+        form > div {
+            margin-bottom: 15px;
+        }
+        form > div > input {
+            outline: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[name=result]{
+            border: 0px solid transparent;
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h1>회원 가입</h1>
+        <div>
+            아이디: <input type="text" name="input" autocomplete="off">
+            <input type="text" name="result">
+        </div>
+    </form>
+    <script>
+        var input = document.form1.input;
+        var result = document.form1.result;
+        
+        input.onkeyup = m1;
+        
+        function m1() {
+            
+            if (input.value.length==0) {
+                result.value = "";
+            } else if (input.value.length < 4){
+                result.value = '아이디가 너무 짧습니다.';
+            } else if(input.value.length  > 12){
+                result.value = '아이디가 너무 깁니다.';
+            } else {
+                result.value = '아이디가 적합합니다.';
+            } 
+        }
+    </script>
+</body>
+</html>

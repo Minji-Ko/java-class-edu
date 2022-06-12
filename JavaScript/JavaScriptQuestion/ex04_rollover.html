@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <img src="../javascript/images/cat01.jpg" name="cat1" data-order="1">
+        <img src="../javascript/images/cat02.jpg" name="cat2" data-order="2">
+        <img src="../javascript/images/cat03.jpg" name="cat3" data-order="3">
+        <img src="../javascript/images/cat04.jpg" name="cat4" data-order="4">
+        <img src="../javascript/images/cat05.jpg" name="cat5" data-order="5">
+    </form>
+
+    <script>
+
+        for(var i=0; i<document.images.length; i++){
+            document.images[i].onmouseover = change;
+            document.images[i].onmouseout = unchange;
+        }
+
+        var src;
+        function change(evt){
+            src = evt.target.src;
+            evt.target.src="../javascript/images/dog0"+ evt.target.dataset['order'] +".jpg"
+        }
+
+        function unchange(evt){
+            evt.target.src = src;
+        }
+
+    </script>
+
+</body>
+</html>

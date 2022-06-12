@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 615px;
+            border: 1px solid #999;
+            padding: 5px;
+            text-align: center;
+        }
+        img { 
+            width: 200px;
+        }
+        input{
+            border: 1px solid transparent;
+            outline: none;
+        }
+    </style>
+</head>
+<body oncontextmenu='return false'  ondragstart='return false' onselectstart='return false'>
+    <!--  
+        oncontextmenu : 우클릭방지
+        ondragstart : 사진딸려나옴 방지
+        onselectstart : 텍스트 드래그 방지
+    -->
+    <form name="form1">
+        <div>
+            <img src="../javascript/images/img01.jpg" name="img1" value="스키">
+            <img src="../javascript/images/img02.jpg" name="img2" value="당근">
+            <img src="../javascript/images/img03.jpg" name="img3" value="나무">
+        </div>
+        <input type="text" name="txt" style="width:600px;">
+    </form>
+
+    <script>
+
+        var txt = document.form1.txt;
+
+        for(var i=0; i<document.images.length; i++){
+            document.images[i].onmouseover = m1;
+            document.images[i].onmouseout = m2;
+        }
+
+        function m1(evt) {
+            var src = evt.target.src;
+            var index = src.lastIndexOf('.');
+            var num = src.substr(index-1, 1);
+            evt.target.src = '../javascript/images/img0'+ (parseInt(num)+3)+'.jpg';
+            if(num == '1'){
+                txt.value = '\'스키\'타는 사람이 \'당근\'으로 변했습니다.'
+            } else if (num == '2') {
+                txt.value = '\'해바라기\'가 \'피망\'으로 변했습니다.'
+            } else if (num == '3') {
+                txt.value = '\'나무\'가 \'개\'가 됐습니다.'
+            }
+        }
+
+        function m2(evt){
+            var src = evt.target.src;
+            var index = src.lastIndexOf('.');
+            var num = src.substr(index-1, 1);
+            evt.target.src = '../javascript/images/img0'+ (parseInt(num)-3)+'.jpg';
+            txt.value = '';
+        }
+    </script>
+</body>
+</html>
