@@ -31,8 +31,8 @@
                 - 면접답변) JavaScript에는 클래스는 없지만 ES6의 문법이 클래스처럼 흉내를 냄
 
             사용자 정의 객체를 만드는 방법
-            1. Object 클래스 사용
-            2. {} > 객체 리터럴 표기법 사용
+            1. Object 클래스 사용           > 세심하게 표현할 때 사용
+            2. {} > 객체 리터럴 표기법 사용  > 간단하게 표현할 때 사용
 
             class User {
                 public String name;
@@ -79,7 +79,66 @@
         console.log(lee.address);   //undefined > ???! > 오타
 
 
+        // const park = new Object();
+        // const park = { name: '박세리', age: 20, address: '서울시 강남구'}; //객체 리터럴
+        const park = { 
+            name: '박세리',
+            age: 20,
+            address: '서울시 강남구'
+        }; //객체 리터럴
 
+        console.log(park);
+        
+        const you = {
+            name: '유재석',
+            age: 30
+        };                      //초기화할 때 사용가능
+
+        you.address = '서울시';  //나중에 추가/삭제 가능
+        
+        console.log(you);
+
+
+        console.clear();
+
+
+        // const jung = {
+        //     name: '정형돈',
+        //     age : 30,
+        //     address: '서울시 강동구 천호동'
+        // };
+
+        // const jung = {
+        //     name: '정형돈',
+        //     age : 30,
+        //     sido: '서울시',
+        //     gugun: '강동구',
+        //     dong: '천호동'
+        // };
+
+        const jung = {
+            name: '정형돈',
+            age : 30,
+            address: {
+                sido: '서울시',
+                gugun: '강동구',
+                dong: '천호동'
+            }
+        };
+        console.log(jung);
+        console.log(jung.address);
+        console.log(jung.address.sido);
+
+        const yang = {
+            name: '양세찬',
+            age: 25,
+            //객체 메소드는 반드시 본인의 특성(프로퍼티)을 이용한다!
+            hello: function() {
+                console.log('안녕하세요.' + this.name + '입니다.'); //반드시 this 이용!!!
+            } //이런건 실명함수로 만들면 불안함
+        };
+        console.log(yang.name); //프로퍼티
+        yang.hello(); //프로퍼티 > 함수, 메소드
 
     </script>
 </body>
