@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            객체, Object 
+            - JavaScript에는 클래스가 없다. 하지만 내장 객체를 제공한다.
+
+            1. 내장 객체
+                - Array, Date, Math, Object
+                - new Array()
+                - new Date()
+                - Math.메소드()
+            
+            2. BOM 객체
+                - window, document form, text, button 등..
+                - BOM 트리 구성 요소들..
+        
+            3. DOM 객체
+                - element, attribute, text, comment 등..
+            
+            4. 사용자 정의 객체
+                - JavaScipt에는 클래스가 없다. > 원하는 객체 생성 불가능 > 원하는 형태(구조)의 객체를 만들 수 있다.
+                - ES6에서 클래스 문법이 만들어짐 > 진짜 class가 아니라 class처럼 보이는 요소를 도입
+                - 면접답변) JavaScript에는 클래스는 없지만 ES6의 문법이 클래스처럼 흉내를 냄
+
+            사용자 정의 객체를 만드는 방법
+            1. Object 클래스 사용
+            2. {} > 객체 리터럴 표기법 사용
+
+            class User {
+                public String name;
+                public int age;
+                public String address;
+            }
+            User hong = new User();
+
+            hong.name = "홍길동";
+            hong.age = 20;
+            hong.address = "서울시 강남구";
+
+            hong = new User(); //새로운 객체 생성
+        */
+       //참조변수는 let, const아무거나 만들어도 되지만 const가 많음  > 객체의 멤버가 아닌 객체 자체를 변경할 일이 거의 없음
+        // let hong = new Object();
+        const hong = new Object();
+
+        //Java의 HashMap같은 성질
+        //JavaScript의 객체는 프로퍼티(Property)를 자유롭게 생성할 수 있다.
+        hong.name = '홍길동'; //hong 객체에 name 프로퍼티를 정의(추가)
+        hong.age = 20;
+
+        hong.address = '서울시 강남구';        //작성이 편하고, 가독성 높음
+        hong['address'] = '서울시 동대문구'; //hong.address와 같은 표기 > 작성이 조금 불편하고, 조작성 높음
+
+        // hong.home-tel = '010-1346-1234'
+        hong['home-tel'] = '010-1346-1234' //이런 식별자 비권장!
+
+        // console.log(hong.name);
+        console.log(hong);
+
+
+        const lee = new Object();
+
+        lee.name = '이순신';
+        lee.age = 25;
+        lee.adress = '서울시 강서구';
+        console.log(lee);
+
+
+        // 주소 수집
+        console.log(hong.address); //서울시 동대문구
+        console.log(lee.address);   //undefined > ???! > 오타
+
+
+
+
+    </script>
+</body>
+</html>

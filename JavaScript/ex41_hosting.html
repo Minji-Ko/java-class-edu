@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //호이스팅, Hoisting
+        // - 변수 호이스팅, 함수 호이스팅
+        // - 코드를 실행하기 직전에, 변수 선언문과 함수 선언문을 해당 스코프의 최상단으로 끌어올린다. > 코드 재배치
+
+        //m1(); //호출
+
+        function m1() { //선언
+            alert();
+        }
+
+
+        //alert(n1); //undefined
+        
+        var n1 = 10;  //선언문만 호이스팅, 초기값은 x
+
+
+
+        function m2() {
+            // alert(n2);
+            // var n2 = 20;  //호이스팅 때문에 에러x
+
+            alert(n3);  //호이스팅은 일어나지만 let변수는 초기화전 접근불가 > Cannot access 'n3' before initialization at m2
+            let n3 = 30;  //**에러메시지의 라인은 플러그인 등 코드추가로 올바르지 않을 수 있음. > 정확한 라인은 클릭해서 확인!
+        }
+
+        m2();
+
+
+
+    </script>`
+
+</body>
+</html>
