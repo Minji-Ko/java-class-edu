@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px; height: 150px;
+            position: absolute; left: 0; top: 0;    
+            cursor: default;    
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box"></div>
+
+    <script>
+        const box = document.getElementById('box');
+        let isDown = false;
+
+        let x = 0;
+        let y = 0;
+        
+        // Drag & Drop > 개체 이동 인터페이스
+        // box.onmousedown = function(event){
+        //     isDown = true;
+        // }
+        window.onmousedown = function(event){
+            if(event.target.id == 'box') {
+                isDown = true;
+                x = event.offsetX;
+                y = event.offsetY;
+            }
+        }
+        
+        
+        // box.onmousemove = function(event){
+            window.onmousemove = function(event){
+                if(isDown) {
+                    box.style.left = event.clientX - x + 'px';
+                    box.style.top = event.clientY - y + 'px';
+                }
+            }
+            box.onmouseup = function(event){
+                isDown = false;
+        }
+
+    </script>
+</body>
+</html>
