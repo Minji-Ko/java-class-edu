@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            /* border: 1px solid black; */
+            display: flex;
+            width: 630px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            margin: 0 auto;
+
+            transform: translate(0px, -100px);
+        }
+        main {
+            width: 800px;
+            margin: 100px auto;
+            /* float: */
+        }
+        #menu img {
+            transition: .5s all;
+        }
+    </style>
+    <script>
+        //<body onload="">
+            //-<body> 태그가 브라우저에 의해서 실행되고 난 직후
+        function init(){
+            const item = document.getElementById('menu').children;
+            alert(item);
+        }
+        
+        // window.onload = function(){}
+        // window.document.onload = function(){}
+        // window.document.body.onload = function(){}
+        
+        let olditem;
+
+        window.onload = function(){
+            const item = document.getElementById('menu').children;
+
+            for (let i=0; i<item.length; i++){
+                item[i].onclick = function(event){
+
+                    if(olditem != null) {
+                        olditem.style.transform = 'translate(0px, 0px)';
+                    }
+                    if (event.target != olditem){
+                        event.target.style.transform = 'translate(0px, 90px)';
+                        olditem = event.target;
+                    } else {
+                        olditem = null;
+                   }
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body><!-- onload="init()" -->
+    <nav id="menu">
+        <img src="images/rect_icon01.png" alt="">
+        <img src="images/rect_icon02.png" alt="">
+        <img src="images/rect_icon03.png" alt="">
+        <img src="images/rect_icon04.png" alt="">
+        <img src="images/rect_icon05.png" alt="">
+    </nav>
+
+    <main>
+        <h1>Title</h1>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis optio sequi necessitatibus facilis quis natus. Excepturi unde illum esse praesentium aspernatur, amet explicabo eveniet voluptate omnis voluptas recusandae eos nihil?
+        </p>
+        <p>
+            Repudiandae tempora exercitationem rerum nobis dolor voluptatibus architecto. Qui sit quisquam assumenda magnam odio obcaecati amet fugit minima, laborum reiciendis reprehenderit dolorum quae voluptatibus aut culpa eveniet praesentium, rem cupiditate?
+        </p>
+        <p>
+            At odio molestias totam iste deleniti laborum qui mollitia laudantium ex quis, numquam inventore sapiente dolorem veritatis, dolore consequatur natus provident sint eius quibusdam ratione repellendus impedit aliquid? Tempore, nemo.
+        </p>
+        <p>
+            Reprehenderit non magnam dolore aliquam nostrum nesciunt eaque rem! At voluptatibus consectetur dolores vero, corrupti a tempora autem quas placeat facilis, tenetur nesciunt nulla quo blanditiis iusto fugiat explicabo accusantium?
+        </p>
+        <p>
+            Porro illum eaque, natus quia vitae, perspiciatis cum soluta accusantium accusamus facilis fugiat deleniti ut facere excepturi. Quidem sit earum consequuntur quo eius laborum tenetur ipsa quam, illum animi fugit?
+        </p>
+        <p>
+            Sunt, magnam consequatur suscipit fugit nesciunt molestiae quaerat libero esse maxime at fuga, iste enim? Dignissimos beatae animi, quisquam eum illo voluptatibus expedita nostrum accusamus excepturi quo quidem, eaque ratione!
+        </p>
+        <p>
+            Laudantium, cum officiis mollitia laborum itaque, perferendis atque earum ipsum error illum voluptates? Laudantium qui illum quibusdam deleniti architecto nesciunt animi voluptas natus! Veniam dignissimos at, velit nesciunt veritatis explicabo.
+        </p>
+        <p>
+            Quia illum ea dolorem vitae eligendi commodi corporis facere laborum, adipisci beatae unde minima excepturi nisi. Necessitatibus nihil quia nulla repudiandae fuga omnis? Repudiandae rerum nulla adipisci illum. Modi, quibusdam!
+        </p>
+        <p>
+            Culpa, quisquam aut corporis soluta temporibus eius. Earum aperiam ullam ad magni, molestiae aut ipsum molestias, sunt sed illo fugit voluptatem. Asperiores praesentium ipsa reiciendis voluptatum nisi cumque! Quos, tempore.
+        </p>
+        <p>
+            Consequuntur deserunt dignissimos quas. Voluptas libero rerum autem hic distinctio expedita veniam dolorum natus doloribus magni quam dolorem odio esse, voluptatibus, aspernatur beatae dicta earum vitae quia. Ducimus, aperiam pariatur.
+        </p>
+    </main>
+    
+</body>
+</html>
