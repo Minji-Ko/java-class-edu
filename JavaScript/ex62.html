@@ -79,19 +79,19 @@
         clist.forEach((item, index) => console.log(item, index));
         
         clist.forEach((item, index, temp) => console.log(item, index, temp));
-
+        
         console.clear();
 
         //map()
         //- 요소를 다른 값으로 변경 후 새로운 배열 반환
         //- 가공 + 변환
-
+        
         console.log(list.map(n => n % 2 == 0 ? '짝수' : '홀수'));
         
         list.map(n => n % 2 == 0 ? '짝수' : '홀수').forEach(str => console.log(str));
 
         clist.map(item => item.length).forEach(len => console.log(len));
-
+        
 
         //20세 + 서울시
         const names = [ '홍길동', '아무개', '호호호' ];
@@ -112,7 +112,7 @@
                 age: 20,
                 address: '서울시'
             }
-
+            
         ];
 
         
@@ -124,15 +124,15 @@
             };
         }).forEach(obj => console.log(obj));
 
-
+        
         //filter()
         //- 요소를 조건에 부합되는 것들만 걸러서 반환
         clist.filter(item => item.length >= 3).forEach(item => console.log(item));
-
+        
         clist.filter(item => item.length >= 3).map(item => item.length).forEach(item => console.log(item));
 
-
-
+        
+        
         //find()
         //- 요소 검색
         let result = clist.find(item => item.startsWith('자'));
@@ -141,10 +141,11 @@
 
 
 
-
-
-
-    </script>
+        clist.forEach((index, item) => console.log(index, item));
+        
+        
+        
+        </script>
 
 </body>
 </html>

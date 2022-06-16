@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.js"></script>
+    <title>Document</title>
+    <style>
+        #tbl td { border: 1px solid black; padding: 5px; width: 100px;}
+    </style>
+</head>
+<body>
+    
+    <table id="tbl">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+
+    <script>
+    //    const tbl = document.getElementById('tbl');
+
+    //    for(let i=0; i<tbl.firstElementChild.children.length; i++){
+    //     const clist = tbl.firstElementChild.children[i].children;
+
+    //     for(let j=0; j<clist.length; j++){
+    //         clist[j].onmouseover = function(event) {
+    //             event.target.bgColor = 'gold';
+    //         }
+    //     }
+    //    }
+
+        //case1
+        $('#tbl td').mouseover(function(event){
+            event.target.bgColor = 'tomato';
+        });
+
+        $('#tbl td').mouseout(function(event){
+            event.target.bgColor = 'transparent';
+        });
+
+        //case2
+        $('#tbl td').mouseover(function(event){
+            event.target.bgColor = 'tomato';
+        }).mouseout(function(event){
+            event.target.bgColor = 'transparent';
+        });
+
+        //case3
+        $('#tbl td').on(function(){
+            mouseover: function(event){
+
+            },
+            mouseout: function(event){
+                
+            }
+        });
+
+    </script>
+</body>
+</html>
