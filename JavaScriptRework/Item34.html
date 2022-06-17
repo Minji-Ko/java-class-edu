@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 1px solid gray;
+            width: 100px; height: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">상자입니다.</div>
+    <input type="button" value="버튼" id="btn">
+
+
+
+    <!-- [Summary] JavaScript로 CSS 적용하기 (2022-06-14 11:36:52) -->
+    <script>
+        const btn = document.getElementById('btn');
+        const box = document.getElementById('box');
+    
+        btn.addEventListener('click', function(){    
+            
+            //1.
+            box.style.color = 'blue';
+            box.style.backgroundColor = 'yellow';
+            box.style.fontSize = '3em';
+            
+
+            //2.
+            box.style['color'] = 'blue';
+            box.style['background-color'] = 'yello';
+
+
+            //*** 주의할점
+            // 프로퍼티로는 inline stylesheet로 정의된 CSS 속성값만 읽음!
+            // alert(box.style.width)  //(x) box.style.width == ''
+        });
+    </script>
+
+
+
+</body>
+</html>

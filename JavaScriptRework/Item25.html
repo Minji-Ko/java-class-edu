@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- [Summary] 전역 이벤트 등록하기 (2022-06-09 09:49:43) -->
+    <!-- 전역이벤트 : 어떤상황에서 행동하든 항상 발생하는 이벤트 -->
+    <script>
+        window.onkeydown = m2;
+
+        function m2(evt) {
+            if (evt.keyCode == 49) {
+                window.location.href = 'https://naver.com';
+            } else if (evt.keyCode == 50) {
+                window.location.href = 'https://google.com';
+            } else if (evt.keyCode == 51) {
+                window.location.href = 'https://daum.net';
+            }
+        } 
+    </script>
+
+</body>
+</html>

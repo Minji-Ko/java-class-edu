@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.js"></script>
+    <title>Document</title>
+    <style>
+        #box {
+           border: 20px solid cornflowerblue;   
+           width: 200px;
+           height: 200px;
+           padding: 30px;
+           margin: 50px;
+           background-color: orange;
+           /* box-sizing: border-box; */
+        }
+    </style>
+</head>
+<body>
+</head>
+<body>
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="box">상자</div>
+    
+
+    <!-- [Summary] jQuery 박스 사이즈 알아내기 (2022-06-16 14:53:56) -->
+    <script>
+
+        //1. CSS속성
+        console.log('width', $('#box').css('width'));   //200px
+        console.log('height', $('#box').css('height'));
+        
+        //2. width/height
+        console.log('width()', $('#box').width());        //200
+        console.log('height()', $('#box').height());
+
+        //3. width/height + padding 
+        console.log('innerWidth()', $('#box').innerWidth());   //260
+        console.log('innerHeight()', $('#box').innerHeight());
+        
+        //4. width/height + padding + border
+        console.log('outerWidth()', $('#box').outerWidth());   //300
+        console.log('outerHeight()', $('#box').outerHeight());
+        
+        //5. width/height + padding + border + margin
+        console.log('outerWidth(true)', $('#box').outerWidth(true));   //400
+        console.log('outerHeight(true)', $('#box').outerHeight(true));
+
+    </script>
+</body>
+</html>

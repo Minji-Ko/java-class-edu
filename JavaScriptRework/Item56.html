@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+</head>
+<body>
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="box">상자</div>
+    <input type="text" id="txt">
+    
+
+    <!-- [Summary] jQuery 속성, 프로퍼티 조작하기(attr, prop) (2022-06-17 00:46:10) -->
+    <!-- 평소에는 attr을 쓰다가 안되는게 있으면 prop써보기~ -->
+    <script>
+
+        $('#btn1').click(function() {
+            
+            //1. HTML 속성을 조작하는 메소드
+            // - obj.attr('prop')           >getter
+            $('#txt').attr('size'); //undefined
+
+            // - obj.attr('prop', value)    >setter
+            $('#txt').attr('size', 50);
+
+
+
+            //2. JavaScript 프로퍼티(속성)을 조작하는 메소드
+            // - obj.prop('prop')           >getter
+            $('#txt').prop('size'); //20
+
+            // - obj.prop('prop', value)    >setter
+            $('#txt').prop('size', 50);
+
+         });
+         
+    </script>
+</body>
+</html>

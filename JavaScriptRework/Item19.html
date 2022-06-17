@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <input type="text" name="txt1" autocomplete="off">
+        <input type="text" name="txt2">
+        <textarea name="txt3"></textarea>
+    </form>
+
+
+    <!-- [Summary] 키 이벤트 등록하기(onkey) (2022-06-09 03:51:20) -->
+    <!-- *** 포커스를 가지는 태그에서만 발생(텍스트박스, 체크박스 등..) -->
+    <script>
+    
+        // 'a' 키를 누르면 > 텍스트박스 'a' 입력
+        // 1. 사용자 > 'a'누른다.
+        //     1. keydown 이벤트 발생
+        //     2. 컨트롤(텍스트 박스)에 값이 입력 (***)
+        //     3. keyup 이벤트 발생
+
+        var txt1 = window.document.form1.txt1;
+        var txt2 = window.document.form1.txt2;
+        var txt3 = window.document.form1.txt3;
+
+
+         // 1. onkeydown 
+         // - 키를 눌렀을 때 발생
+         // - 방금 입력한 문자 필요없는 경우 사용!!!
+        //  - 키보드에 존재하는 모든 키에 반응(***)  > 입력된 문자 구분 불가능
+        txt1.onkeydown = m1;
+        
+        function m1(){
+            console.log(evt.keyCode);
+            txt2.value = txt1.value;
+        }
+
+
+        // 2. onkeyup
+        //  - 키를 뗐을 때 발생
+        //  - 방금 입력한 문자 필요한 경우 사용!!!
+        //  - 순서: keydown -> 텍스트박스에 값 입력 -> keyup
+        txt1.onkeyup = m2;
+        
+        function m2(){
+            txt2.value = txt1.value;
+        }
+
+
+         // 3. onkeypress
+        //  - 키를 눌렀을 때 발생
+        //  - 거의 사용 안함
+        //  - 문자키에만 반응 > 입력된 문자 구분 가능
+        txt1.onkeypress = m3;
+
+        function m3(evt) {    
+            console.log(evt.keyCode);
+        }
+
+    </script>
+       
+</body>
+</html>

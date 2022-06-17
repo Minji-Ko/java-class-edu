@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> #box {width: 200px; height: 200px; border: 1px solid black; background-color: gold;} </style>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div id="box">상자</div>
+
+
+    <!-- [Summary] jQuery 여러 메소드 사용하기(메소드 체이닝), CSS 조작하기 (2022-06-17 00:14:07) -->
+    <script>
+            
+            //1.
+            $('#box')
+                .css('color', 'blue')
+                .css('background-color', 'gold')
+                .css('width', 300)
+                .css('height', 100);
+            
+
+            //2. ***
+            $('#box').css({
+                color: 'blue',
+                'background-color': 'gold',
+                width: 300,
+                height: 100
+            });
+
+            
+            $('#box').css('color'); //inline, embeded, external 상관없이 모두 사용가능
+
+
+            //메소드 체이닝 실행순서: slideUp -> slideDown -> fadeOut -> fadeIn
+            
+            // $('#box')
+            //         .slideUp()
+            //         .slideDown()
+            //         .fadeOut()
+            //         .fadeIn();  
+
+    </script>
+</body>
+</html>

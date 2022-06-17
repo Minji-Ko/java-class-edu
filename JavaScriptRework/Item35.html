@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 1px solid gray;
+            width: 100px; height: 90px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="background-color: plum;">상자입니다.</div>
+    <input type="button" value="버튼" id="btn">
+    
+
+    <!-- [Summary] JavaScript로 현재 적용된 CSS 알아내기 (2022-06-14 12:01:41) -->
+    <script>
+
+        const btn = document.getElementById('btn');
+        const box = document.getElementById('box');
+    
+        btn.addEventListener('click', function(){
+          
+
+            //1. Inline styleSheet만 사용 가능
+            alert(box.style.backgroundColor);  
+            // alert(box.style.width);  //(x)JavaScript는 CSS식별자 파악불가
+
+
+            //2. Inline, Embeded, External 전부 가능
+            const list = window.getComputedStyle(box);
+            alert(list.getPropertyValue('width'));
+            alert(list.getPropertyValue('height'));
+        });
+        
+
+
+           
+      
+    </script>
+
+
+</body>
+</html>

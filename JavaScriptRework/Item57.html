@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> #box{ border: 1px solid black;} </style>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+</head>
+<body>
+    <input type="button" value="add" id="btn1">
+    <input type="button" value="delete" id="btn2">
+    <hr>
+    <div id="box">number</div>
+    
+
+    <!-- [Summary] jQuery 동적으로 태그 추가, 삭제하기 (2022-06-17 01:01:32) -->
+    <script>
+
+        //태그 추가하기
+        $('#btn1').click(function() {
+        
+                //1. html()
+                $('#box').html($('#box').html() + '<img src="../javascript/images/1.png">');
+                
+
+
+                //2-1. 부모.append(자식)
+                $('#box').append(`<img src="../javascript/images/2.png">`);
+                // $('#box').append(`<img src="../javascript/images/2.png">`).css('border', '1px solid pink');
+                
+                //2-2. 자식.appendTo(부모)
+                $(`<img src="../javascript/images/3.png">`).appendTo($('#box'));
+                // $(`<img src="../javascript/images/3.png">`).css('border', '1px solid orange').appendTo($('#box'));
+                
+
+
+                //3-1. 부모.prepend(자식)
+                $('#box').prepend(`<img src="../javascript/images/4.png">`);
+                
+                //3-2. 자식.prependTo(부모)
+                $(`<img src="../javascript/images/5.png">`).prependTo($('#box'));
+
+            });
+            
+
+            //태그 삭제하기
+            $('#btn2').click(function() {
+               
+                $('#box').remove();
+            
+            })
+        
+         
+    </script>
+</body>
+</html>

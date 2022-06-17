@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <textarea name="txt1"></textarea>
+        <input type="button" value="버튼" name="btn1">
+    </form>
+
+
+    <!-- [Summary] 마우스 커서 좌표 사용하기 (2022-06-09 03:36:18) -->
+    <script>
+        var txt1 = window.document.form1.txt1;
+        var btn1 = window.document.form1.btn1;
+        
+        txt1.onmousedown = m1;
+
+
+        function message(txt) {
+            txt1.value = txt + ": " + new Date().toLocaleTimeString() + '\r\n' + txt1.value;
+        }
+
+        function m1(evt) {
+
+            // 1. 마우스 버튼 (1, 2, 1+2, 4 ...)
+            message(evt.buttons); 
+            //message(event.buttons); //비권장!!
+
+
+            // 2. 마우스 커서 좌표
+            // 1) x, y  
+            // - 문서 좌측 상단 기준 > 비권장(비표준)
+            message(evt.x + ',' + evt.y);
+
+            // 2) clientX, clientY     *****
+            // - 문서 좌측 상단을 기준, 절대(= absolute)
+             message(evt.clientX + ',' + evt.clientY);
+
+            // 3) screenX, screenY
+            // - 모니터 좌측 상단을 기준
+            message(evt.screenX + ',' + evt.screenY);
+
+            // 4) offsetX, offsetY  *****
+            // - 이벤트 객체의 좌측 상단을 기준, 상대(= relative)
+            message(evt.offsetX + ',' + evt.offsetY);
+        }
+
+    </script>
+
+</body>
+</html>

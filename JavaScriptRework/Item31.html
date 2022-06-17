@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .box { padding: 50px; }
+        #first { background-color: tomato; }
+        #second { background-color: gold; }
+        #third { background-color: cornflowerblue; }
+    </style>
+</head>
+<body>
+    <div id="first" class="box">
+        <div id="second" class="box">
+            <div id="third" class="box">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- [Summary] 이벤트 중복발생 제거하기 (2022-06-14 10:05:38) -->
+    <!-- 부모 자식간 동일한 이벤트를 추가하는 경우 -->
+    <script>
+        const first = document.getElementById('first');
+        const second = document.getElementById('second');
+        const third = document.getElementById('third');
+
+        first.onclick = function() { alert('빨강'); }
+        second.onclick = function() { 
+            alert('노랑'); 
+            event.cancelBubble = true; //**
+        }
+        third.onclick = function() { alert('파랑'); }  
+    </script>
+</body>
+</html>

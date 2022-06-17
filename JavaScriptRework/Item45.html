@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <input type="button" value="버튼" id="btn">
+
+    
+    <!-- [Summary] jQuery 형변환하기(BOM, DOM) (2022-06-16 10:42:15) -->
+    <script>
+
+            // BOM/DOM → (형변환)  → jQuery
+            jQuery(document.getElementById('btn')).css('color', 'blue');
+            
+            
+            // jQuery  → (형변환)  → BOM/DOM   :꺼내기 
+            jQuery('#btn')[0].value = 'check';   
+
+    </script>
+    
+</body>
+</html>

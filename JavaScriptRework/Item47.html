@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn">
+
+
+    <!-- [Summary] jQuery 이벤트 함수 등록하기 (2022-06-16 11:27:43) -->
+    <script>
+        // jQuery('#btn') == $('#btn')
+       
+
+        //1. 전용 이벤트 함수: 객체.이벤트함수(콜백함수)
+        $('#btn').click(function(){ console.log('버튼1') }); 
+        
+        
+        //2. 범용 이벤트 함수: 객체.on(이벤트명, 콜백함수)
+        $('#btn').on('click', function(){ console.log('버튼2') });
+
+
+
+        //**주의할점
+        // jQuery로 이벤트를 등록하면 그 조작도 jQuery로 하는게 좋다!
+        $('#btn').click(event => { $(this).val('클릭'); });
+
+    </script>
+    
+</body>
+</html>

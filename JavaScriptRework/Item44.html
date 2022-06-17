@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    
+    <!-- [Summary] jQuery 선택자 사용하기 (2022-06-16 10:42:15) -->
+    <script>
+
+            //태그 선택자
+            jQuery('div').css('color', 'green');
+                        
+            //class 선택자
+            jQuery('.box').css('font-size', '2em');
+            
+            // id 선택자
+            jQuery('#box3').css('text-decoration', 'underline');
+
+            //CSS 모든 선택자 지원!!
+            jQuery('div:nth-child(even)').css('font-weight', 'bold');
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- [Summary] 배열 가공하기(map, filter, find) (2022-06-15 15:35:39)-->
+    <script>
+        const list = [ '사과', '포도', '딸기', '수박', '참외', '자두', '자몽', '복숭아', '파인애플' ];
+        
+
+        //map() : 요소를 다른 값으로 변경 후 새로운 배열 반환
+        console.log(list.map(item => item.length));
+
+
+
+        //filter() : 조건에 부합되는 요소들의 배열 반환
+        console.log(list.filter(item => item.length >= 3));
+        
+        list.filter(item => item.length >= 3).forEach(item => console.log(item));
+
+
+
+        //find() : 요소 검색으로 첫번째 만나는 요소 반환
+        let result = list.find(item => item.startsWith('자'));
+        console.log(result);  //자두  //자몽(x)
+
+        let result2 = list.find(item => item.startsWith('바')); 
+        console.log(result2);  //undefined
+        
+    </script>
+
+
+</body>
+</html>

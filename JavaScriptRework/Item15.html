@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <input type="text" name="txt1">
+    </form>
+
+    <!-- [Summary] BOM 태그 접근하기 (2022-06-09 03:13:32) -->
+    <script>
+        // BOM, Browser Object Model 
+        // : HTML 문서 구조를 미리 정해진 트리 구조에 따라 접근하는 모델
+        
+        
+        window.document.form1.txt1.value = 20;
+        
+
+        // 브라우저 창 자체를 접근 >window
+        window
+        // 브라우저 문서접근 > widow.document
+        document
+        // 이미지, 링크, 폼 태그 접근 > name속성
+        form1.txt1
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        아이디: <input type="text" name="txtid">
+        <input type="button" name="btnapply" value="사용">
+        <input type="button" name="btnclose" value="닫기">
+    </form>
+
+
+    <!-- [Summary] 브라우저 창 제어하기(window 자식) (2022-06-09 04:18:06) -->
+    <script>
+        
+        window.document.form1.btnapply.onclick = m3, m4;
+
+        
+        function m3() {
+            //opener = 부모페이지 window 객체
+            opener.document.form1.txtid.value = window.document.form1.txtid.value; 
+
+            window.close();
+        }
+        
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/catty01.png">
+    <img src="images/catty02.png">
+    <img src="images/catty03.png">
+    <img src="images/catty04.png">
+    <img src="images/catty05.png">
+
+    <a href="http://naver.com">네이버</a>
+    <a href="http://google.com">구글</a>
+    <a href="http://daum.net">다음</a>
+    <a name="a1">표지판</a>
+    <a name="a2">표지판</a>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="text">
+        <input type="text">
+        <img>
+    </form>
+    <form>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="radio">
+        <input type="radio">
+    </form>
+
+
+
+    <!-- [Summary] 내장 배열, 컬렉션 사용하기 (2022-06-09 09:55:24) -->
+    <!-- 내장 배열, 컬렉션 : 문서 내용을 기반으로 자동 생성되는 배열 -->
+    <script>
+        //1. 모든 <img>
+        console.log(document.images.length);
+
+
+        //2. 모든 <a href="">
+        console.log(document.links.length);   
+        
+
+        //3. 모든 <a name=""> 
+        console.log(document.anchors.length); 
+        
+
+        //4. 모든 <form>
+        console.log(document.forms.length);
+
+
+        //5. 특정 폼의 모든 입!력! 태그
+        console.log(document.forms[0].elements.length);
+        
+        document.forms[0].txt1.value = '홍길동';
+
+
+        //6. 모든 태그 > 비권장(비표준)
+        console.log(window.document.all.length); 
+
+        for (var i=0; i<document.all.length; i++){
+            //nodeName으로 태그이름 반환
+            console.log(window.document.all[i].nodeName); 
+        }
+    </script>
+
+
+</body>
+</html>

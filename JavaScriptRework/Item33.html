@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        #box {
+            border: 1px solid grey;
+            width: 600px;
+            height: 150px;
+            overflow: hidden;
+        }
+        #box img {
+            float: left;
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body onselectstart="return false;" oncontextmenu="return false;">
+    <div id="box">
+    </div>
+
+        <!-- [Summary] 이벤트 리스너와 이벤트 타겟 구분하기 (2022-06-14 12:00:34)-->
+        <script>
+            const box = document.getElementById('box');
+            
+            box.addEventListener('mousedown', function(event){
+    
+            if (event.buttons == 1) {
+                let num = parseInt(Math.random() * 5) +1
+                let img = document.createElement('img');
+                img.setAttribute('src', `../javascript/images/cat0${num}.jpg`);
+
+                box.appendChild(img);
+                        
+            } else if (event.buttons == 2) {
+                box.removeChild(event.target); //*** event.target != box
+            }
+
+        });
+    
+        </script>
+</body>
+</html>

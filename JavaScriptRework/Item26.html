@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <input type="button" name="btn1" value="뒤로">
+        <input type="button" name="btn2" value="앞으로">
+        <input type="button" name="btn3" value="2단계 뒤로">
+    </form>
+
+
+    <!-- [Summary] 브라우저 탐색기록 제어하기(history) (2022-06-09 09:52:54) -->
+    <script>
+        document.form1.btn1.onclick = m1;
+        document.form1.btn2.onclick = m2;
+        document.form1.btn3.onclick = m3;
+
+
+        function m1() {
+            window.history.back();  //1. 뒤로
+        }
+        function m2() {
+            history.forward();      //2. 앞으로
+        }
+        function m3() {
+            history.go(-2);         //3. 여러단계 이동
+        }
+    </script>
+
+
+</body>
+</html>

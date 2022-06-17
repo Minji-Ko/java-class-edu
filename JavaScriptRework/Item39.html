@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- [Summary] 동일한 객체 생성하기(생성자 함수) (2022-06-15 14:13:52) -->
+    <script>
+
+        //1. 생성자 함수 생성
+        //  - 전역 함수의 this: window 객체 참조
+        //  - 생성자 함수의 this: 방금 생성된 객체 참조
+        function User(name, age) {
+
+            this.name = name;
+            this.age = age;
+            this.hello = function(){
+                console.log('My Name is ' + this.name + '.');
+            }
+        }
+
+
+        //2. 객체 생성: 생성자 함수는 반드시 new 연산자와 같이 사용!!   
+        const user1 = new User('홍길동', 20);
+        const user2 = new User('아무개', 21);  //new == {} == object
+        console.log(typeof user3, user3.constructor.name);
+        console.log(typeof user4, user4.constructor.name);
+
+
+        const now = new Date();
+        console.log(typeof now, now.constructor.name);
+
+
+        const arr = new Array();
+        console.log(typeof arr, arr.constructor.name);
+
+    </script>
+
+
+</body>
+</html>

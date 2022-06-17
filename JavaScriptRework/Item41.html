@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- [Summary] 함수 표현하기 (2022-06-15 15:09:38) -->
+    <script>
+        
+        //1. 함수 선언문
+        function f1() { console.log('f1'); }
+        
+        
+        //2. 함수 표현식(리터럴) == 익명 함수
+        const f2 = function() { console.log('f2'); };
+
+
+        //3. 화살표 함수 == 익명 함수
+        const f3 = () => console.log('f3'); 
+        
+        const f4 = num => console.log(num);
+        const f5 = (a, b) => console.log(a + b);
+        const f6 = () => 200; //return 200;
+      
+        
+        
+        //** 주의할점
+        //1. 함수 선언문의 this는 event.target으로 바꾸어 호출된다.
+        document.addEventListener("click", function () {
+            console.log(this); //document
+        });
+        
+        //2. 화살표 함수의 this는 window객체이다.
+        document.addEventListener("click", () => {
+            console.log(this); //window
+        });
+        
+    </script>
+
+
+</body>
+</html>

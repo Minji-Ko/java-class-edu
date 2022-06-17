@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <textarea name="txt1"></textarea>
+        <input type="button" value="버튼" name="btn1">
+    </form>
+
+
+    <!-- [Summary] 마우스 이벤트 등록하기(onmouse) (2022-06-09 03:28:24) -->
+    <script>
+        var txt1 = window.document.form1.txt1;
+
+        // 1. onmouseover(onmouseenter) : 마우스 커서 진입  
+        txt1.onmouseover = m1;
+        txt1.onmouseenter = m1;
+        
+
+        // 2. onmouseout(onmouseleave) : 마우스 커서 빠져나감
+        txt1.onmouseout = m2;
+        txt1.onmouseleave = m2;
+        
+
+        // 3. onmousedown : 마우스 버튼을 누름 
+        txt1.onmousedown = m3;
+        
+
+        // 4. onmouseup : 마우스 버튼을 뗌
+        txt1.onmouseup = m4;
+        
+
+        // 5. onmousemove
+        txt1.onmousemove = m5;   
+        
+        
+        // 주의할점 ***** 
+        // onclick > 마우스 이벤트(x) > 마우스 좌표접근(x)
+        txt1.onclick = m6;
+
+
+        function message(txt) {
+            txt1.value = txt + ": " + new Date().toLocaleTimeString() + '\r\n' + txt1.value;
+        }
+        function m1() { message('mouseover'); }
+        function m2() { message('mouseout'); }
+        function m3() { message('mousedown'); }
+        function m4() { message('mouseup'); }
+        function m5() { message('mousemove'); }
+        function m6() { alert('click'); }
+    </script>
+
+
+</body>
+</html>

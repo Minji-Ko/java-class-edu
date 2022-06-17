@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> #box {width: 200px; height: 200px; border: 1px solid black; background-color: gold;}</style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <input type="button" value="stop" id="btn4">
+    <hr>
+    <div id="box">box</div>
+
+
+    <!-- [Summary] jQuery 이펙트 함수 효과 사용하기(animate) (2022-06-16 12:47:28) -->
+    <script>
+
+            //1. animate(obj) 
+            $('#btn1').click(function(){
+                
+                // const obj = {};
+                //$('#box').animate(obj);
+
+                $('#box').animate({
+                    width : 'toggle',
+                    height : 'toggle',
+                    'font-size' : 'toggle'
+                });
+                
+            });
+            
+            
+            //2. animate(obj, time) 
+            $('#btn2').click(function(){
+               
+                $('#box').animate({
+                    width: 400
+                }, 3000);
+            
+           });
+
+
+            
+            //3. animate(obj, time, function)
+            $('#btn3').click(function(){
+               
+                $('#box').animate({
+                    
+                    'margin-left': '+=50px' // marginLeft: '+=50px'
+                    
+                }, 3000, function() { //에니메이션이 종료 후 실행
+                    
+                    $('#box').text('box' + n);
+                    n++;
+                    
+                });
+            });
+            
+            let n = 1;
+
+
+            //4. 현재 동작하는 에니메이션 중단
+            $('#btn4').click(function(){
+                $('#box').stop();
+            })
+
+    </script>
+    
+</body>
+</html>

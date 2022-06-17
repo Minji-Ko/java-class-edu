@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <!-- [Summary] jQuery 자식 선택하기 (2022-06-17 01:13:38) -->
+    <script> window.onload = function() {
+      
+      $('#btn').click(function(){
+            
+
+            //1. children()
+            $('#me').children('div').addClass('check');
+            
+                // first(), last()
+                $('#me').children().first().addClass('check');
+                $('#me').children().last().addClass('check');
+            
+                // eq()
+                $('#me').children().eq(0).addClass('check');
+                $('#me').children().eq(-1).addClass('check');
+
+                // find()
+                $('#me').find('span').css('border', '20px solid tomato');
+
+
+
+            //**주의할점
+            // 선택자로 최대한 찾을 수 있는걸 찾고 jquery쓰기!
+            // $('#me').children().children().addClass('check');
+            $('#me > div > div').addClass('check');
+            $('#me > * > *').addClass('check');
+
+        })
+       
+    };</script>
+
+
+
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 15px;
+            margin: 15px;
+        }
+        #me {
+            border-width: 10px;
+        }
+        .check {
+            background-color: gold;
+        }
+    </style>
+     <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <input type="button" value="자식" id="btn">
+    <hr>
+
+    <div>할아버지
+        <div>큰아버지
+            <div>사촌
+            </div>
+        </div>
+        <div>아버지
+            <div>형</div>
+            <div>형</div>
+            <div id="me">나
+                <div>자식</div>
+                <span>추가</span>
+                <div>자식
+                    <div>손자</div>
+                    <span class="one">추가</span>
+                </div>
+                <div class="one">자식</div>
+            </div>
+            <div>동생</div>
+        </div>
+        <div>작은아버지
+            <div>사촌
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>

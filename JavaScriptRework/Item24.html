@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <input type="button" name="btn1" value="버튼">
+    </form>
+
+
+    <!-- [Summary] 현재창의 페이지URL 제어하기(location) (2022-06-09 09:12:53) -->
+    <script>
+        window.document.form1.btn1.onclick = m1;
+
+        function m1() {
+            
+            // 1.페이지 URL 이동
+            window.location.href = 'https://naver.com'; 
+            console.log(window.location.href);           //읽기
+
+
+            // 2. 페이지 정보
+            console.log(window.location.host);      // 127.0.0.1:5500
+            console.log(window.location.hostname);  // 127.0.0.1
+            console.log(window.location.protocol);  // http:
+            console.log(window.location.port);      // 5500
+
+            
+            // 3. 페이지 새로고침(F5)
+            window.location.reload(); 
+            window.location.href = 'Item24.html'; 
+
+        }
+    </script>
+
+
+</body>
+</html>

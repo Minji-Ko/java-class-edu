@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl {
+            border-collapse: collapse;
+        }
+        #tbl td { 
+            border: 1px solid gray;
+            padding: 5px;
+        }
+    </style>
+    
+
+</head>
+<body>
+    
+    <table id="tbl">
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+        <tr><td>item</td><td>item</td><td>item</td><td>item</td><td>item</td></tr>
+    </table>
+ 
+ 
+    <!-- [Summary] 테이블 행에 이벤트 등록하기 (2022-06-14 10:37:30) -->
+    <script>
+    
+        const tbl = document.getElementById('tbl');
+        const row = tbl.firstElementChild.children; //table.tbody.tr
+
+        
+        for(let i=0; i<row.length; i++) { 
+            
+            row[i].onmouseover = function(event){
+                
+            //1. let + row[i]                     (***** var로 하면 안됨!)
+                // row[i].bgColor = 'gold'; 
+                //let > closure로 인한 function의 루프변수 i 유지
+
+
+            // 2. event.currentTarget
+                event.currentTarget.bgColor = 'gold'            //(o)
+                // event.target.parentElement.bgColor = 'gold'; //(o)
+                
+                // event.target.bgColor = 'gold'  //(x) 이벤트를 건 당사자 != event.target
+                
+            }; 
+        }
+
+    </script>
+
+
+</body>
+</html>

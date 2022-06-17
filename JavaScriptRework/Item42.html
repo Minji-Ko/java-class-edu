@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- [Summary] 배열 탐색하기(forEach) (2022-06-15 15:23:17) -->
+    <script>
+
+        const list = [ '사과', '포도', '딸기', '수박', '참외', '복숭아' ];
+        
+        //1. 요소 탐색
+        list.forEach(item => console.log(item));
+
+
+        //2. 요소와 인덱스 탐색
+        list.forEach((item, index) => console.log(item, index));
+    
+
+        //3. 요소와 인덱스, 전체배열 요소 탐색
+        clist.forEach((item, index, arr) => console.log(item, index, arr));
+
+    </script>
+
+
+
+</body>
+</html>

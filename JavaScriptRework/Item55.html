@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.js"></script>
+    <title>Document</title>
+</head>
+<body>
+</head>
+<body>
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="box">상자1</div>
+    <div id="box2">상자2</div>
+    <input type="text" id="txt">
+
+    <!-- [Summary] jQuery 콘텐츠 조작하기(innerText, textContent, innerHTML) (2022-06-17 00:38:11) -->
+    <script>
+        $('#btn1').click(function() {
+            
+            //1. text() < innerText, textContent 
+            $('#box').text('안녕하세요.');
+            
+            
+            //2. html() < innerHTML
+            $('#box2').html('<input type="text">');
+            
+
+            //3. val()  < vlaue
+            $('#txt').val('텍스트를 입력하세요.');
+
+         });
+         
+    </script>
+</body>
+</html>

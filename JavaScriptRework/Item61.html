@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> #tbl td { border: 1px solid black; padding: 5px; width: 100px;}</style>
+    
+
+    <!-- [Summary] jQuery 여러 메소드 사용하기(메소드 체이닝), 이벤트 조작하기 (2022-06-17 01:42:30) -->
+    <script>
+        //1.
+        $('#tbl td').mouseover(function(event){
+            event.target.bgColor = 'tomato';
+        });
+
+        $('#tbl td').mouseout(function(event){
+            event.target.bgColor = 'transparent';
+        });
+
+
+
+        //2.
+        $('#tbl td')
+            .mouseover(function(event){
+                event.target.bgColor = 'tomato';
+            }).mouseout(function(event){
+                event.target.bgColor = 'transparent';
+            });
+
+
+
+        //3. ***
+        $('#tbl td').on({
+            mouseover: function(event){
+                event.target.bgColor = 'tomato';
+            },
+            mouseout: function(event){
+                event.target.bgColor = 'transparent';  
+            }
+        });
+
+    </script>
+
+
+</head>
+<body>
+    
+    <table id="tbl">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+</body>
+</html>

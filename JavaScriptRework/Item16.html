@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="버튼" name="btn1">
+    </form>
+
+
+    <!-- [Summary] BOM 이벤트 등록하기, 사건 처리하기 (2022-06-09 03:20:46)-->
+    <script>
+
+        // 1. 대상(버튼) 검색  
+        //window.document.form1.btn1
+
+
+        // 2. 동적 이벤트 등록(: JavaScript 사용) > 통제가능
+        // vs 정적 이벤트(: HTML태그에 직접 사용)  
+        if((new Date()).getSeconds() % 2 == 0){
+            window.document.form1.btn1.onclik = m1;
+        }
+
+        function m1() {
+            alert('click');
+        }
+
+    </script>
+
+
+</body>
+</html>

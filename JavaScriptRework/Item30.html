@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .box { padding: 50px; }
+        #first { background-color: tomato; }
+        #second { background-color: gold; }
+        #third { background-color: cornflowerblue; }
+    </style>
+</head>
+<body>
+    <div id="first" class="box">
+        <div id="second" class="box">
+            <div id="third" class="box">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- [Summary] 이벤트 발생순서 조정하기(이벤트 버블링) (2022-06-14 09:26:34) -->
+    <!-- 부모 자식간 동일한 이벤트를 추가하는 경우 -->
+    <script>
+        const first = document.getElementById('first');
+        const second = document.getElementById('second');
+        
+
+        // 이벤트 터널링(Event Tunneling), 이벤트 캡처링(Event Capturing)
+        // : 운영체제 → 브라우저 → window → document → <html> → <body> → #first → #second → "event.target(#third)"
+       
+        // 이벤트 버블링(Event Bubbling)
+        // : 운영체제 ← 브라우저 ← window ← document ← <html> ← <body> ← .. ← #third 
+        
+
+        //1. 이벤트 터널링 -> 이벤트 버블링(이벤트 발생!) : 기본
+        first.onclick = function() { alert('빨강'); }
+        second.onclick = function() { alert('노랑'); }
+        
+        
+        //2. 이벤트 터널링(이벤트 발생!) -> 이벤트 버블링
+        first.addEventListener('click', function(){ alert('red'); }, true);   //DOM으로만 가능
+        second.addEventListener('click', function(){ alert('yellow'); }, true);
+        third.addEventListener('click', function(){ alert('blue'); }, true);
+        
+    </script>
+
+    
+</body>
+</html>

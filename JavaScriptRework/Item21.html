@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <fieldset>
+            아이디: <input type="text" name="txtid">
+            <input type="button" name="btn1" value=" 중복검사">
+        </fieldset>
+    </form>
+
+    
+    <!-- [Summary] 브라우저 창 제어하기(window 부모) (2022-06-09 04:18:06) -->
+    <script>
+         document.form1.btn1.onclick = m1;
+
+         var child; 
+
+         function m1() {
+
+            //window.open(URL, Name, Option);
+                //1. URL    : 새창의 URL
+                //2. Name   : 새창 이름 > 중복창 제어
+                //3. Option : 새창 옵션들
+            child = window.open('Item22.html', 'idcheck', 'width=500 height=500');
+
+
+            //child = 자식 페이지의 window 객체
+            child.document.form1.txtid.value = '아이디';
+         }
+
+
+        //팝업차단 > 거의 사용 안함
+        window.open('Item22.html', 'child', 'width=500 height=300 left=1000 top=300');
+
+    </script>
+
+
+</body>
+</html>

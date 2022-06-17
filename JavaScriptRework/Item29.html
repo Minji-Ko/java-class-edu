@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/cat01.jpg" id="cat1">
+    <img src="images/cat02.jpg" id="cat2">
+    <img src="images/cat03.jpg" id="cat3">
+
+
+    <!-- [Summary] 특정 좌표에 겹쳐있는 모든 요소 알아내기(2022-06-15 02:15:18) -->
+    <script>
+        window.onmousedown = function(event) {
+
+            let x = event.clientX;
+            let y = event.clientY;
+
+            
+            // document.elementFromPoint: 좌표의 최상위 요소 반환
+            console.log(document.elementFromPoint(x, y).id);
+            
+            
+            // document.elementsFromPoint: 좌표의 모든 요소 반환
+            console.log(document.elementsFromPoint(x, y)); 
+        
+        }
+
+
+    </script>
+</body>
+</html>
