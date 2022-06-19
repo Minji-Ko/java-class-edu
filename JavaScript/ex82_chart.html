@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+
+<body>
+    <!-- 
+        1. 표, 
+        2. 차트, 
+        3. 그리드(*******) 
+    -->
+    <h1>차트 만들기</h1>
+    <div id="container"></div>
+    <script>
+        Highcharts.chart('container', {
+
+            title: {
+                text: '몸무게 변화, 2021년'
+            },
+
+            subtitle: {
+                text: '측정시간 : 기상 직후'
+            },
+
+            yAxis: {
+                title: {
+                    text: '몸무게(kg)'
+                }
+            },
+
+            xAxis: {
+                accessibility: {
+                    rangeDescription: 'Range: 2019 to 2021'
+                }
+            },
+
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 2010
+                }
+            },
+
+            series: [{
+                name: '홍길동',
+                data: [70, 72, 75, 72, 73, 78, 70, 72, 75, 72, 73, 75]
+            }, {
+                name: '아무개',
+                data: [ 69, 70, 69, 70, 72, 69, 70, 72, 74, 73, 75, 75]
+            }, {
+                name: '이상해',
+                data: [ 72, 74, 73, 75, 75, 69, 70, 69, 70, 72, 69, 70]
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        });
+    </script>
+</body>
+
+</html>
