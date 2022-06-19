@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- [Summary] 여러 데이터 입력받기 (2022-06-19 17:13:18) -->
+    <hr>색상
+    <input type="color" onchange="document.body.bgColor=this.value;">
+	
+    
+    <hr>범위
+    <input type="range" min="10" max="120" step="20">
+        
+    
+    <hr>숫자
+    <input type="number" min="0" max="100"><br>
+
+
+    <hr>전화번호
+    <input type="tel" pattern="010-[0-9]{4}-[0-9]{4}"><br>
+    
+
+    <hr>URL(http://, https://) 
+    <input type="url"><br>
+    
+
+    <hr>이메일(@ 검사)
+    <input type="email"><br>
+
+</body>
+</html>

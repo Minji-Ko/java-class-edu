@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- [Summary] 자원 경로 표현하기 (2022-06-19 17:59:18) -->
+
+		
+    1. 상대 경로
+    <!-- . : 현재폴더 -->
+    <!-- .. : 부모 폴더 -->
+    <!-- 이름: 자식폴더 -->
+    <img src="./images/dog.jpg">
+    <img src="images/dog.jpg">
+    
+    
+    2. 절대 경로
+    <!-- '/'으로 시작 -->
+    <!-- '/client' == webapp폴더 -->
+    <img src="/client/html/images/dog.jpg">
+        
+    3. 로컬 경로
+    <!-- 드라이브명으로 시작 > 사용 불가능!! -->
+    <!-- C:\class\client\ClientTest\src\main\webapp\html\images\dog.jpg -->
+    
+    4. 외부 경로
+    <!-- 남의 사이트의 자원을 참고 > 내것도 내것, 남의 것도 내것! -->
+    <!-- 관리 불가능;;; -->
+    <!-- CDN > Cloudflare -->
+    <img src="https://bit.ly/3b8uAFV">
+    
+</body>
+</html>

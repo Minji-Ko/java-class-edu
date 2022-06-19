@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- [Summary] input 태그의 속성 사용하기 (2022-05-29 17:42:30)-->
+    <!-- <input> 인라인 태그, 단독태그 -->
+    
+    
+    <!-- type : 입력 컨트롤 종류 지정 -->
+    <input type="text">
+    
+    <!-- name  : 식별자, HTML에서 사용 -->
+    <!-- id    : 식별자, CSS, JavaScript에서 사용 -->
+    <!-- class : 식별자, CSS, JavaScript에서 사용 -->
+    <input type="text" name="txtName">
+    
+
+    <!-- size : 길이(문자 개수) -->
+    <!-- maxlength : 최대 입력 가능 문자수 + 유효성 검사 -->
+    <input type="text" size="50" maxlength="5">
+
+
+    <!-- value : 컨트롤의 입력값(현재 입력값) -->
+    <input type="text" value="텍스트">
+
+    <!-- placeholder : 입력값 도움말 -->
+    <input type="text" placeholder="아이디">
+
+
+    <!-- readonly : 읽기 전용(전원 on) > 서버 전송 가능 --> 
+    <!-- disabled : 비활성화(전원 off) > 서버 전송 불가능 -->
+    <input type="text" value="읽기전용" readonly>
+    <input type="text" disabled>
+
+
+    <!-- accesskey    : 바로가기(Alt + 조합키) -->
+	<!-- autocomplete : 자동 완성 끄기         -->
+	<!-- autofocus    : 자동 포커스            -->
+    <input type="text" accesskey="s" autocomplete="off" autofocus>	
+	
+    
+</body>
+</html>
