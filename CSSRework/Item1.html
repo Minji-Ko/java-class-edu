@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- [Summary] 요소의 위치 지정하기(z-index) (2022-06-03 01:54:49) -->
+
+    <!-- static은 좌표값 사용불가 
+         absolute, relative, fixed는 사용가능 -->
+    <style>
+        .box {
+            border: 10px solid black;
+            width: 200px; 
+            height: 200px;
+        }
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+
+
+
+        /* 1. 원점 지정: 좌상, 우상, 좌하, 우하 */
+        #box1 {
+            position: absolute;
+            right: 100px;
+            bottom: 500px;
+        }
+        #box2 {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        
+        /* 2. z-index 지정: z-index가 클수록 가까움(위에 보임) */
+        #box1 { z-index: 1; }
+        #box2 { z-index: 2; }
+        #box2:hover { z-index: 0; }
+        
+    </style>
+     
+
+
+</head>
+<body>
+    <div id="box1" class="box">박스1</div>
+    <div id="box2" class="box">박스2</div>
+</body>
+</html>

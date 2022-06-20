@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <!-- [Summary] 그레디언트, 그라데이션 사용하기 (2022-06-20 01:49:29) -->
+    <style>
+
+        .box {
+            border: 1px solid black;
+            width: 700px;
+            height: 200px;
+            margin: 20px;
+        }
+
+        /* 선형 그레디언트 */
+        #box1 {
+            /* 색상선택 */
+            background: linear-gradient(yellow, green);
+            background: linear-gradient(yellow,yellow, yellow, green);
+
+
+            /* 방향+색상선택 */
+            background: linear-gradient(45deg, yellow, green);
+            background: linear-gradient(to right, yellow, green, red, blue, orange);
+            background: linear-gradient(to top right, yellow, green);
+        }
+        
+        /* 원형 그레디언트 */
+        #box2 {
+            background: radial-gradient(circle, yellow,orange, yellow, yellowgreen);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1" class="box"></div>
+    <div id="box2" class="box"></div>
+</body>
+</html>

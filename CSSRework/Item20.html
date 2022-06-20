@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- [Summary] 다단 구조 사용하기 -->
+    <style>
+        #main {
+            column-count: 3;
+            column-gap: 30px;
+            column-rule: 1px dashed grey;
+
+            /* column-fill: auto, balance*/
+            column-fill: auto; 
+        }
+        #main p {
+            /* break-inside: auto, avoid */
+            break-inside: avoid;
+        }
+    </style>
+</head>
+<body>
+   <div id="main">
+       <p style="background-color: tomato;">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus earum possimus doloribus sit iste culpa, eveniet enim laudantium non nisi! Recusandae provident ullam, dignissimos pariatur impedit perspiciatis adipisci temporibus vel excepturi doloremque cum quis earum cupiditate quod dolorum inventore corporis culpa quam? Quidem odio et officia dolorem culpa exercitationem temporibus. 
+        </p>
+        <p style="background-color: gold;">
+        Consequatur doloremque voluptatibus obcaecati, eveniet reprehenderit aliquam distinctio magnam, tenetur assumenda ab atque veniam quasi consequuntur nihil animi iure aperiam veritatis impedit! Necessitatibus quidem, magnam vel ad illo eligendi hic quam pariatur consequatur voluptas voluptates fugit explicabo ratione laboriosam quos sint nemo? Repellat accusamus alias aliquam perferendis nulla? Porro, temporibus. magnam vel ad illo eligendi hic quam pariatur consequatur voluptas voluptates fugit explicabo ratione laboriosam quos sint nemo? Repellat accusamus alias aliquam perferendis nulla? Porro, temporibus.
+        </p>
+        <p style="background-color: yellowgreen;">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus earum possimus doloribus sit iste culpa, eveniet enim laudantium non nisi! 
+        </p>
+        <p style="background-color: powderblue;">
+        Recusandae provident ullam, dignissimos pariatur impedit perspiciatis adipisci temporibus vel excepturi doloremque cum quis earum cupiditate quod dolorum inventore corporis culpa quam? Quidem odio et officia dolorem culpa exercitationem temporibus. Consequatur doloremque voluptatibus obcaecati, eveniet reprehenderit aliquam distinctio magnam, tenetur assumenda ab atque veniam quasi consequuntur nihil animi iure aperiam veritatis impedit!
+        </p>
+        <p style="background-color: cornflowerblue;">
+        Necessitatibus quidem, magnam vel ad illo eligendi hic quam pariatur consequatur voluptas voluptates fugit explicabo ratione laboriosam quos sint nemo? Repellat accusamus alias aliquam perferendis nulla? Porro, temporibus.
+        </p>
+        <p style="background-color: plum;">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus earum possimus doloribus sit iste culpa, eveniet enim laudantium non nisi! 
+        </p>
+        <p style="background-color: peachpuff;">
+        Recusandae provident ullam, dignissimos pariatur impedit perspiciatis adipisci temporibus vel excepturi doloremque cum quis earum cupiditate quod dolorum inventore corporis culpa quam? Quidem odio et officia dolorem culpa exercitationem temporibus. Consequatur doloremque voluptatibus obcaecati, eveniet reprehenderit aliquam distinctio magnam, tenetur assumenda ab atque veniam quasi consequuntur nihil animi iure aperiam veritatis impedit! Necessitatibus quidem, magnam vel ad illo eligendi hic quam pariatur consequatur voluptas voluptates fugit explicabo ratione laboriosam quos sint nemo? Repellat accusamus alias aliquam perferendis nulla? Porro, temporibus.
+        </p>
+    </div>
+</body>
+</html>

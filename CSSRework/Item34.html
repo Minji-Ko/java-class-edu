@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- [Summary] 요소 띄워서 배치하기(float) (2022-06-01 17:56:53) -->
+    <style>
+        #main {
+            border: 10px solid black;
+            width: 800px;
+        }
+        #menu {
+            background-color: orange;
+            width: 800px;
+            height: 100px;
+        }
+        #submenu {
+            background-color: yellow;
+            width: 200px;
+            height: 500px;
+
+            /* float : bottom: ; */
+            /* 특징1 > 요소들이 인라인의 성질을 가짐*/
+            /* 특징2 > 실행순서에 따라 켠켠히 쌓임*/
+            float: left;
+        }
+        #content {
+            background-color: cornflowerblue;
+            width:600px;
+            height: 500px;
+
+            /* 앞의 요소 아래로 들어가는 현상 제거 */
+            float: left;
+        }
+        #footer {
+            
+            /* 앞의 요소의 float로 인해 따라 올라가는 현상 제거 */
+            clear: left;
+            background-color: green;
+            width: 800px;
+            height: 50px;
+        }     
+    </style>
+
+
+</head>
+<body>
+    <div id="main">
+        <div id="menu">주메뉴(orange)</div>
+        <div id="submenu">보조메뉴(yellow)</div>
+        <div id="content">콘텐츠(blue)</div>
+        <div id="footer">하단(green)</div>
+    </div>
+</body>
+</html>

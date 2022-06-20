@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- [Summary] 블럭태그의 너비와 높이 조정하기 (2022-06-01 18:50:04) -->
+    <style>
+        #bar {
+            background-color: black;
+            width: 200px;
+            height: 10px;
+        }
+
+        #box {
+            background-color: gold;
+            width: 200px;
+            height: 200px;
+
+
+            /* 1. box-sizing: border-box
+            > content + padding + border 영역의 크기     */
+            box-sizing: border-box;
+            
+            /* 2. box-sizing: content-box 
+                > content 영역만!*** (기본) */
+            box-sizing: content-box;
+            
+                
+            border: 10px solid tomato;
+            padding: 20px;
+            margin: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="bar"></div>
+    <div id="box">상자입니다.</div>
+</body>
+</html>

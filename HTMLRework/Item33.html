@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- [Summary] CSS 선택자로 코드 작성하기 (Emmet, Zen-coding) (2022-05-29 22:24:23) -->
+    <!-- https://emmet.io -->
+
+    div  
+    <div></div>
+
+    div[title]
+    <div title=""></div>
+    
+    div#box
+    <div id="box"></div>
+
+    div#box.one.two
+    <div id="box" class="one two"></div>
+    
+
+    div>p
+    <div>
+        <p></p>
+    </div>
+
+    
+    div+p
+    <div></div>
+    <p></p>
+
+
+    div{상자}            <!--emmet만의 기능-->
+    <div>상자</div>
+    
+    div*3                <!--emmet만의 기능-->
+    <div></div>
+    <div></div>
+    <div></div>
+
+    div#box$${상자$}*2   <!--emmet만의 기능-->
+    <div id="box01">상자1</div>
+    <div id="box02">상자2</div>
+
+
+    lorem  <!--emmet 더미데이터 예약어, Lorem Ipsum -->
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident earum odio tenetur suscipit laborum molestiae quod natus temporibus, quibusdam dolor assumenda accusantium veritatis, nemo nostrum obcaecati, enim nesciunt! Illum, consequatur.
+
+
+    p>lorem5
+    <p>Lorem ipsum dolor sit amet.</p>
+
+
+</body>
+</html>
