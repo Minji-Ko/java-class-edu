@@ -65,8 +65,8 @@
 		
 		if('<%= sel %>' == '보이기') {
 			
-			btn.setAttribute('style', 'border: <%= thick %>px <%= style %> <%= bcolor %>');
-			btn.setAttribute('style', 'border-radius: <%= radius %>px');
+			btn.setAttribute('style', 'border: <%= thick %>px <%= style %> <%= bcolor %>; border-radius: <%= radius %>px;');
+			
 			
 		} else {
 			btn.setAttribute('style', 'border: 0px');
