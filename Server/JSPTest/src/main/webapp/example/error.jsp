@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- error.jsp -->
 	<h1>고객센터</h1>
 	
 	<p>꾸뻑 인사하는 그림</p>
@@ -14,3 +15,21 @@
 	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
