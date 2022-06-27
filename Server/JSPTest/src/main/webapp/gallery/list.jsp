@@ -1,26 +1,28 @@
 <%@page import="com.test.jsp.DBUtil"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-
-	//1. DB 작업 > select > 결과
-	//2. 결과 출력
 	
-	//1.
 	Connection conn = null;
 	Statement stat = null;
 	ResultSet rs = null;
+
+	/* try { */
+		
+		conn = DBUtil.open();
+		
+		String sql = "select * from tblGallery order by regdate";
+		
+		stat = conn.createStatement();
 	
-	conn = DBUtil.open();
-	
-	String sql = "select * from tblGallery order by regdate desc";
-	
-	stat = conn.createStatement();
-	
-	rs = stat.executeQuery(sql);
+		rs = stat.executeQuery(sql);
+	/* 	
+	} catch (Exception e) {
+		
+	} */
 
 %>    
 <!DOCTYPE html>
@@ -109,8 +111,7 @@
 		<h1>Image Gallery <small>List</small></h1>
 		
 		<div id="list">
-		
-			<% while (rs.next()) { %>
+			<% while(rs.next()){  %>
 			<div style="background-image:url(images/<%= rs.getString("filename") %>);" data-toggle="modal" data-target="#exampleModal" onclick="showImage('<%= rs.getString("filename") %>', '<%= rs.getString("subject") %>', '<%= rs.getString("regdate") %>');">
 				<span title="delete" onclick="deleteImage('<%= rs.getString("seq") %>');">&times;</span>
 				<div class="title"><%= rs.getString("subject") %></div>
@@ -151,6 +152,7 @@
 	<script>
 	
 		function showImage(img, title, regdate) {
+			//alert(img);
 			
 			$('.modal-body > img').attr('src', 'images/' + img);
 			$('#exampleModalLabel > span').eq(0).text(title + '(' + img + ')');
@@ -159,6 +161,7 @@
 		}
 		
 		function deleteImage(seq) {
+			//alert(img);
 						
 			if (confirm('delete?')) { 
 				location.href = 'delok.jsp?seq=' + seq;

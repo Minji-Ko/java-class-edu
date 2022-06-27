@@ -1,39 +1,33 @@
-<%@page import="com.test.jsp.DBUtil"%>
-<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="com.test.jsp.DBUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-
-	//1.
 	request.setCharacterEncoding("UTF-8");
 
-	//2.
-	String todo = request.getParameter("todo");
-	String priority = request.getParameter("priority");
+	String todo = request.getParameter("todo");	
+	String priority = request.getParameter("priority");	
 	
 	
+	Connection conn = null;
+	PreparedStatement pstat = null;
 	int result = 0;
 	
 	try {
-		//3.		
-		Connection conn = null;
-		PreparedStatement stat = null;
 		
 		conn = DBUtil.open();
-				
-		String sql = "insert into tblTodo (seq, todo, regdate, priority, complete) values (seqTodo.nextval, ?, default, ?, default)";
 		
-		stat = conn.prepareStatement(sql);
+		String sql = "insert into tblTodo(seq, todo, priority) values (seqTodo.nextVal, ?, ?)";
 		
-		stat.setString(1, todo);
-		stat.setString(2, priority);
+		pstat = conn.prepareStatement(sql);
+		pstat.setString(1, todo);
+		pstat.setString(2, priority);
 		
-		result = stat.executeUpdate();
-		
+		result = pstat.executeUpdate();
 		
 	} catch (Exception e) {
-		System.out.println(e);
+		System.out.println(e);	
 	}
 
 %>    
@@ -41,7 +35,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Todo</title>
 <%@ include file="/todo/inc/asset.jsp" %>
 <style>
 
@@ -51,32 +45,12 @@
 	
 	<script>
 		<% if (result > 0) { %>
-		
-		location.href = 'list.jsp';
-		
+			location.href = 'list.jsp';
 		<% } else { %>
-		
-		alert('추가 실패;;');
-		history.back();
-		
-		<% } %> 
+			alert("등록 실패;;");
+			history.back();
+		<% } %>
 	</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

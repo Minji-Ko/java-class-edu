@@ -9,4 +9,19 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <!-- Servlet 가상 주소 매핑 -->
+  	<!-- 
+  	<servlet>
+  		<servlet-name>template</servlet-name>
+  		<servlet-class>com.test.memo.Template</servlet-class>
+  	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>template</servlet-name>
+		<url-pattern>/template.do</url-pattern>
+	</servlet-mapping> 
+	-->
+  
 </web-app>

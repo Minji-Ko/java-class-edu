@@ -24,12 +24,12 @@
 		<table class="table table-bordered add">
 			<tr>
 				<th>할일</th>
-				<td><input type="text" name="todo" class="form-control" required></td>
+				<td><input type="text" class="form-control" name="todo" required></td>
 			</tr>	
 			<tr>
 				<th>중요도</th>
 				<td>
-					<select name="priority" class="form-control">
+					<select class="form-control" name="priority">
 						<option value="A">A</option>
 						<option value="B" selected>B</option>
 						<option value="C">C</option>

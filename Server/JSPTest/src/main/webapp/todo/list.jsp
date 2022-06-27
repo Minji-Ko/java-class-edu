@@ -1,6 +1,6 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="com.test.jsp.DBUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -10,14 +10,16 @@
 	Statement stat = null;
 	ResultSet rs = null;
 	
-	conn = DBUtil.open();
+	try {
+		
+		conn = DBUtil.open();
+		
+		String sql = "select * from tblTodo order by priority";
+		
+		stat = conn.createStatement();
+		
+		rs = stat.executeQuery(sql);
 	
-	String sql = "select * from tblTodo order by regdate asc";
-	
-	stat = conn.createStatement();
-	
-	rs = stat.executeQuery(sql);
-
 %>    
 <!DOCTYPE html>
 <html>
@@ -26,7 +28,6 @@
 <title>Todo</title>
 <%@ include file="/todo/inc/asset.jsp" %>
 <style>
-
 </style>
 </head>
 <body>
@@ -40,16 +41,10 @@
 				<th>할일</th>
 				<th>날짜</th>
 			</tr>
-			<% 
-				while (rs.next()) { 
-					String temp = "";
-					if (rs.getString("complete").equals("y")) {
-						temp = "class=\"complete\"";
-					}
-			%>
-			<tr <%= temp %>>
+			<% while(rs.next()){ %>
+			<tr data-seq="<%= rs.getString("seq") %>" data-complete="<%= rs.getString("complete") %>">
 				<td><%= rs.getString("priority") %></td>
-				<td onclick="change(<%= rs.getString("seq") %>, '<%= rs.getString("complete") %>');"><%= rs.getString("todo") %></td>
+				<td><%= rs.getString("todo") %></td>
 				<td><%= rs.getString("regdate") %></td>
 			</tr>
 			<% } %>
@@ -60,11 +55,20 @@
 				class="btn btn-warning" onclick="location.href='add.jsp';">
 		</div>
 	</main>
+	<% 
+		} catch (Exception e) {
+			System.out.println(e);	
+		} 
+	 %>
+	
 	
 	<script>
-		function change(seq, complete) {
-			location.href = 'change.jsp?seq=' + seq + '&complete=' + complete;
-		}
+		$('table tr[data-complete=y]').addClass('complete');
+	
+		$('table tr').click(function(){
+			location.href='completeok.jsp?seq='+ $(this).data('seq');
+		});	
+	
 	</script>
 
 </body>

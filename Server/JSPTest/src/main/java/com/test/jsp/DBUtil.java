@@ -2,20 +2,19 @@ package com.test.jsp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class DBUtil {
 	
-	private static Connection conn = null;
-	
+	private static Connection conn;
+
 	public static Connection open() {
 		
-		String url = "jdbc:oracle:thin:@192.168.50.107:49157:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String id = "hr";
 		String pw = "java1234";
-		
+	
 		try {
-			
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			conn = DriverManager.getConnection(url, id, pw);
@@ -28,16 +27,14 @@ public class DBUtil {
 		}
 		
 		return null;
-		
-	}//open
-	
+	}
 	
 	public static Connection open(String server, String id, String pw) {
 		
 		String url = "jdbc:oracle:thin:@" + server + ":1521:xe";
-		
+	
 		try {
-			
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			conn = DriverManager.getConnection(url, id, pw);
@@ -50,7 +47,6 @@ public class DBUtil {
 		}
 		
 		return null;
-		
 	}
 	
 	
@@ -58,32 +54,10 @@ public class DBUtil {
 		
 		try {
 			conn.close();
-		} catch (SQLException e) {
+		} catch (Exception e) {
+			System.out.println("DBUtil.close");
 			e.printStackTrace();
 		}
-		
 	}
 	
-
-}//DBUtil
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

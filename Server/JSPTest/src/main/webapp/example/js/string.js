@@ -1,5 +1,4 @@
 String.format = function() {
-
     // The string containing the format items (e.g. "{0}")
     // will and always has to be the first argument.
     var theString = arguments[0];

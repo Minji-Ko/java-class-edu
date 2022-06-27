@@ -4,10 +4,10 @@ public class Student {
 	
 	private String name;
 	private int kor;
-	private int eng;
+	private	int eng;
 	private int math;
 	private String gender;
-	
+
 	public String getNick() {
 		return "바보";
 	}
@@ -36,10 +36,8 @@ public class Student {
 	public void setMath(int math) {
 		this.math = math;
 	}
-	public String getGender() {
-		return gender;
-	}
 	
 	
-
+	
+	
 }

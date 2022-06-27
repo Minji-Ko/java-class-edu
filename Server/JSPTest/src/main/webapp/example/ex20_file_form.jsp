@@ -4,43 +4,39 @@
 <%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-
+    
+<% 
 	//디렉토리 탐색
 	
 	String path = application.getRealPath("/example/images");
-
+	
 	File dir = new File(path);
 	
 	File[] list = dir.listFiles();
 	
-	//System.out.println(Arrays.toString(list));
 	//System.out.println(list[0].getName());
-	
 	//System.out.println(list[0].lastModified());
 	
 	//Calendar temp = Calendar.getInstance();
 	//temp.setTimeInMillis(list[0].lastModified());
-	//System.out.println(list[0].getName());
 	//System.out.printf("%tF %tT\n", temp, temp);
 	
-	//1.png
-	//2022-06-23 11:12:25
-	
-	/* 
+	/* 	
 	Arrays.sort(list, (a, b) -> {
-		
 		return Long.compare(a.lastModified(), b.lastModified());
-	}); 
-	*/
+	});  
+	*/ //Lambda expressions are allowed only at source level 1.8 or above
+	
+	
 	
 	Arrays.sort(list, new Comparator<File>() {
 		public int compare(File a, File b) {
 			return Long.compare(a.lastModified(), b.lastModified());
 		}
-	});
-
+	}); //오름차순 정렬
+	
 %>    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,21 +44,17 @@
 <title>Insert title here</title>
 <%@ include file="/example/inc/asset.jsp" %>
 <style>
-	
 	#list {
 		width: 800px;
-		margin-top: 20px;
-		margin-bottom: 30px;
-		/* outline: 10px solid black; */
+		margin: 30px 0; 
 	}
-	
 	#list > div {
 		float: left;
 		border: 1px solid #999;
 		margin: 15px;
 		width: 126px;
 		height: 126px;
-		background-size: cover;
+		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
 		position: relative;
@@ -74,13 +66,9 @@
 		font-size: 1.5em;
 		position: absolute;
 		right: 6px;
-		top: 0;
+		top: 0px; 
 		cursor: pointer;
 		display: none;
-	}
-	
-	#list > div:hover > span {
-		display: inline;
 	}
 	
 	#list::after {
@@ -88,28 +76,26 @@
 		display: block;
 		clear: both;
 	}
+	#list > div:hover > span {
+		display: inline;
+	}
 	
-	/* 
-	#list > div > img {
+	/* #list > div > img {
 		width: 126px;
 		height: 126px;
-	} 
-	*/
-	
-	
-	.modal-body > img {
+	} */  
+
+	.modal-body img {
 		display: block;
 		margin: 15px auto;
 		
-		/* 
-		width: ; > 고정 크기
-		max-width: ; > 작을땐 객체 크기, 클땐 지정 크기
-		min-width: ; > 클땐 객체 크기, 작은 지정 크기
-		*/
 		
+		/* 	width : 고정 크기 
+			max-width : 작을 땐 객체 크기, 클땐 최대 지정
+			min-width : 클 땐 객체 크기, 작을 땐 지정 크기 
+		*/
 		max-width: 560px;
 	}
-	
 	
 	#exampleModal .modal-dialog {
        -webkit-transform: translate(0,-50%);
@@ -118,46 +104,37 @@
        top: 50%;
        margin: 0 auto;
    }
-	
 </style>
 </head>
 <body>
-
-	<!-- ex20_file_form.jsp -->
+	
 	<div class="container">
 		<h1>Image Gallery</h1>
 		
 		<div id="list">
 		
-			<% for (File img : list) { %>	
-			
-			<%-- <div><img src="images/<%= img.getName() %>"></div> --%>
-			<div style="background-image:url(images/<%= img.getName() %>);" data-toggle="modal" data-target="#exampleModal" onclick="showImage('<%= img.getName() %>');">
+			<% for (File img : list) { %>
+			<%-- <img src="images/<%= img.getName() %>"> --%>
+			<div style="background-image:url(images/<%= img.getName() %>);" data-toggle="modal" data-target="#exampleModal" onclick="showImage('<%= img.getName() %>');"> 
 				<span title="delete" onclick="deleteImage('<%= img.getName() %>');">&times;</span>
 			</div>
-			
-			<% } %>
-					
-		</div>
-		
+			<% } %> 
+		</div> 
+
 		<form method="POST" action="ex20_file_ok.jsp" enctype="multipart/form-data">
-		<table class="table">
-			<tr>
-				<th>이미지</th>
-				<td><input type="file" name="attach" required></td>
-			</tr>
-		</table>
-		
-		<div>
-			<input type="submit" value=" 이미지 업로드 "
-				class="btn btn-success">
-		</div>
+			<table class ="table table-bordered">
+				<tr>
+					<th>이미지</th>
+					<td><input type="file" name="attach" required></td>
+				</tr>
+			</table>
+			
+			<div>
+				<input type="submit" value="이미지 업로드" class="btn btn-success">
+			</div>
 		</form>
-		
-		
 	</div>
-	
-	
+
 	
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -170,7 +147,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	      	<img src="images/1.png">
+	        <img src="images/1.png">
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -179,50 +156,23 @@
 	  </div>
 	</div>
 	
-	
-	
 	<script>
-	
 		function showImage(img) {
 			//alert(img);
-			
 			$('.modal-body > img').attr('src', 'images/' + img);
 			$('#exampleModalLabel').text(img);
-			
 		}
-		
 		function deleteImage(img) {
-			//alert(img);
-						
-			if (confirm('delete?')) { 
+			location.href = 'ex20_file_delete.jsp?filename=' + img;
+			
+			if(confirm('delete?')) {
 				location.href = 'ex20_file_delete.jsp?filename=' + img;
 			}
 			
 			event.stopPropagation();
 			
 		}
-	
 	</script>
-
+	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
+    
+<% 
 
-	
 
 %>    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +17,7 @@
 </style>
 </head>
 <body>
-
-	<!-- template.jsp -->
+	
 	<main>
 		<header>
 			<%@ include file="inc/header.jsp" %>
@@ -26,28 +26,12 @@
 			<div class="section content">
 				본문
 			</div>
-		</section>	
+		</section>
 	</main>
 	
 	<script>
-		
+	
 	</script>
-
+	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
