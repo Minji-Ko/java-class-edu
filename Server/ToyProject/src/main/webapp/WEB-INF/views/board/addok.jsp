@@ -16,11 +16,16 @@
 	<main>
 		<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 		<section>
-			<h1>Home</h1>
 		</section>
 	</main>
 	<script>
-	
+	<c:if test="${result == 1}">
+		location.href = '/toy/board/list.do';
+	</c:if>
+	<c:if test="${result == 0}">
+		alert('failed');
+		history.back();
+	</c:if>
 	</script>
 	
 </body>

@@ -16,7 +16,15 @@
 	<main>
 		<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 		<section>
-			<h1>Home</h1>
+			<h2>Board</h2>
+			
+			<table>
+			</table>
+			
+			<div class="btns">
+				<input type="button" value="글쓰기" class="btn btn-primary"
+					onclick="location.href='/toy/board/add.do';">
+			</div>
 		</section>
 	</main>
 	<script>

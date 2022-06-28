@@ -16,11 +16,10 @@
 	<main>
 		<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 		<section>
-			<h1>Home</h1>
 		</section>
 	</main>
 	<script>
-	
+		location.href = '/toy/index.do';
 	</script>
 	
 </body>

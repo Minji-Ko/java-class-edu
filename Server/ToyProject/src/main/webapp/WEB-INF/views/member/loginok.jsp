@@ -16,11 +16,16 @@
 	<main>
 		<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 		<section>
-			<h1>Home</h1>
 		</section>
 	</main>
 	<script>
-	
+		<c:if test="${not empty auth}">  //${auty != null} 보다는 empty를 많이 사용함
+			location.href = '/toy/index.do';
+		</c:if>
+		<c:if test="${empty auth}">
+			alert('failed');
+			history.back();
+		</c:if>
 	</script>
 	
 </body>

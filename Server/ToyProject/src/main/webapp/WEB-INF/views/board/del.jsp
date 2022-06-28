@@ -16,7 +16,7 @@
 	<main>
 		<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 		<section>
-			<h1>Home</h1>
+			콘텐츠
 		</section>
 	</main>
 	<script>

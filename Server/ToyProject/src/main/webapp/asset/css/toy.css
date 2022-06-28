@@ -54,6 +54,7 @@ main > header > nav > ul {
 
 main > header > nav > ul > li {
 	margin: 0 5px;
+	font-size: 20px;
 }
 
 main > section {
@@ -63,6 +64,10 @@ main > section {
 
 main > section > h2 {
 	margin-bottom: 15px;
+}
+
+header .badge {
+	font-size: 16px;
 }
 
 a {
@@ -83,8 +88,14 @@ a:hover {
 }
 
 .table.vertical th {
+	width: 120px;
 	text-align: center;
 	vertical-align: middle;
+}
+
+.table.vertical textarea {
+	resize: none;
+	height: 300px;
 }
 
 
