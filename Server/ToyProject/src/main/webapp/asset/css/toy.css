@@ -20,9 +20,13 @@ html, body {
 main {
 	width: 800px;	
 	margin: 0 auto;
-	height: 100%;
 	box-shadow: 0px 0px 3px #999;
 	background-color: white;
+	
+	/* display: flex;
+	flex-direction: column;
+	 */
+	min-height: 100vh;
 }
 
 main > header {
@@ -58,12 +62,13 @@ main > header > nav > ul > li {
 }
 
 main > section {
-	padding-left: 20px;
-	padding-right: 20px;
+	padding: 50px;
+	padding-top: 30px;
 }
 
 main > section > h2 {
 	margin-bottom: 15px;
+	font-variant: small-caps;
 }
 
 header .badge {
@@ -98,13 +103,104 @@ a:hover {
 	height: 300px;
 }
 
+.table.horizontal th {
+	text-align: center;
+}
 
+.table.horizontal th:nth-child(1) { width: 60px; }
+.table.horizontal th:nth-child(2) { width: auto; }
+.table.horizontal th:nth-child(3) { width: 80px; }
+.table.horizontal th:nth-child(4) { width: 120px; }
+.table.horizontal th:nth-child(5) { width: 60px; }
 
+.table.horizontal td {
+	text-align: center;
+}
 
+.table.horizontal td:nth-child(2) {
+	text-align: left;
+}
 
+.btns {
+	overflow: hidden;
+}
 
+.btn {
+	float: right;
+	margin-left: 5px;
+}
 
+.search {
+	margin: 20px auto;
+}
 
+.search td:nth-child(3) {
+	padding: 0px 3px;
+}
+
+.tblAddComment {
+	width: 600px;
+	margin: 50px auto 30px auto;
+}
+
+.tblAddComment textarea {
+	resize: none;
+	height: 100px;
+	width: 500px;
+}
+.tblAddcomment btn {
+	margin-left: 10px;	
+}
+
+.tblEditComment {
+	width: 570px;
+	/* margin: 3px auto; */
+}
+
+.tblEditComment textarea {
+	resize: none;
+	height: 100px;
+	width: 460px;
+}
+
+.tblEditComment .btn {
+	font-size: 13px;
+	float: none;
+	/* display: block; */
+	margin-bottom: 10px;
+}
+
+.tblEditComment td {
+	padding: 5px;
+	border: 0px solid transparent;
+}
+
+.table.comment {
+	width: 600px;
+	margin: 20px auto;
+}
+
+.table.comment td > div:nth-child(2) > span {
+	color: #999;
+	float: right;
+	margin-left: 5px;
+} 
+
+.table.comment td > div:nth-child(2) > span:nth-child(1) {
+	font-size: 13px;
+	color: #b9bde1;
+}
+.table.comment td > div:nth-child(2) > span:nth-child(2) {
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+.table.comment td > div:nth-child(2) > span:nth-child(3),
+.table.comment td > div:nth-child(2) > span:nth-child(4) {
+	font-size: 12px;
+	display: none;
+	cursor: pointer;
+}
 
 
 

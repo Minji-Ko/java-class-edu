@@ -11,4 +11,10 @@ public class BoardDTO {
     private String id;
     private String regdate;
     private String readcount;
+    private int thread;
+    private int depth;
+    
+    private String name;
+    private String commentcount;
+    
 }

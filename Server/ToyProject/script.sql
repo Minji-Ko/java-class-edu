@@ -17,7 +17,6 @@ select * from tblMember;
 commit;
 
 
-
 -- 게시판
 create table tblBoard (
     seq number primary key,
@@ -25,7 +24,9 @@ create table tblBoard (
     content varchar2(4000) not null,
     id varchar2(300) not null references tblMember(id),
     regdate date default sysdate not null,
-    readcount number default 0 not null
+    readcount number default 0 not null,
+    thread number not null,
+    depth number not null
 );
 
 create sequence seqBoard;
@@ -35,8 +36,57 @@ create sequence seqBoard;
 insert into tblBoard(seq, subject, content, id , regdate, readcount) values (seqBoard.nextVal, 'subject', 'content', 'hong', default, default);
 
 
+
 select * from tblBoard;
 
+
+
+
+
+
+
+select * from (select b.*, rownum as rnum from vwBoard b) where rnum between 1 and 10;
+
+
+create or replace view vwBoard
+as
+select seq, subject, content, id, 
+        (select name from tblMember where id = tblBoard.id) as name,
+        regdate, readcount, thread, depth,
+        (select count(*) from tblComment where pseq = tblBoard.seq) as commentcount
+    from tblBoard order by thread desc;
+
+select * from vwBoard;
+
+select b.*, (select name from tblMember where id = b.id) from tblBoard b where seq = 11;
+
+update tblBoard set readcount = readcount + 1 where seq = 11;
+
+
+-- 댓글 테이블
+create table tblComment (
+    seq number primary key,
+    content varchar2(1000) not null,
+    id varchar2(30) not null references tblMember(id),
+    regdate date default sysdate not null,
+    pseq number not null references tblBoard(seq)
+);
+
+
+
+create sequence seqComment;
+
+drop table tblComment;
+
+insert into tblComment(seq, content, id, regdate, pseq) values (seqComment.nextVal, 'content', 'hoho', default, 11);
+
+select * from tblComment;
+
+select tblComment.*, 
+    (select name from tblMember where id = tblComment.id) as name 
+from tblComment where pseq = 8 order by regdate desc ;
+
+commit;
 
 
 

@@ -16,11 +16,16 @@
 	<main>
 		<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 		<section>
-			콘텐츠
 		</section>
 	</main>
 	<script>
-	
+	<c:if test="${result == 1}">
+		location.href = '/toy/board/view.do?seq=${seq}';
+	</c:if>
+	<c:if test="${result == 0}">
+		alert('failed');
+		history.back();
+	</c:if>
 	</script>
 	
 </body>

@@ -34,7 +34,7 @@
 				</tr>
 				<tr>
 					<th>사진</th>
-					<td><input type="file" name="pic" class="form-control"></td>
+					<td><input type="file" name="pic"></td>
 				</tr>
 			</table>
 			<div class="btns">

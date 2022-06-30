@@ -10,4 +10,5 @@
 <script src="/toy/asset/js/bootstrap.js"></script>
 <script src="/toy/asset/js/toy.js"></script>
 
+
 <script src="https://kit.fontawesome.com/595a929853.js" crossorigin="anonymous"></script>

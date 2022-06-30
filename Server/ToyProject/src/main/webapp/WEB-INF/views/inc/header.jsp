@@ -4,10 +4,10 @@
 <style>
 	.fas.fa-fire-alt {
 		<c:if test="${not empty auth and lv == 1}">
-		color: tomato;
+		color: cornflowerblue;
 		</c:if>
 		<c:if test="${not empty auth and lv == 2}">
-		color: cornflowerblue;
+		color: tomato;
 		</c:if>
 		<c:if test="${empty auth}">
 		color: black;
