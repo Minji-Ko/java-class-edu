@@ -25,7 +25,7 @@ public class BoardDAO {
 
 		try {
 			
-			String sql = "insert into tblBoard(seq, subject, content, id , regdate, readcount, thread, depth) values (seqBoard.nextVal, ?, ?, ?, default, default, ?, ?)";
+			String sql = "insert into tblBoard(seq, subject, content, id , regdate, readcount, thread, depth, filename, orgfilename) values (seqBoard.nextVal, ?, ?, ?, default, default, ?, ?, ?, ?)";
 			
 			pstat = conn.prepareStatement(sql);
 			pstat.setString(1, dto.getSubject());
@@ -33,6 +33,8 @@ public class BoardDAO {
 			pstat.setString(3, dto.getId());
 			pstat.setInt(4, dto.getThread());
 			pstat.setInt(5, dto.getDepth());
+			pstat.setString(6, dto.getFilename());
+			pstat.setString(7, dto.getOrgfilename());
 			
 			return pstat.executeUpdate();
 			
@@ -50,14 +52,25 @@ public class BoardDAO {
 		try {
 			
 			String where = "";
+			String sql = "";
 			
-			if(map.get("isSearch").equals("y")) {
-				where = String.format("where %s like '%%%s%%'"
-											, map.get("column")
-											, map.get("word"));
+			
+			if(map.get("tag") == null) {
+				if(map.get("isSearch").equals("y")) {
+					where = String.format("where %s like '%%%s%%'"
+							, map.get("column")
+							, map.get("word"));
+				}
+				
+				sql = String.format("select * from (select b.*, rownum as rnum from vwBoard b %s) where rnum between %s and %s ", where, map.get("begin"), map.get("end"));
+				
+			} else {
+				
+				sql = String.format("select b.* from tblBoard b \r\n"
+						+ "    inner join  tblTagging t on t.bseq = b.seq\r\n"
+						+ "    inner join tblHashTag h on h.seq = t.hseq\r\n"
+						+ "        where h.tag = '%s'", map.get("tag"));
 			}
-			
-			String sql = String.format("select * from (select b.*, rownum as rnum from vwBoard b %s) where rnum between %s and %s ", where, map.get("begin"), map.get("end"));
 			
 			stat = conn.createStatement();
 			
@@ -75,9 +88,10 @@ public class BoardDAO {
 				dto.setName(rs.getString("name"));
 				dto.setRegdate(rs.getString("regdate"));
 				dto.setReadcount(rs.getString("readcount"));
-				dto.setCommentcount(rs.getString("commentcount"));
-				
 				dto.setDepth(rs.getInt("depth"));
+				dto.setCommentcount(rs.getString("commentcount"));
+				dto.setIsNew(rs.getDouble("isnew"));
+				dto.setFilename(rs.getString("filename"));
 				
 				list.add(dto);
 			}
@@ -117,8 +131,26 @@ public class BoardDAO {
 				
 				dto.setThread(rs.getInt("thread"));
 				dto.setDepth(rs.getInt("depth"));
+				
+				dto.setFilename(rs.getString("filename"));
+				dto.setOrgfilename(rs.getString("orgfilename"));
 			}
 					
+			
+			//해시태그
+			sql = "select tag from tblHashTag h inner join  tblTagging t on h.seq = t.hseq where bseq = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, seq);
+			
+			rs = pstat.executeQuery();
+			
+			dto.setTaglist(new ArrayList<String>());
+			
+			while (rs.next()) {
+				dto.getTaglist().add(rs.getString("tag"));
+			}
+			
 			return dto;	
 			
 		} catch (Exception e) {
@@ -150,12 +182,14 @@ public class BoardDAO {
 		
 		try {
 			
-			String sql = "update tblBoard set subject = ?, content = ? where seq = ?";
+			String sql = "update tblBoard set subject = ?, content = ?, filename= ?, orgfilename = ? where seq = ?";
 			
 			pstat = conn.prepareStatement(sql);
 			pstat.setString(1, dto.getSubject());
 			pstat.setString(2, dto.getContent());
-			pstat.setString(3, dto.getSeq());
+			pstat.setString(3, dto.getFilename());
+			pstat.setString(4, dto.getOrgfilename());
+			pstat.setString(5, dto.getSeq());
 			
 			return pstat.executeUpdate();
 			
@@ -418,7 +452,132 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 	}
+
+	//AddOk 서블릿 > 방금 작성한 글번호 주세요~
+	public String getSeq() {
+
+		try {
+			//안정성 높은 코드
+			//99.9%의 사이트에서 문제없이 작동함 
+			String sql = "select max(seq) as seq from tblBoard";
+			
+			stat = conn.createStatement();
+			
+			rs = stat.executeQuery(sql);
+			
+			if(rs.next()) {
+				return rs.getString("seq");
+			}
+			
+			
+		} catch (Exception e) {
+			System.out.println("BoardDAO.getSeq");
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
 	
+	public void addHashTag(String tag) {
+		try {
+			String sql = "insert into tblHashTag (seq, tag) values (seqHashTag.nextVal, ?)";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, tag);
+			
+			pstat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			System.out.println("BoardDAO.addHashTag");
+			e.printStackTrace();
+		}
+	}
+
+	public String getHashTagSeq(String tag) {
+		
+		try {
+			
+			String sql = "select seq from tblHashTag where tag= ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, tag);
+			
+			rs = pstat.executeQuery();
+			
+			if(rs.next()) {
+				return rs.getString("seq");
+			}
+			
+			
+		} catch (Exception e) {
+			System.out.println("BoardDAO.getSeq");
+			e.printStackTrace();
+		}
+		
+		
+		return null;
+	}
+
+	public void addTagging(HashMap<String, String> map) {
+		try {
+			String sql = "insert into tblTagging (seq, bseq, hseq) values (seqTagging.nextVal, ?, ?)";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, map.get("bseq"));
+			pstat.setString(2, map.get("hseq"));
+			
+			pstat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			System.out.println("BoardDAO.addHashTag");
+			e.printStackTrace();
+		}
+	}
+
+	public void delTags(String seq) {
+
+		try {
+			String sql = "delete from tblTagging where bseq = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, seq);
+			
+			pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("BoardDAO.delTags");
+			e.printStackTrace();
+		}
+	}
+
+	public ArrayList<String> taglist() {
+		
+		try {
+			
+			String sql = "select * from tblHashTag order by tag asc";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			rs = pstat.executeQuery();
+			
+			ArrayList<String> list = new ArrayList<String>();
+			
+			while(rs.next()) {
+				list.add(rs.getString("tag"));
+			}
+			
+			return list;
+			
+		} catch (Exception e) {
+			System.out.println("BoardDAO.taglist");
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 }
 
 

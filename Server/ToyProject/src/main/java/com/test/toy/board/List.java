@@ -61,6 +61,7 @@ public class List extends HttpServlet {
 		map.put("column", column);
 		map.put("word", word);
 		map.put("isSearch", isSearch);
+		map.put("tag", req.getParameter("tag"));
 		
 		
 		

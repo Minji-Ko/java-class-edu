@@ -19,8 +19,12 @@ public class Del extends HttpServlet {
 		//2. JSP 호출하기
 
 		String seq = req.getParameter("seq");
+		String column = req.getParameter("column");
+		String word = req.getParameter("word");
 		
 		req.setAttribute("seq", seq);
+		req.setAttribute("column", column);
+		req.setAttribute("word", word);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/board/del.jsp");
 

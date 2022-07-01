@@ -8,8 +8,15 @@
 <meta charset="UTF-8">
 <title>Toy Project</title>
 <%@ include file="/WEB-INF/views/inc/asset.jsp" %>
+<link rel="stylesheet" href="/toy/asset/css/tagify.css" />
+<script src="/toy/asset/js/jQuery.tagify.min.js"></script>
 <style>
-
+.tagify {
+	border: 0px solid transparent;
+}
+tr:nth-child(5) td {
+	padding: 5px;
+}
 </style>
 </head>
 <body>
@@ -37,18 +44,58 @@
 					<th>내용</th>
 					<td colspan="7" style="height:300px; vertical-aiign: middle;">${dto.content}</td>
 				</tr>
+				<tr>
+					<th>파일</th>
+					<td colspan="7">
+						<c:if test="${not empty dto.orgfilename}">
+						<a href="/toy/board/download.do?filename=${dto.filename}&orgfilename=${dto.orgfilename}">${dto.orgfilename}</a>
+						</c:if>
+						<c:if test="${empty dto.orgfilename}">
+						파일 없음
+						</c:if>
+					</td>
+				</tr>
+				<tr>
+					<th>태그</th>
+					<td colspan="7"><input type="text" name="tags" readonly></td>
+				</tr>
 			</table>
 			
+			<form method="GET" action="/toy/board/goodbad.do" class="goodbad">
+				<button class="btn btn-info" style="float:left;">
+					<i class="fa-solid fa-thumbs-up"></i>
+					<span class="badge badge-pill  badge-light">10</span>
+				</button>
+				<input type="hidden" name="seq" value="${dto.seq}">
+				<input type="hidden" name="column" value="${column}">
+				<input type="hidden" name="word" value="${word}">
+				<input type="hidden" name="goodbad" value="good">	
+			</form>
+			<form method="GET" action="/toy/board/goodbad.do" class="goodbad">
+				<button class="btn btn-danger" style="float:left;">
+					<i class="fa-solid fa-thumbs-down"></i>
+					<span class="badge badge-pill badge-light">5</span>
+				</button>
+				<input type="hidden" name="seq" value="${dto.seq}">
+				<input type="hidden" name="column" value="${column}">
+				<input type="hidden" name="word" value="${word}">	
+				<input type="hidden" name="goodbad" value="bad">	
+			</form>
+						
 			<div class="btns">
 				<input type="button" value="돌아가기" class="btn btn-secondary" 
 					onclick="location.href='/toy/board/list.do?column=${column}&word=${word}';">
 				<c:if test="${auth == dto.id || auth == 'admin'}"> 
-				<button class="btn btn-primary" onclick="location.href='/toy/board/edit.do?seq=${dto.seq}';">수정하기</button>
-				<button class="btn btn-primary" onclick="location.href='/toy/board/del.do?seq=${dto.seq}';">삭제하기</button>
+				<button class="btn btn-primary" onclick="location.href='/toy/board/edit.do?seq=${dto.seq}&column=${column}&word=${word}';">
+					수정하기
+				</button>
+				<button class="btn btn-primary" onclick="location.href='/toy/board/del.do?seq=${dto.seq}&column=${column}&word=${word}';">
+					삭제하기
+				</button>
 				</c:if> 
 				<c:if test="${not empty auth}">
 				<button type="button" class="btn btn-primary" 
-					onclick="location.href='/toy/board/add.do?reply=1&thread=${dto.thread}&depth=${dto.depth}';">답변쓰기</button>
+					onclick="location.href='/toy/board/add.do?reply=1&thread=${dto.thread}&depth=${dto.depth}&column=${column}&word=${word}';">답변쓰기</button>
 				</c:if>
 			</div>
 			
@@ -148,6 +195,33 @@
 				</form>
 			</td>
 		</tr>`;
+		 
+		
+		/* $('#imgAttach').ready(function(){
+			if($('#imgAttach').width() > 610) {
+				$('#imgAttach').width('610');
+			}
+			$('#imgAttach').show();
+		}) */
+		
+		let tag = '';
+		
+		<c:forEach items='${dto.taglist}' var="tag">
+			tag += '${tag},';
+		</c:forEach>		
+		
+		$('input[name=tags]').val(tag);
+		
+		
+		const tagify = new Tagify(document.querySelector('input[name=tags]'), {});
+		
+		tagify.on('click', test);
+		
+		function test(e) {
+			//alert(e.detail.data.value);
+			
+			location.href = '/toy/board/list.do?tag=' + e.detail.data.value;
+		}
 		
 	</script>
 	

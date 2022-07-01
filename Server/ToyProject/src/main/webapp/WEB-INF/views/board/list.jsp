@@ -45,8 +45,16 @@
 						</c:if>
 						
 						<a href="/toy/board/view.do?seq=${dto.seq}&column=${map.column}&word=${map.word}">${dto.subject}</a>
+
+						<c:if test="${not empty dto.filename}">
+						<i class="fa-solid fa-floppy-disk"></i>
+						</c:if>
 						<c:if test="${dto.commentcount > 0}">
 						<span class="badge badge-pill badge-secondary">${dto.commentcount}</span>
+						</c:if>
+						
+						<c:if test="${dto.isNew * 24 < 3}">
+						<span style="color:cornflowerblue;">new</span>
 						</c:if>
 					</td>
 					<td>${dto.name}</td>

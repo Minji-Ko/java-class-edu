@@ -26,11 +26,12 @@ create table tblBoard (
     regdate date default sysdate not null,
     readcount number default 0 not null,
     thread number not null,
-    depth number not null
+    depth number not null,
+    filename varchar2(100) null,
+    orgfilename varchar2(100) null
 );
 
 create sequence seqBoard;
-
 
 
 insert into tblBoard(seq, subject, content, id , regdate, readcount) values (seqBoard.nextVal, 'subject', 'content', 'hong', default, default);
@@ -53,7 +54,9 @@ as
 select seq, subject, content, id, 
         (select name from tblMember where id = tblBoard.id) as name,
         regdate, readcount, thread, depth,
-        (select count(*) from tblComment where pseq = tblBoard.seq) as commentcount
+        (select count(*) from tblComment where pseq = tblBoard.seq) as commentcount,
+        (sysdate - regdate) as isnew,
+        filename, orgfilename
     from tblBoard order by thread desc;
 
 select * from vwBoard;
@@ -61,8 +64,8 @@ select * from vwBoard;
 select b.*, (select name from tblMember where id = b.id) from tblBoard b where seq = 11;
 
 update tblBoard set readcount = readcount + 1 where seq = 11;
-
-
+update tblBoard set filename = 'back.jpg', orgfilename ='back.jpg' where seq = 287;
+commit;
 -- 댓글 테이블
 create table tblComment (
     seq number primary key,
@@ -89,6 +92,18 @@ from tblComment where pseq = 8 order by regdate desc ;
 commit;
 
 
+-- 해시 태그 테이블
+create table tblHashTag(
+    seq number primary key,
+    tag varchar2(100) unique not null
+);
+
+-- 게시글 <-> 해시 태그
+create table tblTagging (
+    seq number primary key,
+    bseq number not null references tblBoard(seq),
+    hseq number not null references tblHashTag(seq)
+);
 
 
 

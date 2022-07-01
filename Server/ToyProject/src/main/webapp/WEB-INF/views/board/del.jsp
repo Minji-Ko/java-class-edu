@@ -28,6 +28,8 @@
 				<input type="submit" value="삭제하기" class="btn btn-primary">
 			</div>
 			<input type="hidden" name="seq" value="${seq}">
+			<input type="hidden" name="column" value="${column}">
+			<input type="hidden" name="word" value="${word}">
 			</form>
 			
 		</section>

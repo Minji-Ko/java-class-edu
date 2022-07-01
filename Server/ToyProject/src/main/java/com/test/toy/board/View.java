@@ -1,8 +1,11 @@
 package com.test.toy.board;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,6 +57,33 @@ public class View extends HttpServlet {
 		if(column != null && column.equals("content")) {
 			dto.setContent(dto.getContent().replace(word, "<span style=\"background-color:yellow;font-weight:bold;\">" + word + "</span>"));
 		}
+		
+		
+		//첨부파일이 이미지 > 내용과 함께 출력하기
+		if(dto.getFilename() != null
+				&& (dto.getFilename().toLowerCase().endsWith(".jpg")
+					|| dto.getFilename().toLowerCase().endsWith(".jpeg") 
+					|| dto.getFilename().toLowerCase().endsWith(".png") 
+					|| dto.getFilename().toLowerCase().endsWith(".gif"))) {
+		
+			BufferedImage img = ImageIO.read(new File(req.getRealPath("/files") +"\\" + dto.getFilename()));
+			
+//			System.out.println(img.getWidth());
+//			System.out.println(img.getHeight());
+			
+			String temp = "";
+			
+			if (img.getWidth() > 610) {
+				temp = "style='width:610px;'";
+			}
+			
+			dto.setContent(dto.getContent() + String.format("<div style='margin-top:15px;'><img src='/toy/files/%s' id='imgAttach' %s></div>", dto.getFilename(), temp));
+//			dto.setContent(dto.getContent() + String.format("<div style='margin-top:15px;'><img src='/toy/files/%s' id='imgAttach' style='display:none'></div>", dto.getFilename()));
+		}
+		
+		
+		//3.6 해시태그
+		
 		
 		
 		//3.7 댓글 목록 가져오기

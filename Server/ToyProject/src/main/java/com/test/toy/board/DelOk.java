@@ -1,5 +1,6 @@
 package com.test.toy.board;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -19,6 +20,8 @@ public class DelOk extends HttpServlet {
 		HttpSession session = req.getSession();
 		
 		String seq = req.getParameter("seq");
+		String column = req.getParameter("column");
+		String word = req.getParameter("word");
 		
 		BoardDTO dto = new BoardDTO();
 		dto.setSeq(seq);
@@ -31,7 +34,22 @@ public class DelOk extends HttpServlet {
 		
 		if((dto.getId() != null && dto.getId().equals("admin")) || dao.check(dto)){
 			
+			//댓글 삭제
 			dao.delCommentAll(seq);
+			
+			
+			//첨부 파일 삭제
+			dto = dao.get(seq);
+			
+			if(dto.getFilename() != null) {
+				String path = req.getRealPath("/files") +"\\" + dto.getFilename();
+				File file = new File(path);
+				file.delete();
+			}
+			
+			//해시 태그 삭제
+			dao.delTags(seq);
+			
 			
 			result = dao.del(seq);
 			
@@ -40,6 +58,8 @@ public class DelOk extends HttpServlet {
 		
 		
 		req.setAttribute("result", result);
+		req.setAttribute("column", column);
+		req.setAttribute("word", word);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/board/delok.jsp");
 

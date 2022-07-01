@@ -21,12 +21,16 @@ public class Edit extends HttpServlet {
 		//4. JSP 호출하기 + 결과 전달하기
  		
 		String seq = req.getParameter("seq");
+		String column = req.getParameter("column");
+		String word = req.getParameter("word");
 		
 		BoardDAO dao = new BoardDAO();
 		
 		BoardDTO dto = dao.get(seq);
 		
 		req.setAttribute("dto", dto);
+		req.setAttribute("column", column);
+		req.setAttribute("word", word);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/board/edit.jsp");
 

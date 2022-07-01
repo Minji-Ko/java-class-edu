@@ -20,7 +20,7 @@
 	</main>
 	<script>
 	<c:if test="${result == 1}">
-		location.href = '/toy/board/view.do?seq=${seq}';
+		location.href = '/toy/board/view.do?seq=${seq}&column=${column}&word=${word}';
 	</c:if>
 	<c:if test="${result == 0}">
 		alert('failed');
