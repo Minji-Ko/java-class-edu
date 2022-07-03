@@ -1,0 +1,233 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	width: 100%;
+	margin: 0 auto;
+	min-width: 1400px;
+}
+
+header {
+	height: 200px;
+	background-color: #f2dff4;
+	background-image: url('/shop/images/roses_1920.png');
+	overflow:hidden;
+	border-bottom: 5px solid #ddd;
+	font-variant: small-caps;
+}
+
+.nav-menu {
+	margin: 30px 0 0 0; 
+	padding-top:10px;
+	background-color: #f7f7f7; 
+}
+.nav-menu .brand {
+	font-weight: bold;
+	font-size: 50px;
+	margin-left: 40px;
+} 
+.nav-menu ul {
+	display: inline-block;
+	vertical-align: middle;
+	list-style-type: none;
+	font-size: 30px;
+	padding-bottom: 16px;
+} 
+.nav-menu .search {
+	margin: 20px 30px 0 40px;
+	float: right;
+} 
+.nav-menu .search i {
+	font-size: 20px;
+} 
+
+.nav-menu li {
+	margin-left: 50px;
+	display: inline-block;
+} 
+
+.nav-mymenu ul {
+	list-style-type: none;
+	float: right;
+	margin: 8px 20px;
+} 
+
+.nav-mymenu li {
+	display: inline-block;
+	margin:5px;
+	font-size: 25px;
+	border-radius: 30px;
+	background-color: #A6DF78;
+	
+}
+.nav-mymenu li > a {
+	color: #fff;
+	text-shadow: 0px 0px 2px green;
+}
+ 
+a {
+	color: #333;
+}
+a:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+
+section {
+	margin: 100px auto;
+	width: 1000px;
+	color: #555;
+}
+
+section h1 {
+	text-align: center;
+	font-variant: small-caps;
+	font-weight: bold;
+	padding-bottom: 20px;
+	border-bottom: 3px solid #555;
+}
+section h2 {
+	margin-top: 50px;
+}
+
+/* join */
+.tbl-join {
+	margin-top: 20px;
+}
+.tbl-join th {
+	width: 250px;
+}
+.tbl-join th > div {
+	color: cornflowerblue;
+	font-size: 14px;
+}
+.tbl-join td > span {
+	margin-left: 5px;
+}
+.tbl-join td input {
+	width: 150px;
+	display: inline-block;
+}
+
+.tbl-join tr:nth-child(1) select { width: 80px; display:inline; } 
+.tbl-join tr:nth-child(1) input[type=button] { width: 90px; margin: 0 5px; } 
+.tbl-join tr:nth-child(2) input[name=footSize] { width: 70px; } 
+.tbl-join tr:nth-child(2) input { margin-right: 5px; } 
+.tbl-join tr:nth-child(4) input { margin-right: 5px; } 
+.tbl-join tr:nth-child(5) input { width: 600px; margin: 5px;} 
+.tbl-join tr:nth-child(6) input { width: 80px; margin-right:5px; text-align:center; }
+.tbl-join tr:nth-child(7) input,
+.tbl-join tr:nth-child(9) input { width: 30px; }
+.tbl-join tr:nth-child(8) input:nth-child(1) { width: 120px; margin-right:5px; }
+.tbl-join tr:nth-child(8) input:nth-child(2) { width: 200px; }
+.tbl-join tr:nth-child(8) select { display:inline; width: 200px; }
+
+.form-join input[type=submit] { 
+	padding: 10px 20px;
+	font-size: 20px; 
+	font-weight: bold;
+	width: 150px;
+	margin: 50px auto;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* login */
+.form-login {
+	width: 600px;
+	margin: 80px auto 30px auto;
+	border: 1px solid #DDD;
+	border-radius: 10px;
+}
+.form-login input[type=submit] {
+	width: 400px;
+	font-size: 20px;
+	margin: 30px auto 50px auto;
+	display: block;
+}
+.form-login h2 {
+	text-align: center;
+}
+.tbl-login {
+	box-shadow: 0px 0px 2px #DDD;
+	margin: 30px auto 20px auto;
+	width: 400px;
+} 
+.tbl-login td > i {
+	margin-left: 20px;
+}
+.tbl-login input {
+	width: 300px;
+	margin-left: 15px;
+	display: inline;
+}
+.help-login {
+	text-align: center;
+}
+.help-login a {
+	padding: 0 10px;
+}
+.help-login a:nth-child(1),
+.help-login a:nth-child(2) {
+	border-right: 1px solid #999;
+	display: inline-block;
+}
+/* mypage */
+.mypage-info {
+	height: 200px;
+	margin: 40px auto;
+	border-radius: 5px;
+}
+.mypage-info td {
+	vertical-align: middle;
+	font-size: 18px;
+}
+.mypage-info td div {
+	margin: 15px;
+}
+.mypage-info td a {
+	margin: 10px;
+	font-size: 17px;
+	padding: 5px 10px;
+}
+.mypage-info td:nth-child(1){ 
+	width: 300px; 
+	background-color: #F5CCC1;/* #F2DFF4; */
+	padding: 0 10px;
+	padding-left: 130px;
+	font-size: 130px;
+}
+.mypage-info td:nth-child(2){ width: auto; background-color: #F2DFF4;}
+.mypage-info td:nth-child(2) div:first-child { font-size: 25px; font-weight: bold; }
+.mypage-info td:nth-child(3){ width: 350px; }
+.mypage-info td:nth-child(3) a { margin-left: 20px; }
+.mypage-info td:nth-child(3) { padding-left: 30px; border: 1px solid #DEE2E6;}
+
+.mypage-order td { 
+	text-align: center; 
+	padding: 20px; 
+}
+.mypage-order td div { 
+	font-size: 40px; 
+	font-weight: bold; 
+}
+
+.mypage-menu div {
+	margin-top: 15px;
+	text-align: center;
+}
+.mypage-menu div > div:hover {
+	background-color: #fdfdfd;
+}
+
+
+
+ 
