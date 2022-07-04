@@ -25,4 +25,8 @@ public class BoardDTO {
     
     private ArrayList<String> taglist;
     
+    private String good;
+    private String bad;
+    private String goodbad;
+    
 }

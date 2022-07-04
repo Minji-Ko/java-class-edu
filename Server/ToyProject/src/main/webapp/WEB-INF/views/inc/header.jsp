@@ -35,19 +35,17 @@
 		<ul>
 			<li><a href="/toy/index.do">Home</a></li>
 			<li><a href="/toy/board/list.do">Board</a></li>
-			<li><a href="/toy/etc">Etc</a></li>
+			<li><a href="/toy/etc/chart.do">Etc</a></li>
 			<li><a href="/toy/etc">Etc</a></li>
 			
 			<c:if test="${empty auth}">
 			<li><a href="/toy/member/register.do" class="badge badge-pill badge-primary">Register</a></li>
 			<li><a href="/toy/member/login.do" class="badge badge-pill badge-primary">Login</a></li>
 			</c:if>
-
 			<c:if test="${not empty auth}">
 			<li><a href="/toy/member/info.do" class="badge badge-pill badge-secondary">Info</a></li>
 			<li><a href="/toy/member/logout.do" class="badge badge-pill badge-secondary">Logout</a></li>
 			</c:if>
-
 		</ul>
 	</nav>
 </header>

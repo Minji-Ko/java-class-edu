@@ -50,6 +50,7 @@ public class DelOk extends HttpServlet {
 			//해시 태그 삭제
 			dao.delTags(seq);
 			
+			dao.gelGoodBad(seq);
 			
 			result = dao.del(seq);
 			

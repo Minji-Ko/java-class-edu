@@ -10,12 +10,23 @@
 <%@ include file="/WEB-INF/views/inc/asset.jsp" %>
 <link rel="stylesheet" href="/toy/asset/css/tagify.css" />
 <script src="/toy/asset/js/jQuery.tagify.min.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=50afd7bb7d0ec954215a57b040f3f045"></script>
 <style>
 .tagify {
 	border: 0px solid transparent;
 }
 tr:nth-child(5) td {
 	padding: 5px;
+}
+tr:last-child from {
+	margin-right: 5px;
+}
+#btngood.btn-secondary, #btnbad.btn-secondary {
+	opacity: .5;
+}
+#map {
+	width: 100%;
+	height: 400px;
 }
 </style>
 </head>
@@ -59,27 +70,35 @@ tr:nth-child(5) td {
 					<th>태그</th>
 					<td colspan="7"><input type="text" name="tags" readonly></td>
 				</tr>
+				<c:if test="${not empty lat}">
+				<tr>
+					<th>위치</th>
+					<td colspan="7"><div id="map"></div></td>
+				</tr>
+				</c:if>
 			</table>
 			
 			<form method="GET" action="/toy/board/goodbad.do" class="goodbad">
-				<button class="btn btn-info" style="float:left;">
+				<button class="btn btn-secondary" style="float:left;" id="btngood">
 					<i class="fa-solid fa-thumbs-up"></i>
-					<span class="badge badge-pill  badge-light">10</span>
+					<span class="badge badge-pill  badge-light">${dto.good}</span>
 				</button>
 				<input type="hidden" name="seq" value="${dto.seq}">
 				<input type="hidden" name="column" value="${column}">
 				<input type="hidden" name="word" value="${word}">
-				<input type="hidden" name="goodbad" value="good">	
+				<input type="hidden" name="good" value="1">	
+				<input type="hidden" name="bad" value="0">	
 			</form>
 			<form method="GET" action="/toy/board/goodbad.do" class="goodbad">
-				<button class="btn btn-danger" style="float:left;">
+				<button class="btn btn-secondary" style="float:left;" id="btnbad">
 					<i class="fa-solid fa-thumbs-down"></i>
-					<span class="badge badge-pill badge-light">5</span>
+					<span class="badge badge-pill badge-light">${dto.bad}</span>
 				</button>
 				<input type="hidden" name="seq" value="${dto.seq}">
 				<input type="hidden" name="column" value="${column}">
 				<input type="hidden" name="word" value="${word}">	
-				<input type="hidden" name="goodbad" value="bad">	
+				<input type="hidden" name="good" value="0">	
+				<input type="hidden" name="bad" value="1">	
 			</form>
 						
 			<div class="btns">
@@ -222,6 +241,30 @@ tr:nth-child(5) td {
 			
 			location.href = '/toy/board/list.do?tag=' + e.detail.data.value;
 		}
+		
+		<c:if test="${dto.goodbad == 1}">
+			$('#btngood').attr('class', 'btn btn-info');
+		</c:if>
+		<c:if test="${dto.goodbad == 2}">
+			$('#btnbad').attr('class', 'btn btn-danger');
+		</c:if>
+		
+		
+		<c:if test="${not empty lat}">
+			var container = document.getElementById('map');
+			var options = {
+				center: new kakao.maps.LatLng(37.499321, 127.033220),
+				level: 7
+			};
+	
+			var map = new kakao.maps.Map(container, options);
+			
+			var m = new kakao.maps.Marker({
+				position: new kakao.maps.LatLng(${lat}, ${lng})
+			})
+			
+			m.setMap(map);
+		</c:if>
 		
 	</script>
 	

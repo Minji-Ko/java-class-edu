@@ -14,6 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.drew.imaging.ImageMetadataReader;
+import com.drew.metadata.Metadata;
+import com.drew.metadata.exif.GpsDirectory;
+
 @WebServlet("/board/view.do")
 public class View extends HttpServlet {
 
@@ -43,7 +47,12 @@ public class View extends HttpServlet {
 			session.setAttribute("readcount", "y");
 		}
 		
-		BoardDTO dto = dao.get(seq);
+		BoardDTO tempdto = new BoardDTO();
+		
+		tempdto.setSeq(seq);
+		tempdto.setId((String)session.getAttribute("auth"));
+		
+		BoardDTO dto = dao.get(tempdto);
 		
 		//3.5. 
 		// 태그비활성화 > 원본은 그대로 저장해야하기에!!!! 출력시 조작
@@ -79,6 +88,38 @@ public class View extends HttpServlet {
 			
 			dto.setContent(dto.getContent() + String.format("<div style='margin-top:15px;'><img src='/toy/files/%s' id='imgAttach' %s></div>", dto.getFilename(), temp));
 //			dto.setContent(dto.getContent() + String.format("<div style='margin-top:15px;'><img src='/toy/files/%s' id='imgAttach' style='display:none'></div>", dto.getFilename()));
+		
+			
+			
+			//사진의 gps
+			File file = new File(req.getRealPath("files") + "\\" + dto.getFilename());
+			
+			String pdsLat = "";
+			String pdsLon = "";
+			
+			try {
+	      
+	            Metadata metadata = ImageMetadataReader.readMetadata(file);
+	            GpsDirectory gpsDirectory = metadata.getFirstDirectoryOfType(GpsDirectory.class);
+	      
+	            // 위도,경도 호출
+	            if (gpsDirectory.containsTag(GpsDirectory.TAG_LATITUDE)
+	                  && gpsDirectory.containsTag(GpsDirectory.TAG_LONGITUDE)) {
+	      
+	               pdsLat = String.valueOf(gpsDirectory.getGeoLocation().getLatitude()); //위도
+	               pdsLon = String.valueOf(gpsDirectory.getGeoLocation().getLongitude());//경도
+	      
+	      
+	               if (pdsLat != null && pdsLon != null) {
+	                  req.setAttribute("lat", pdsLat);
+	                  req.setAttribute("lng", pdsLon);
+	               }
+	      
+	            }
+			} catch (Exception e) {
+				System.out.println("View.doGet");
+				e.printStackTrace();
+			}
 		}
 		
 		
