@@ -21,7 +21,13 @@
 	 </main>
 	
 	<script>
-		
+	<c:if test="${result == 1}">
+		location.href='/shop/member/profile.do';
+	</c:if>
+	<c:if test="${result == 0}">
+		alert('Sorry, your request cannot be accepted.');
+		history.back();
+	</c:if>
 	</script>
 	
 </body>

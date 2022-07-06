@@ -30,7 +30,6 @@ public class LoginOk extends HttpServlet {
 		
 		MemberDAO dao = new MemberDAO();
 		
-		
 		session.setAttribute("auth", dao.login(dto));
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/member/loginok.jsp");

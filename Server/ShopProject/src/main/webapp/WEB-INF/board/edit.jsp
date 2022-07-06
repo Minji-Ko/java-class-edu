@@ -17,18 +17,11 @@
 	 <main>
 		<%@ include file="/WEB-INF/inc/header.jsp" %>
 	 	<section>
-	 		<h1>Edit Info</h1>
 	 	</section>
 	 </main>
 	
 	<script>
-	<c:if test="${result == 1}">
-		location.href='/shop/index.do';
-	</c:if>
-	<c:if test="${result == 0}">
-		alert('Sorry, your request cannot be accepted.');
-		history.back();
-	</c:if>
+		
 	</script>
 	
 </body>

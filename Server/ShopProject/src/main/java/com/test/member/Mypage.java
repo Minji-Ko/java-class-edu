@@ -1,6 +1,7 @@
 package com.test.member;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -28,6 +29,7 @@ public class Mypage extends HttpServlet {
 		
 		//적립금 정보
 		String point = dao.getPoint(memberSeq);
+		if (point == null) { point = "0"; }
 		
 		//주문 진행현황 정보
 		HashMap<String, Integer> map = dao.getProcess(memberSeq);

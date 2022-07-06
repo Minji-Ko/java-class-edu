@@ -9,7 +9,7 @@
 			<li><a href="#">New Arrivals</a></li>
 			<li><a href="#">Best</a></li>
 			<li><a href="#">Shop All</a></li>
-			<li><a href="#">Board</a></li>
+			<li><a href="/shop/board/list.do">Board</a></li>
 			<li><a href="#">About</a></li>
 		</ul>
 		<div class="search">

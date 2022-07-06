@@ -43,7 +43,36 @@
 	 			<a href="#!">비밀번호 찾기</a>
 	 			<a href="/shop/member/join.do">회원가입</a>
 	 		</div>
+	 		
+	 		<!-- 임시start -->
+	 		<form method="POST" action="/shop/member/loginok.do" style="display:inline">
+				<input type="hidden" name="id" value="sineob7">
+				<input type="hidden" name="pw" value="CkwPPWmoME%">
+				<input type="submit" value="주유아(sineob7)" class="btn btn-primary">
+			</form>	 	
+	 		<form method="POST" action="/shop/member/loginok.do" style="display:inline">
+				<input type="hidden" name="id" value="oepan">
+				<input type="hidden" name="pw" value="iIuhZmLsHU20*">
+				<input type="submit" value="김수기(oepan)" class="btn btn-primary">
+			</form>	 	
+	 		<form method="POST" action="/shop/member/loginok.do" style="display:inline">
+				<input type="hidden" name="id" value="aekcyfm">
+				<input type="hidden" name="pw" value="gJOQJqXlyiZ38&">
+				<input type="submit" value="서유진(aekcyfm)" class="btn btn-primary">
+			</form>	 	
+	 		<form method="POST" action="/shop/member/loginok.do" style="display:inline">
+				<input type="hidden" name="id" value="wolbt">
+				<input type="hidden" name="pw" value="leYbnoiowK!">
+				<input type="submit" value="이아설(wolbt)" class="btn btn-primary">
+			</form>	 	
+	 		<form method="POST" action="/shop/member/loginok.do" style="display:inline">
+				<input type="hidden" name="id" value="bynja2">
+				<input type="hidden" name="pw" value="NmBtpuqFK#">
+				<input type="submit" value="박혜미(bynja2)" class="btn btn-primary">
+			</form>	 	
 	 	</section>
+	 	<!-- 임시end -->
+	 	
 	 </main>
 	
 	<script>

@@ -25,7 +25,7 @@
 	 				<td>
 			 			<div>${auth.name}(${auth.id})님</div>
 			 			<div>${grade} 회원 <i class="fa-solid fa-circle-question"></i></div>
-			 			<a href="/shop/member/profile.do" class="badge badge-secondary">정보 수정</a>
+			 			<a href="/shop/member/edit.do" class="badge badge-secondary">정보 수정</a>
 	 				</td>
 	 				<td>
 		 				<div>
@@ -99,7 +99,7 @@
 			  <div class="col-sm-3">
 			    <div class="card">
 			      <div class="card-body">
-			      	<a href="#">
+			      	<a href="/shop/member/profile.do">
 			        <h3 class="card-title">Profile</h3>
 			        <p class="card-text">회원 정보</p>
 			        </a>

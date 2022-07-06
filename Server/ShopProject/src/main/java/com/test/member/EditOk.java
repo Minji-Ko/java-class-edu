@@ -1,5 +1,67 @@
 package com.test.member;
 
-public class EditOk {
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/member/editok.do")
+public class EditOk extends HttpServlet {
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		HttpSession session = req.getSession();
+		
+		req.setCharacterEncoding("UTF-8");
+		
+		String seq = ((MemberDTO)session.getAttribute("auth")).getSeq();
+		String id = req.getParameter("id");
+		String pw = req.getParameter("pw");
+		String name = req.getParameter("name");
+		String address = req.getParameter("address1") + ", " + req.getParameter("address2");
+		String tel = req.getParameter("tel1") + "-" + req.getParameter("tel2") + "-" + req.getParameter("tel3");
+		String smsConsent = req.getParameter("smsConsent");
+		String email = req.getParameter("email1") + "@" + req.getParameter("email2");
+		String emailConsent = req.getParameter("emailConsent");
+		String solarLunar = req.getParameter("solarLunar");
+		String birthdate = req.getParameter("birthdate");
+		String footSize = req.getParameter("footSize");
+		
+		
+		MemberDTO dto = new MemberDTO();
+		dto.setSeq(seq);
+		dto.setId(id);
+		dto.setPw(pw);
+		dto.setName(name);
+		dto.setAddress(address);
+		dto.setTel(tel);
+		dto.setSmsConsent(smsConsent);
+		dto.setEmail(email);
+		dto.setEmailConsent(emailConsent);
+		dto.setSolarLunar(solarLunar);
+		dto.setBirthdate(birthdate);
+		dto.setFootSize(footSize);
+		
+		MemberDAO dao = new MemberDAO();
+		
+		int result = 0;
+
+		if(dao.checkPw(dto)) {
+			result = dao.editProfile(dto);
+		}
+
+		req.setAttribute("result", result);
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/member/editok.jsp");
+
+		dispatcher.forward(req, resp);
+	}
 
 }
+

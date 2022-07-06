@@ -20,7 +20,7 @@ public class JoinOk extends HttpServlet {
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		String name = req.getParameter("name");
-		String address = req.getParameter("address1") + " " + req.getParameter("address1");
+		String address = req.getParameter("address1") + ", " + req.getParameter("address2");
 		String tel = req.getParameter("tel1") + "-" + req.getParameter("tel2") + "-" + req.getParameter("tel3");
 		String smsConsent = req.getParameter("smsConsent");
 		String email = req.getParameter("email1") + "@" + req.getParameter("email2");
