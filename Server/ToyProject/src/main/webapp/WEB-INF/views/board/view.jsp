@@ -118,7 +118,7 @@ tr:last-child from {
 				</c:if>
 			</div>
 			
-			<c:if test="${not empty auth}">
+<%-- 			<c:if test="${not empty auth}">
 			<form method="POST" action="/toy/board/addcommentok.do">
 			<table class="tblAddComment">
 				<tr>
@@ -134,8 +134,8 @@ tr:last-child from {
 			<input type="hidden" name="column" value="${column}">
 			<input type="hidden" name="word" value="${word}">
 			</form>
-			</c:if>
-
+			</c:if> --%>
+<%-- 
 			<table class="table table-bordered comment">
 				<c:forEach items="${clist}" var="cdto">
 				<tr>
@@ -152,20 +152,76 @@ tr:last-child from {
 					</td>
 				</tr>
 				</c:forEach>
-			</table>			
+			</table>			 --%>
+			
+			<c:if test="${not empty auth}">
+			<form id="addCommentForm">
+			<table class="tblAddComment">
+				<tr>
+					<td>
+						<textarea class="form-control" name="comment" required></textarea>
+					</td>
+					<td>
+						<button class="btn btn-primary" type="button" onclick="addComment();">쓰기</button>
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="pseq" value="${dto.seq}">
+			</form>
+			</c:if>
+ 
+			<table class="table table-bordered comment">
+				<c:forEach items="${clist}" var="cdto">
+				<tr>
+					<td>
+						<div>${cdto.comment}</div>
+						<div>
+							<span>${cdto.regdate}</span>
+							<span>${cdto.name}(${cdto.id})</span>
+							<c:if test="${cdto.id == auth}">
+							<span class="btnspan"><a href="#!" onclick="delcomment(${cdto.seq});">[삭제]</a></span>
+							<span class="btnspan"><a href="#!" onclick="editcomment(${cdto.seq});">[수정]</a></span>
+							</c:if>
+						</div>
+					</td>
+				</tr>
+				</c:forEach>
+			</table>
+						
 		</section>
 	</main>
 	<script>
 		$('.table.comment td').mouseover(function(){
 			$(this).find('.btnspan').show();
-		})
+		});
 		$('.table.comment td').mouseout(function(){
 			$(this).find('.btnspan').hide();
-		})
+		});
 		
-		function delcomment(seq) {
+	/* 	function delcomment(seq) {
 			if(confirm('delete?')) {
 				location.href ='delcommentok.do?seq=' + seq + '&pseq=${dto.seq}&column=${column}&word=${word}'; 
+			}
+		} */
+		function delcomment(seq) {
+			
+			let tr = $(event.target).parents('tr');
+			
+			if(confirm('delete?')) {
+				
+				$.ajax({
+					type: 'POST',
+					url: '/toy/board/delcommentajaxok.do',
+					data: 'seq='+seq,
+					dataType: 'json',
+					success: function(result){
+						tr.remove();
+					},
+					error: function(a, b, c){
+						console.log(a, b, c);
+					}
+				})
+				
 			}
 		}
 		
@@ -187,12 +243,12 @@ tr:last-child from {
 			}
 		}
 		
-		function cancelform () {
+		function cancelForm () {
 				$('#editRow').remove();
 				isEdit = false;
 		}		
 		
-		const temp = 
+	/* 	const temp = 
 		`<tr id="editRow" style="background-color: #EFEFEF;">
 			<td>
 				<form method="POST" action="/toy/board/editcommentok.do">
@@ -210,6 +266,26 @@ tr:last-child from {
 				<input type="hidden" name="pseq" value="${dto.seq}">
 				<input type="hidden" name="column" value="${column}">
 				<input type="hidden" name="word" value="${word}">
+				<input type="hidden" name="seq">
+				</form>
+			</td>
+		</tr>`; */
+		 
+		const temp = 
+		`<tr id="editRow" style="background-color: #EFEFEF;">
+			<td>
+				<form id="EditCommentForm">
+				<table class="tblEditComment">
+					<tr>
+						<td>
+							<textarea class="form-control" name="comment" required></textarea>
+						</td>
+						<td>
+							<button class="btn btn-primary" type="button" onclick="editComment();">수정하기</button>
+							<button type="button" class="btn btn-secondary" onclick="cancelForm();">취소하기</button>
+						</td>
+					</tr>
+				</table>
 				<input type="hidden" name="seq">
 				</form>
 			</td>
@@ -265,6 +341,94 @@ tr:last-child from {
 			
 			m.setMap(map);
 		</c:if>
+		
+		
+		
+		/* Ajax 버전 댓글 */
+		function addComment() {
+			
+			$.ajax({
+				type: 'POST',
+				url: '/toy/board/addcommentajaxok.do',
+				data: $('#addCommentForm').serialize(),
+				dataType: 'json',
+				success: function(result){
+					if (result.result == "1") {
+						
+						//<td> x 9 개 -> <td> x 9개 이벤트 추가 -> 댓글 쓰기 -> 새로운 <td> x 1개 추가
+						
+						let temp =	`<tr>
+										<td>
+											<div>\${$('[name=comment]').val()}</div>
+											<div>
+												<span>\${result.regdate}</span>
+												<span>\${result.name}(\${result.id})</span>
+												<span class="btnspan"><a href="#!" onclick="delcomment(\${result.seq});">[삭제]</a></span>
+												<span class="btnspan"><a href="#!" onclick="editcomment(\${result.seq});">[수정]</a></span>
+											</div>
+										</td>
+									</tr>`;	
+						
+						if ($('.comment tbody').length == 0) {
+							$('.comment').append('<tbody></tbody>');
+						}	
+						$('.comment tbody').prepend(temp);
+						
+						$('.table.comment td').mouseover(function(){
+							$(this).find('.btnspan').show();
+						});
+						$('.table.comment td').mouseout(function(){
+							$(this).find('.btnspan').hide();
+						});
+						
+						$('.tblAddComment textarea[name=comment]').val('');
+						
+					} else {
+						alert('failed');
+					}
+				},
+				error: function(a, b, c){
+					console.log(a, b, c);
+				}
+			});
+			
+		}
+	
+		
+		function editComment() {
+			
+			
+			$.ajax({
+				
+				type: 'POST',
+				url: '/toy/board/editcommentajaxok.do',
+				data: $('#EditCommentForm').serialize(),
+				dataType: 'json',
+				success: function(result){
+					
+					if (result.result == "1") {
+						
+						
+						//수정된 댓글을 화면에 반영하기
+						$('#editRow').prev().children().eq(0).children().eq(0).text($('#editRow textarea[name=comment]').val());
+						
+						$('#editRow').remove();
+						
+					} else {
+						alert('failed');
+					}
+					
+				},
+				error: function(a, b, c){
+					console.log(a, b, c);
+				}
+				
+			});
+			
+		}
+		
+		
+		
 		
 	</script>
 	

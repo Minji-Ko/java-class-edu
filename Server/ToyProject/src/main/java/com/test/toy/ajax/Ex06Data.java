@@ -1,6 +1,7 @@
 package com.test.toy.ajax;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -24,10 +25,30 @@ public class Ex06Data extends HttpServlet {
 		
 		
 		//ArrayList<BuseoDTO> -> JSON 변환
+		resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("application/json");
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/ajax/ex06.jsp");
+		PrintWriter writer = resp.getWriter();
+		
+		String temp = "";
+		temp += "[";
+		for (BuseoDTO dto : list) {
+			temp += "{";
+			temp += String.format("\"num\": %s,", dto.getNum());
+			temp += String.format("\"name\": \"%s\",", dto.getName());
+			temp += String.format("\"jikwi\": \"%s\",", dto.getJikwi());
+			temp += String.format("\"tel\": \"%s\",", dto.getTel());
+			temp += String.format("\"city\": \"%s\"", dto.getCity());
 
-		dispatcher.forward(req, resp);
+			temp += "},";
+		}
+		temp = temp.substring(0, temp.length()-1); //마지막 , 제거
+		temp += "]";
+		
+		writer.print(temp);
+		
+		writer.close();
+		
 	}
 
 }

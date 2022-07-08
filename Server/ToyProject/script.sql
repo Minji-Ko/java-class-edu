@@ -185,3 +185,54 @@ select * from tblCategory;
 
 update tblCategory set icon = 'fa-solid fa-utensils' where seq=2;
 select f.*, c.marker as marker, c.icon as icon from tblFood f inner join tblCategory c on c.seq = f.category order by f.name asc;
+
+select * from tblComment;
+
+
+select tblComment.*, (select name from tblMember where id = tblComment.id)
+    from tblComment where seq = (select max(seq) from tblComment);
+    
+
+create table tblDraggable(
+    id varchar2(30) primary key,
+    left number not null,
+    top number not null
+);
+
+insert into tblDraggable (id, left, top) values ('cat01', 0, 0);
+insert into tblDraggable (id, left, top) values ('cat02', 0, 0);
+insert into tblDraggable (id, left, top) values ('cat03', 0, 0);
+
+commit;
+
+select * from tblDraggable;
+
+create table tblMovie (
+    seq number primary key,
+    title varchar2(200) not null,
+    category varchar2(200) null,
+    time number not null,
+    rdate varchar2(10) not null,
+    director varchar2(100) not null,
+    actor varchar2(200) null,
+    poster varchar2(300) not null
+);
+
+create sequence seqMovie;
+
+select * from tblMovie;
+
+
+create table tblBana(
+    seq number not null,
+    img varchar2(300) not null,
+    engName varchar2(50) not null,
+    korName varchar2(50) not null
+);
+
+create sequence seqBana;
+
+drop table tblBana;
+drop sequence seqBana;
+
+select * from tblBana;

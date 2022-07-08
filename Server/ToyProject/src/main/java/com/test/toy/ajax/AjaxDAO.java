@@ -132,8 +132,220 @@ public class AjaxDAO {
 	}
 
 	public ArrayList<BuseoDTO> listInsa(String buseo) {
-		// TODO Auto-generated method stub
+
+		try {
+			
+			String sql = "select * from hr.tblInsa where buseo = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, buseo);
+			
+			rs = pstat.executeQuery();
+			
+			ArrayList<BuseoDTO> list = new ArrayList<BuseoDTO>();
+			
+			while (rs.next()) {
+				BuseoDTO dto = new BuseoDTO();
+				
+				dto.setNum(rs.getString("num"));
+				dto.setName(rs.getString("name"));
+				dto.setJikwi(rs.getString("jikwi"));
+				dto.setTel(rs.getString("tel"));
+				dto.setCity(rs.getString("city"));
+				
+				list.add(dto);
+			}
+			
+			return list;
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.listInsa");
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	public ArrayList<AddressDTO> getAddress() {
+		return get("");
+	}
+	public ArrayList<AddressDTO> getAddress(String gender) {
+		
+		if(gender.equals("f") || gender.equals("m")) {
+			return get("where gender = '" + gender +"' ");
+		} else {
+			return get("");
+		}
+		
+	}
+	
+	public ArrayList<AddressDTO> get(String where) {
+		try {
+			
+			String sql = "select * from hr.tblAddress "+ where + "order by name asc";
+			
+			stat = conn.createStatement();
+			
+			rs = stat.executeQuery(sql);
+			
+			ArrayList<AddressDTO> list = new ArrayList<AddressDTO>(); 
+			
+			while (rs.next()) {
+				AddressDTO dto = new AddressDTO();
+				
+				dto.setSeq(rs.getString("seq"));
+				dto.setName(rs.getString("name"));
+				dto.setAge(rs.getString("age"));
+				dto.setGender(rs.getString("gender"));
+				dto.setTel(rs.getString("tel"));
+				dto.setAddress(rs.getString("address"));
+				
+				list.add(dto);
+			}
+			
+			return list;
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.getAddress");
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+
+	public int addAddress(AddressDTO dto) {
+		
+		try {
+			
+			String sql = "insert into hr.tblAddress values (seqAddress.nextVal, ? , ?, ?, ?, ?)";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getName());
+			pstat.setString(2, dto.getAge());
+			pstat.setString(3, dto.getAddress());
+			pstat.setString(4, dto.getGender());
+			pstat.setString(5, dto.getTel());
+			
+			return pstat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.addAddress");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	public int getSeq() {
+		
+		try {
+
+			String sql = "select max(seq) as seq from hr.tblAddress";
+
+			stat = conn.createStatement();
+			
+			rs = stat.executeQuery(sql);
+			
+			if(rs.next()) {
+				return rs.getInt("seq");
+			}
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.getSeq");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	public int delAddress(String seq) {
+		
+		try {
+			
+			String sql = "delete from hr.tblAddress where seq = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, seq);
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.delAddress");
+			e.printStackTrace();
+		}
+		
+		
+		return 0;
+	}
+
+	public int updatePosition(DraggableDTO dto) {
+
+		try {
+			
+			String sql = "update tblDraggable set left = ?, top = ? where id = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, dto.getLeft());
+			pstat.setString(2, dto.getTop());
+			pstat.setString(3, dto.getId());
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.updatePosition");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	public ArrayList<DraggableDTO> listDraggable() {
+		
+		try {
+			
+			String sql = "select * from tblDraggable";
+			
+			stat = conn.createStatement();
+			
+			rs = stat.executeQuery(sql);
+			
+			ArrayList<DraggableDTO> list = new ArrayList<DraggableDTO>();
+			
+			while(rs.next()) {
+				DraggableDTO dto = new DraggableDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setLeft(rs.getString("left"));
+				dto.setTop(rs.getString("top"));
+				
+				list.add(dto);
+			}
+			
+			return list;
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.listDraggable");
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

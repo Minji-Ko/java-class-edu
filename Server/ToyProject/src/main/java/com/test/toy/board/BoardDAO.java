@@ -810,6 +810,37 @@ public class BoardDAO {
 
 		return null;
 	}
+
+	public CommentDTO getComment() {
+		
+		try {
+			
+			String sql = "select tblComment.*, (select name from tblMember where id = tblComment.id) as name "
+					+ "from tblComment where seq = (select max(seq) from tblComment)";
+			
+			stat = conn.createStatement();
+			
+			rs = stat.executeQuery(sql);
+			
+			CommentDTO dto = new CommentDTO();
+
+			if (rs.next()) {
+				dto.setSeq(rs.getString("seq"));
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setPseq(rs.getString("pseq"));
+				dto.setRegdate(rs.getString("regdate"));
+			}
+			
+			return dto;
+			
+		} catch (Exception e) {
+			System.out.println("BoardDAO.getComment");
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 }
 
 

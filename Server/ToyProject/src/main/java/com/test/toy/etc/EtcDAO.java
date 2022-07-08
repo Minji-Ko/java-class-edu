@@ -115,4 +115,25 @@ public class EtcDAO {
 		
 		return null;
 	}
+
+	public int addBana(BanaDTO dto) {
+		
+		try {
+			
+			String sql = "insert into tblBana values (seqBana.nextVal, ? , ? ,?)";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getImg());
+			pstat.setString(2, dto.getEngName());
+			pstat.setString(3, dto.getKorName());
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("EtcDAO.addBana");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 }

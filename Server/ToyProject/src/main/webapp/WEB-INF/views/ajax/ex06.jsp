@@ -43,13 +43,6 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
 						<td colspan="5">직원이 없습니다.</td>
 					</tr>
 				</tbody>
@@ -72,6 +65,21 @@
 				data: 'buseo=' + buseo,
 				dataType: 'json',
 				success: function(result){
+					let temp = '';
+					
+					$(result).each(function(index, item){
+						//직원 1명 > JSON 객체 1개
+						temp += '<tr>';
+						temp += '<td>'+ item.num +'</td>';
+						temp += '<td>'+ item.name +'</td>';
+						temp += '<td>'+ item.jikwi +'</td>';
+						temp += '<td>'+ item.tel +'</td>';
+						temp += '<td>'+ item.city +'</td>';
+						temp += '</tr>';
+					});
+					
+					$('table tbody').html('');
+					$('table tbody').append(temp);
 					
 				},
 				error: function(a, b, c){
