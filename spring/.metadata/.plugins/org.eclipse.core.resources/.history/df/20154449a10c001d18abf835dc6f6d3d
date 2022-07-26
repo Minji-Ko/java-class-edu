@@ -1,0 +1,16 @@
+package com.test.spring;
+
+@Controller
+public class Ex05Controller {
+
+	@GetMapping(value="/add")
+	public String add() {
+		return "add";
+	
+	}
+	
+	@PostMapping(value="/addok")
+	public String addok() {
+		return "addok";
+	}
+}

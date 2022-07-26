@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:aop="http://www.springframework.org/schema/aop"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+	<!-- Spring AOP -->
+	
+	<!-- 주 업무 객체 -->
+	<bean id="memo" class="com.test.spring.aop.MemoImpl" />
+
+	<!-- 보조 업무 객체 -->
+	<bean id="logger" class="com.test.spring.aop.Logger" />
+	
+	<!-- 주 업무 객체 + 보조 업무 객체 -->
+	<!-- Spring AOP 설정 -->
+	<aop:config>
+		
+	</aop:config>
+	
+</beans>
