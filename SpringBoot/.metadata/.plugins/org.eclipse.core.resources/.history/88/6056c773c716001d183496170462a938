@@ -1,0 +1,14 @@
+package com.test.spring.thymeleaf;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AddressDAO {
+
+	private SqlSessionTemplate template;
+	
+	@Autowired
+	public AddressDAO(SqlSessionTemplate template) {
+		this.template = template;
+	}
+}

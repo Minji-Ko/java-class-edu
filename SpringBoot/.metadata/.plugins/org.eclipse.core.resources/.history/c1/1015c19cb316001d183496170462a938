@@ -1,0 +1,19 @@
+package com.test.spring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.test.controller.DIController;
+
+@SpringBootApplication
+public class BootMybatisApplication {
+
+	public static void main(String[] args) {
+		
+		DIController controller = new DIController();
+		System.out.println(controller == null);
+		
+		SpringApplication.run(BootMybatisApplication.class, args);
+	}
+
+}

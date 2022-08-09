@@ -1,0 +1,13 @@
+package com.test.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class TestDAO {
+
+	public int test() {
+		System.out.println("TestDAO.test()");
+		
+		return (int)System.nanoTime();
+	}
+}

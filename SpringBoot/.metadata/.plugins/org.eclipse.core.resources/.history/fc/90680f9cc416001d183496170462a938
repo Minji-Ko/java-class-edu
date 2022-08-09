@@ -1,0 +1,15 @@
+package com.test.spring.thymeleaf;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ThymeleafController {
+	
+	private AddressDAO dao;
+	
+	@Autowired
+	public ThymeleafController() {
+		this.dao = dao;
+	}
+	
+}

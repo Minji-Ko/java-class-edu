@@ -1,0 +1,11 @@
+#Server Port
+server.port=8090
+
+#MyBatis > Connection
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=hr
+spring.datasource.password=java1234
+
+#MyBatis > resources > mapper
+mybatis.mapper-locations=classpath:mapper/*.xml

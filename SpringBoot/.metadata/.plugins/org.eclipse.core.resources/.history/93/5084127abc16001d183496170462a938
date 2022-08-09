@@ -1,0 +1,15 @@
+package com.test.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Primary
+public class AdminDAO implements IMemberDAO {
+
+	@Override
+	public int test() {
+		System.out.println("AdminDAO.test()");
+		
+		return (int)System.nanoTime();
+	}
+}

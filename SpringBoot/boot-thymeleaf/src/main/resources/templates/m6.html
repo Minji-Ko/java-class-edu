@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org"> <!-- xmlns:th="https://thymeleaf.org" > 타임리프 문법 사용 가능 -->
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/mvp.css">
+<style>
+	
+	.one {
+		color: gold;
+	}
+	
+	.two {
+		text-decoration: underline;
+	}
+	
+	.three {
+		font-size: 3em;
+	}
+	
+</style>
+</head>
+<body>
+	<h1>Thymeleaf</h1>
+
+	<!--  
+	
+		Thymeleaf > HTML 속성 조작
+		- th:* = ""
+		- th:HTML속성명 = ""
+		- 기존 속성이 있으면 대체한다.
+		- 기존 속성이 없으면 새로 만든다.
+		
+		STS > Thymeleaf Plugin for Eclipse X.X.X
+		
+		https://github.com/thymeleaf/thymeleaf-extras-eclipse-plugin
+	
+	-->
+	
+	<h2>HTML Attributes</h2>
+	
+	<input type="text" name="age">
+	<input type="text" th:name="age">
+	<input type="text" th:name="${s1}" th:size="${size}">
+	
+	<hr>
+	
+	<input type="text" value="홍길동" th:value="${s1}">
+	
+	<hr>
+	
+	<div class="one">Box 1</div>
+	<div th:class="one">Box 2</div>
+	
+	<div class="one" th:class="two">Box 3</div>
+	
+	<div class="one" th:attrappend="class=' two'">Box 4</div>
+	<div class="one" th:attrprepend="class='two '">Box 5</div>
+	<div class="one" th:classappend="two">Box 5</div>
+	
+	<input type="checkbox" name="cb" th:checked="true">
+	<input type="checkbox" name="cb" th:checked="false">
+	
+	<!-- <div style="${color}">Box</div> -->
+	
+	<div th:style="'background-color: ' + ${color}">Box</div>
+	<div th:style="|background-color: ${color}|">Box</div>
+	
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

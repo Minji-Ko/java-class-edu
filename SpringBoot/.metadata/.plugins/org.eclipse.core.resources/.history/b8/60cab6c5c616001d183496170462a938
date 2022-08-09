@@ -1,0 +1,11 @@
+package com.test.spring.thymeleaf;
+
+public class AddressDTO {
+
+	private String seq;
+	private String name;
+	private int age;
+	private String tel;
+	private String address;
+	
+}

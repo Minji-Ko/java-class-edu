@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf</title>
+<link rel="stylesheet" href="/css/mvp.css">
+</head>
+<body>
+<main>
+	
+	<!-- m7.html -->
+	<h1>Thymeleaf</h1>
+	
+	<!--/*  
+		
+		Thymeleaf Text
+		
+		- HTML 콘텐츠에 데이터 출력
+			- th:text
+				- escaped text
+				- '<' -> &lt;
+				- '>' -> &gt;
+			- th:utext
+				- unescaped text
+				- 그대로 출력
+				
+		- 인라인 출력
+			- th:inline="text" //사용 잘 안함
+			- th:inline="javascript" //주력
+			- th:inline + [[]] //escaped text
+			- th:inline + [()] //unescaped text
+			
+	*/-->
+	
+	<h2>Text</h2>
+	
+	<div th:text="${dto.name}"></div>
+	<div th:utext="${dto.name}"></div>
+	
+	<hr>
+	
+	<div th:text="${txt}"></div>
+	<div th:utext="${txt}"></div>
+	
+	<hr>
+	
+	<div th:inline="text">[[${txt}]]</div>
+	<div th:inline="text">[(${txt})]</div>
+	
+	<hr>
+	
+	<div>이름: <span th:text="${dto.name}"></span></div>
+	<div th:text="'이름: ' + ${dto.name}"></div>
+	<div th:text="|이름: ${dto.name}|"></div>
+	<div th:inline="text">이름: [[${dto.name}]]</div>
+	<div>이름: [[${dto.name}]]</div>
+	
+	<hr>
+	
+	개발 순서 : 클라이언트 작성 -> 서버 작성
+	
+	퍼블리싱 담당자가 작성한 코드
+	<div>이름: <span th:text="${name}">홍길동</span></div>
+	<div>이름: [[${text}]]</div>
+	
+	
+
+	
+</main>
+</body>
+</html>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org"> <!-- xmlns:th="https://thymeleaf.org" > 타임리프 문법 사용 가능 -->
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/mvp.css">
+</head>
+<body>
+	<h1>Thymeleaf</h1>
+
+	<!-- 
+		Thymeleaf Standard Expression	
+		
+		1. Variable Expressions, 변수 표현식
+			- ${}
+			- 컨트롤러부터 전달된 값을 출력한다.
+			- JSP의 EL과 유사 > SpringEL
+		
+		2. Selection Variable Expressions, 선택 변수 표현식
+			- *{}
+			- 객체/맵 프로퍼티를 출력한다.
+			
+		3. Message Expressions, 메시지 표현식
+			- #{}
+			- 스프링 메시지를 출력한다.
+		
+		4. Link URL Expressions, 링크 주소 표현식
+			- @{}
+			- 링크의 URL을 출력한다.
+		
+		5. Fragment Expressions, 조각 표현식
+			- ~{}
+			- 조각페이지를 삽입한다.
+		
+	 -->
+	 
+	 <h2>변수 표현식</h2>
+	 
+	 <div>${num}</div>
+
+</body>
+</html>

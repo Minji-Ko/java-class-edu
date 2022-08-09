@@ -1,0 +1,22 @@
+package com.test.spring.thymeleaf;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ThymeleafController {
+	
+	private AddressDAO dao;
+	
+	@Autowired
+	public ThymeleafController(AddressDAO dao) {
+		this.dao = dao;
+	}
+	
+	@GetMapping("/m1")
+	public void m1() {
+		
+	}
+	
+}

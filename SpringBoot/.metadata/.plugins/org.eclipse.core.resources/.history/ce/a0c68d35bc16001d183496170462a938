@@ -1,0 +1,11 @@
+package com.test.repository;
+
+public class AdminDAO implements IMemberDAO {
+
+	@Override
+	public int test() {
+		System.out.println("MemberDAO.test()");
+		
+		return (int)System.nanoTime();
+	}
+}
